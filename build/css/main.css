@@ -6,7 +6,7 @@
       border-radius: 0;
     }
 /*height of html. adjust as percentage later on*/
-    .row.content {height: 700px;}
+    .row.content {height: 800px;}
 
     .sidenav {
       padding-top: 20px;
@@ -19,7 +19,7 @@
       background-color: #333;
       color: white;
       padding: 15px;
-      position: relative;;
+      position: relative;
       border-top: 1px solid #000;
     width:100%;
 
