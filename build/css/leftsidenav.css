@@ -1,0 +1,26 @@
+@import "http://designmodo.github.io/Flat-UI/dist/css/flat-ui.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+@import "https://daneden.github.io/animate.css/animate.min.css";
+
+
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  font-size: 17px;
+  line-height: 30px;
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Comic Sans MS";
+}
+
+
+.sidebar-nav li a:hover, .sidebar-nav li a:focus, .sidebar-nav li.open a:focus {
+  background-color: transparent;
+  color: teal;
+  text-decoration: none;
+}
