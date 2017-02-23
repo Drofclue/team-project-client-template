@@ -24,48 +24,12 @@
 
 
 <body>
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="main.html">
-        <img src  = "img/cherry_logo.png"
-             alt = "logo" width="60px" height="60" />
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="main.html">Home</a></li>
-        <li><a href="about.html#">About</a></li>
-        <li><a href="#">Contact us</a></li>
 
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My team<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-        	<li><a href="">List of my teams</a></li>
-        	<li><a href="">Coming team meaning</a></li>
-        	<li><a href="">Search other teams</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-
-<li><a href="/user_profile.html"><span class="glyphicon glyphicon-user"></span> Hello, Ringo Daddy</a></li>
-<li><a href="/user_setting.html"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
-<li><a href="/logout.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-      </ul>
-    </div>
-  </div>
-</nav>
-
+<!-- Seperates the page into columns -->
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2 sidenav text-left">
+    <!-- Creates the right sidebar which is the main navigation bar -->
+    <div class="col-md-2 sidenav text-left">
 
       <ul class="nav sidebar-nav">
           <li class="sidebar-brand">
@@ -108,6 +72,7 @@
           </li>
       </ul>
     </div>
+    <!--the middle content of the page which changes from page to page -->
     <div class="col-sm-7 text-left">
       <h1>Suggested games</h1>
       <p> <mark><code>Users will see this suggested coming games list as soon as they logged in.</code>
@@ -120,22 +85,20 @@
       <h3>Detail</h3>
       <p>Suggested games details</p>
     </div>
+    <!-- The right bar that holds the user hub, suggested games, and games coming up-->
     <div class="col-sm-3 sidenav">
       <div class="well">
-
-<div class="alert alert-info fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
-</div>
-<div class="alert alert-danger fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
-</div>
-<div class="alert alert-success fade in">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
-</div>
-
+        <div class="alert alert-info fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
+        </div>
+        <div class="alert alert-danger fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
+        </div>
+        <div class="alert alert-success fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>New feed
+        </div>
       </div>
       <div class="well">
-
         <p> Top most recent games</p>
         <form id="eventForm" method="post" class="form-horizontal">
             <div class="form-group">
@@ -144,7 +107,6 @@
                     <input type="text" class="form-control" name="name" />
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="col-xs-3 control-label">Date</label>
                 <div class="col-xs-5 date">
@@ -152,7 +114,6 @@
                     <input type="hidden" id="selectedDate" name="selectedDate" />
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-xs-5 col-xs-offset-3">
                     <button type="submit" class="btn btn-default">Validate</button>
@@ -165,35 +126,35 @@
   </div>
 </div>
 
+<!--The bottom of the page-->
 <footer class="container-fluid text-center ">
-<div class="col-md-3 text-left">
- <section id="logo-ad" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><a href="/main.html">  <img src  = "img/cherry_logo.png"
+  <div class="col-md-3 text-left">
+    <section id="logo-ad" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><a href="/main.html">  <img src  = "img/cherry_logo.png"
         alt = "logo" width="60px" height="60" /></a></p>
-  <p>Thanks For Choosing Cherry Picker</p>
-  </div></section>      </div>
-</div>
-<div class="col-md-3 text-left">
-<section id="Customer-service-info" class="widget widget_black_studio_tinymce"><h5 class="widget-title">Customer service hours</h5><div class="textwidget"><p>Call us anytime cuz we go ham</p>
-</div>
-</section>
-</div>
-<div class="col-md-3 text-left">
+        <p>Thanks For Choosing Cherry Picker</p>
+      </div></section>      </div>
+    </div>
+    <div class="col-md-3 text-left">
+      <section id="Customer-service-info" class="widget widget_black_studio_tinymce"><h5 class="widget-title">Customer service hours</h5><div class="textwidget"><p>Call us anytime cuz we go ham</p>
+    </div>
+  </section>
+  </div>
+  <div class="col-md-3 text-left">
+    <section id="brief-info" class="widget widget_black_studio_tinymce"><h5 class="widget-title">Some more Information about cherry picker</h5>
+    <div class="textwidget"><p>text box</p>
+    </div></section>
+  </div>
 
-  <section id="brief-info" class="widget widget_black_studio_tinymce"><h5 class="widget-title">Some more Information about cherry picker</h5><div class="textwidget"><p>text box</p>
-  </div></section>
-
-</div>
-
-<div class="col-md-3 text-left">
-<section id="social-widget" class="widget Social_Widget"><h5 class="widget-title">Follow us!</h5>
-  <div class="socialmedia-buttons smw_left">
-  <a href="http://facebook.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/fb.png" alt="Follow Us on Facebook" title="Follow Us on Facebook" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
-  <a href="http://plus.google.com" rel="publisher" target="_blank"><img width="32" height="32" src="/img/g+.png" alt="Follow Us on Google+" title="Follow Us on Google+" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
-  <a href="http://twitter.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/tt.png" alt="Follow Us on Twitter" title="Follow Us on Twitter" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
-  <a href="http://linkedin.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/in.png" alt="Follow Us on LinkedIn" title="Follow Us on LinkedIn" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
-</div>
-</section>
-</div>
+  <div class="col-md-3 text-left">
+    <section id="social-widget" class="widget Social_Widget"><h5 class="widget-title">Follow us!</h5>
+      <div class="socialmedia-buttons smw_left">
+        <a href="http://facebook.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/fb.png" alt="Follow Us on Facebook" title="Follow Us on Facebook" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
+        <a href="http://plus.google.com" rel="publisher" target="_blank"><img width="32" height="32" src="/img/g+.png" alt="Follow Us on Google+" title="Follow Us on Google+" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
+        <a href="http://twitter.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/tt.png" alt="Follow Us on Twitter" title="Follow Us on Twitter" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
+        <a href="http://linkedin.com" rel="nofollow" target="_blank"><img width="32" height="32" src="/img/in.png" alt="Follow Us on LinkedIn" title="Follow Us on LinkedIn" style="opacity: 0.8; -moz-opacity: 0.8;" class="fade"></a>
+      </div>
+    </section>
+  </div>
 </footer>
 
 
