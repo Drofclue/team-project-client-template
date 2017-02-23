@@ -33,3 +33,22 @@
       }
       .row.content {height:auto;}
     }
+
+.user-hub .media{
+  border: 1px solid lightgrey;
+}
+
+.user-hub hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid lightgray;
+}
+
+.user-hub .logout {
+  border-left: 1px solid lightgray;
+}
+
+a,
+a:visited {
+  font-weight: bold;
+}
