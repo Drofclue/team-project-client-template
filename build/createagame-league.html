@@ -142,10 +142,25 @@
                   <label for="league" class="col-md-3 col-form-label">League</label>
                   <div class="col-md-9">
                     <select class="form-control">
-                      <option>No League</option>
                       <option>Middle-Aged Bowling</option>
                       <option>My Really Cool League</option>
                     </select>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body league-options">
+                <div class="form-group row">
+                  <label for="privacy" class="col-md-3 col-form-label">Privacy</label>
+                  <div class="col-md-9 form-inline centering">
+                    <label for="optionpublic" class="radio inline">
+                      <input name="inlineRadioOptions" type="radio" id="inlineRadioPublic" value="optionpublic"> Public
+                    </label>
+                    <label for="optionprivate" class="radio inline">
+                      <input name="inlineRadioOptions" type="radio" id="inlineRadioPrivate" value="optionprivate"> Private
+                    </label>
+                    <span id="helpBlock" class="help-block">Public games are available for all registered users to join. Private games are only available to members of the associated league.</span>
+                  </div>
+                </div>
                   </div>
                 </div>
                   <button type="submit" class="btn pull-right">Submit</button>
