@@ -33,3 +33,37 @@
       }
       .row.content {height:auto;}
     }
+
+.user-hub .media{
+  border: 1px solid #414619;
+}
+
+.user-hub hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid #414619;
+}
+
+.user-hub .logout {
+  border-left: 1px solid #414619;
+}
+
+a,
+a:visited  {
+  color:#CC0C19;
+  font-weight: bold;
+}
+
+.right-bar{
+  padding-top: 20px;
+  background-color: #A4E567;
+  height: 100%;
+}
+
+.right-bar .panel>.panel-body{
+  background-color: #C0FFBC;
+}
+
+.right-bar{
+  color:#414619;
+}
