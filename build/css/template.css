@@ -67,3 +67,11 @@ a:visited  {
 .right-bar{
   color:#414619;
 }
+
+.games-list{
+  padding-left: 0px;
+}
+
+.games-list .media{
+  margin-top: 0px;
+}
