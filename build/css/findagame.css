@@ -1,0 +1,11 @@
+.panel find-a-game-panel {
+  margin-right: auto;
+}
+.btn-primary {
+  border-color: #cc0c19;
+  background-color: #69AF9A;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color: #CC0C19;
+  border-color: #A4E567;
+}
