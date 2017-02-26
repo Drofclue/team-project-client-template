@@ -3,11 +3,16 @@
 }
 .btn-primary {
   border-color: #cc0c19;
-  background-color: #69AF9A;
+  opacity: 50%;
+
 }
-.btn-primary:hover, .btn-primary:active {
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:target {
   background-color: #CC0C19;
   border-color: #A4E567;
+}
+.btn-primary:visited{
+  color: white;
 }
 .card-results{
   margin: 0px;
@@ -24,4 +29,7 @@
 }
 .inline-block{
   text-indent: 10px;
+}
+.label-default-cherry {
+  background-color: #414649;
 }
