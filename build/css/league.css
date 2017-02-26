@@ -12,6 +12,18 @@
 .sportswe{
   padding-top: 50px;
 }
+
+.upcoming-games{
+  border-style: groove;
+   border-width: 5px;
+   padding-top: 20px;
+   border-top: 0;
+ }
+
+.upcoming-games-title{
+  font-size: 20px;
+  height: 45px;
+}
 .sports li{
 padding-top: 20px;
 font-size:20px;
