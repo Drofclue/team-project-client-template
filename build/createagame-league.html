@@ -17,6 +17,7 @@
 
   <!-- Custom CSS. -->
   <link href="css/template.css" rel="stylesheet">
+  <link href="css/create-game.css" rel="stylesheet">
 
   <link href="css/embeddingDatePicker.css" rel="stylesheet">
 </head>
@@ -63,7 +64,7 @@
               <a href="/schedule.html"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</a>
           </li>
           <li>
-              <a href="/teams.html"><i class="fa fa-fw fa-users"></i> Teams</a>
+              <a href="/league.html"><i class="fa fa-fw fa-users"></i> Leagues</a>
           </li>
 
           <li>
@@ -74,11 +75,106 @@
     </div>
     <!--the middle content of the page which changes from page to page -->
     <div class="col-md-7 text-left">
+<p><h2>Create a Game</h2></p>
+      <div class="panel panel-default">
+          <div class="panel-body">
+                <div class="form-group row">
+                  <label for="game-name" class="col-md-3 col-form-label">Game Name</label>
+                  <div class="col-md-9">
+                    <input class="form-control" type="text" id="game-name" placeholder="Game Name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="location" class="col-md-3 col-form-label">Location</label>
+                  <div class="col-md-9">
+                    <input class="form-control" type="text" id="location" placeholder="Zip Code or City">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="players" class="col-md-3 col-form-label">Max. Players</label>
+                  <div class="col-md-9">
+                    <input class="form-control" type="text" id="players" placeholder="Maximum Number of Players">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="age" class="col-md-3 col-form-label">Age Range</label>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" id="agemin" placeholder="Minimum Age">
+                  </div>
+                  <div class="col-md-1 centering">
+                    to
+                  </div>
+                  <div class="col-md-4">
+                    <input class="form-control" type="text" id="agemax" placeholder="Maximum Age">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="sport" class="col-md-3 col-form-label">Sport</label>
+                  <div class="col-md-9">
+                    <select class="form-control">
+                      <option>Baseball</option>
+                      <option>Basketball</option>
+                      <option>Bowling</option>
+                      <option>Football</option>
+                      <option>Hockey</option>
+                      <option>Soccer</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="skilllevel" class="col-md-3 col-form-label">Skill Level</label>
+                  <div class="col-md-9 form-inline centering">
+                    <label for="optionbeginner" class="checkbox inline">
+                      <input id="optionbeginner" type="checkbox" id="inlineCheckboxBeginner" value="optionbeginner"> Beginner
+                    </label>
+                    <label for="optionnovice" class="checkbox inline">
+                      <input id="optionnovice" type="checkbox" id="inlineCheckboxNovice" value="optionnovice"> Novice
+                    </label>
+                    <label for="optionintermediate" class="checkbox inline">
+                      <input id="optionintermediate" type="checkbox" id="inlineCheckboxIntermediate" value="optionintermediate"> Intermediate
+                    </label>
+                    <label for="optionadvanced" class="checkbox inline">
+                      <input id="optionadvanced" type="checkbox" id="inlineCheckboxAdvanced" value="optionadvanced"> Advanced
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="league" class="col-md-3 col-form-label">League</label>
+                  <div class="col-md-9">
+                    <select class="form-control">
+                      <option>Middle-Aged Bowling</option>
+                      <option>My Really Cool League</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body league-options">
+                    <div class="form-group row">
+                      <label for="privacy" class="col-md-3 col-form-label">Privacy</label>
+                      <div class="col-md-9 form-inline centering">
+                        <label for="optionpublic" class="radio inline">
+                          <input name="inlineRadioOptions" type="radio" id="inlineRadioPublic" value="optionpublic"> Public
+                        </label>
+                        <label for="optionprivate" class="radio inline">
+                          <input name="inlineRadioOptions" type="radio" id="inlineRadioPrivate" value="optionprivate"> Private
+                        </label>
+                        <span id="helpBlock" class="help-block">Public games are available for all registered users to join. Private games are only available to members of the associated league.</span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="invite" class="col-md-3 col-form-label">Invite Members</label>
+                      <div class="col-md-9">
+                        <input type="search" class="form-control" placeholder="Search Members...">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <button type="submit" class="btn pull-right">Submit</button>
 
+              </form>
 
-<p><h2> THIS IS TEAMS PAGE</h2></p>
-
-
+        </div>
+      </div>
     </div>
     <!-- The right bar that holds the user hub, suggested games, and games coming up-->
     <div class="col-md-3 right-bar">

@@ -1,0 +1,30 @@
+.league-name{
+  padding-top: 20px;
+}
+
+.member-count{
+  padding-top: 35px;
+  color: gray;
+}
+.sports{
+  padding-top: 10px;
+}
+.sportswe{
+  padding-top: 50px;
+}
+
+.upcoming-games{
+  border-style: groove;
+   border-width: 5px;
+   padding-top: 20px;
+   border-top: 0;
+ }
+
+.upcoming-games-title{
+  font-size: 20px;
+  height: 45px;
+}
+.sports li{
+padding-top: 20px;
+font-size:20px;
+}
