@@ -19,7 +19,7 @@
       background-color: #333;
       color: white;
       padding: 15px;
-      position: relative;
+      position: fixed;
       border-top: 1px solid #000;
     width:100%;
 
@@ -66,4 +66,39 @@ a:visited  {
 
 .right-bar{
   color:#414619;
+}
+
+.right-bar .media{
+  margin-top: 0px;
+}
+
+.right-bar .panel-footer{
+  padding-top: 0px;
+}
+
+.suggested-games hr{
+  border-top: 1px dotted black;
+  margin: 5px;
+}
+
+.right-bar ul{
+  padding-left: 0px;
+}
+
+.right-bar .game-title{
+  padding-bottom: 10px;
+}
+
+.right-bar .game-explanation{
+  color: gray;
+}
+
+.right-bar .title{
+  font-weight:bold;
+  text-align: left;
+  width: 30%;
+}
+
+.right-bar .description{
+  text-align: left;
 }
