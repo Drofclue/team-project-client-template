@@ -9,3 +9,19 @@
   background-color: #CC0C19;
   border-color: #A4E567;
 }
+.card-results{
+  margin: 0px;
+  padding: 2px;
+  text-indent: 10px;
+
+  background-color: white;
+  color: #414649;
+
+
+}
+.panel-results{
+  background-color: #C0FFBC;
+}
+.inline-block{
+  text-indent: 10px;
+}
