@@ -1,0 +1,57 @@
+.friends{
+	background-color: #A4E567;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.messages{
+	margin-left: 0px;
+}
+
+#current{
+	background-color: #69AF9A;
+
+}
+
+.timestamp{
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.typing{
+	font-size: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+}
+
+.search_friends{
+	width: 200px !important;
+}
+.send_message{
+	width: 300px !important;
+}
+vr {
+	display: block;
+	width: 1px;
+	background-color:#A4E567;
+	position:absolute;
+	top:0;
+	bottom:0;
+	margin-bottom: 427px;
+	left: 410px;
+}
+.green {
+  color: green;
+}
+
+.grey{
+	color: #C0C0C0;
+}
+
+hr {
+	background-color:#A4E567;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
