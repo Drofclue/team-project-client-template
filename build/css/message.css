@@ -32,16 +32,7 @@
 .send_message{
 	width: 300px !important;
 }
-vr {
-	display: block;
-	width: 1px;
-	background-color:#A4E567;
-	position:absolute;
-	top:0;
-	bottom:0;
-	margin-bottom: 427px;
-	left: 410px;
-}
+
 .green {
   color: green;
 }
