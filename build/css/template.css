@@ -1,51 +1,47 @@
 
-
-
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
 /*height of html. adjust as percentage later on*/
-    .row.content {height: 800px;}
 
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
+.sidenav {
+  padding-top: 20px;
+  background-color: #69Af9A;
+  height: 100%;
+}
 
-    footer {
+footer {
+  position: relative;
+  width:100%;
+  bottom: 0;
+  left: 0;
+  background-color: #414649;
+  text-align: center;
+}
 
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      position: fixed;
-      border-top: 1px solid #000;
-    width:100%;
+html, body {
+    height: 100%;
+    padding:0;
+    margin:0;
+}
 
-    }
-
-
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;}
-    }
+.page{
+  height:100%;
+}
 
 .user-hub .media{
-  border: 1px solid #414619;
+  border: 1px solid #414649;
 }
 
 .user-hub hr {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-top: 1px solid #414619;
+  border-top: 1px solid #414649;
 }
 
 .user-hub .logout {
-  border-left: 1px solid #414619;
+  border-left: 1px solid #414649;
 }
 
 a,
@@ -65,7 +61,7 @@ a:visited  {
 }
 
 .right-bar{
-  color:#414619;
+  color:#414649;
 }
 
 .right-bar .media{
