@@ -1,0 +1,102 @@
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+/*height of html. adjust as percentage later on*/
+.row.content {
+  height: 800px;
+}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  position: relative;
+  border-top: 1px solid #000;
+  width:100%;
+}
+
+
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.user-hub .media{
+  border: 1px solid #414619;
+}
+
+.user-hub hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid #414619;
+}
+
+.user-hub .logout {
+  border-left: 1px solid #414619;
+}
+
+a, a:visited  {
+  color:#CC0C19;
+  font-weight: bold;
+}
+
+.right-bar{
+  padding-top: 20px;
+  background-color: #A4E567;
+  height: 100%;
+}
+
+.right-bar .panel>.panel-body{
+  background-color: #C0FFBC;
+  padding-top:
+}
+
+.right-bar{
+  color:#414619;
+}
+
+/* added to template to create user profile page */
+
+.main-column{
+  height: 100%;
+  /* background-color: #69AF9A; */
+}
+
+.profilewidget{
+  margin-top: 20px;
+}
+
+.profile-pic{
+  border: 1px solid #414619;
+}
+
+.profile-box{
+  background-color: #f1f1f1;
+  color: #414619;
+  border-radius: 5px;
+}
+
+.sportwidget{
+  background-color: #C0FFBC;
+  color: #414619;
+  border-radius: 20px;
+}
+
+.league-table{
+  background-color: #C0FFBC;
+  border-radius: 20px;
+}
+
+.recent-played-games{
+  margin-top: 20px;
+}

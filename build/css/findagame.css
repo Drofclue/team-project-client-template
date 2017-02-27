@@ -1,0 +1,35 @@
+.panel find-a-game-panel {
+  margin-right: auto;
+}
+.btn-primary {
+  border-color: #cc0c19;
+  opacity: 50%;
+
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:target {
+  background-color: #CC0C19;
+  border-color: #A4E567;
+}
+.btn-primary:visited{
+  color: white;
+}
+.card-results{
+  margin: 0px;
+  padding: 2px;
+  text-indent: 10px;
+
+  background-color: white;
+  color: #414649;
+
+
+}
+.panel-results{
+  background-color: #C0FFBC;
+}
+.inline-block{
+  text-indent: 10px;
+}
+.label-default-cherry {
+  background-color: #414649;
+}

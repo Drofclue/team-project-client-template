@@ -2,7 +2,7 @@
 <html lang="en" style="100%;">
 
 <head>
-    <title>Cherry Picker|Home</title>
+    <title>Cherry Picker|UserProfile</title>
     <link rel="shortcut icon" href=img/cherry_logo.png/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +17,10 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
 
     <!-- Custom CSS. -->
-    <link href="css/template.css" rel="stylesheet">
+    <link href="css/userprofile.css" rel="stylesheet">
 
     <link href="css/embeddingDatePicker.css" rel="stylesheet">
 </head>
-
-
 
 <body>
 
@@ -64,7 +62,7 @@
                         <a href="/schedule.html"><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</a>
                     </li>
                     <li>
-                        <a href="/league.html"><i class="fa fa-fw fa-users"></i> Leagues</a>
+                        <a href="/teams.html"><i class="fa fa-fw fa-users"></i> Teams</a>
                     </li>
 
                     <li>
@@ -73,14 +71,145 @@
 
                 </ul>
             </div>
-            <!--the middle content of the page which changes from page to page -->
-            <div class="col-md-7 text-left">
-                <p>
-                    <h2> THIS IS MESSAGE PAGE</h2></p>
+
+            <!--the middle content of the user profile page -->
+            <div class="col-md-7 main-column">
+
+                <!-- The profile information and picture widget -->
+                <div class="container-fluid profilewidget">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="well well-sm profile-box">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="img/lingodaddy_profile_pic.jpg" alt="" width="100%" class="img-rounded img-responsive profile-pic">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span> <h1> Lingo Daddy</h1> </span>
+                                        <p style="text-align:left;"> <b> Username: </b> <i> Lingodaddy_24 </i> </p>
+                                        <p style="text-align:left;"> <b> Age: </b> <i> 59 </i> </p>
+                                        <p style="text-align:left;"> <b> Gender: </b> <i> Helicopter </i> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Sport widget -->
+                        <div class="col-md-6">
+                            <div class="container-fluid">
+                                <div class="panel">
+                                    <table class="table table-striped sportwidget">
+                                        <thead>
+                                            <th>
+                                                <p style="text-align:center;"> Sport </p>
+                                            </th>
+                                            <th>
+                                                <p style="text-align:center;"> Skill Level </p>
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Bowling</td>
+                                                <td>Advanced</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Water Polo</td>
+                                                <td>Novice</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Muy Thai</td>
+                                                <td>Intermediate</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--League Listing widget for profile page -->
+                        <div class="col-md-6">
+                            <div class="container-fluid">
+                                <div class="panel">
+                                    <table class="table table-striped league-table">
+                                        <thead>
+                                            <th>
+                                                <p style="text-align:center;"> Leagues </p>
+                                            </th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="#">Middle-Aged Bowling</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">We Play Polo</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="#">Tuesday Fight Night</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This is the recent games played widget -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel">
+                                <div class="panel-heading recent-played-games">
+                                    <p style="text-align:left;"> <b> Recently Played Games: </b> </p>
+                                </div>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <th>
+                                            <p style="text-align:center;"> Date </p>
+                                        </th>
+                                        <th>
+                                            <p style="text-align:center;"> Location </p>
+                                        </th>
+                                        <th>
+                                            <p style="text-align:center;"> Sport </p>
+                                        </th>
+                                        <th>
+                                            <p style="text-align:center;"> League </p>
+                                        </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>5/13/2017</td>
+                                            <td>Hadley, MA</td>
+                                            <td>Water Polo</td>
+                                            <td>N/A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5/11/2017</td>
+                                            <td>Boston, MA</td>
+                                            <td>Muy Thai</td>
+                                            <td><a href="#">Tuesday Fight Night</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+
+
+
             <!-- The right bar that holds the user hub, suggested games, and games coming up-->
             <div class="col-md-3 right-bar">
-                <div class="panel panel-default user-hub">
+                <div class="panel user-hub">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
