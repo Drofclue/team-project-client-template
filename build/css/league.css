@@ -12,6 +12,7 @@
 }
 .sportswe{
   padding-top: 50px;
+  padding-left: -20px;
 }
 
 .upcoming-games{
@@ -28,4 +29,9 @@
 .sports li{
 padding-top: 20px;
 font-size:20px;
+}
+
+
+.sportsweplay{
+  padding-left: 20px;
 }

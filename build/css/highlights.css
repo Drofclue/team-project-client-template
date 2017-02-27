@@ -1,0 +1,35 @@
+
+
+hr {
+	width: 715px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.post{
+	width: 715px;
+}
+.reactions{
+	margin-left: 15px;
+	margin-top: 10px;
+	width: 715px;
+}
+.comments{
+	background-color: #A4E567;
+}
+
+.people_reacted{
+	padding-bottom: 0px;
+}
+.comments hr{
+	width: 685px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.send_message{
+	width: 600px !important;
+}
+.highlights .send_button{
+	height: 34px;
+	width: 40px;
+}
