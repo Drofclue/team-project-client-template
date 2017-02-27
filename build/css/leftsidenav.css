@@ -10,13 +10,15 @@
   padding: 10px;
   position: absolute;
   top: 0;
-  font-size: 17px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 50px;
   background-color: transparent;
   color: #ffffff;
-  font-family: "Comic Sans MS";
 }
 
+.cp{
+  font-size: 40px;
+}
 
 .sidebar-nav li a:hover, .sidebar-nav li a:focus, .sidebar-nav li.open a:focus {
   background-color: transparent;
