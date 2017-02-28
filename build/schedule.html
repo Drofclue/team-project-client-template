@@ -15,6 +15,7 @@
     <!-- Custom CSS. -->
     <link href="css/template.css" rel="stylesheet">
     <link href="css/embeddingDatePicker.css" rel="stylesheet">
+    <link href="css/schedule.css" rel="stylesheet">
 </head>
 
 
@@ -60,109 +61,102 @@
                 </ul>
             </div>
             <!--the middle content of the page which changes from page to page -->
-            <div class="col-md-7 text-left">
+      <div class="col-md-7 text-left">
+    <div class="row">
+        <div class="col-md-8 calendar">
+            <!--calendar left  -->
 
+            <h1>Schedule</h1>
 
-                <div class="row">
-                    <div class="calendar">
-                        <div class="col leftCol ">
-                            <div class="content">
-                                <h2 class="year">2017</h2>
-                                <ul class="months">
-                                    <li><a href="#" title="Jan" data-value="1">Jan</a></li>
-                                    <li><a href="#" title="Feb" data-value="2" class="selected">Feb</a></li>
-                                    <li><a href="#" title="Mar" data-value="3">Mar</a></li>
-                                    <li><a href="#" title="Apr" data-value="4">Apr</a></li>
-                                    <li><a href="#" title="May" data-value="5">May</a></li>
-                                    <li><a href="#" title="Jun" data-value="6">Jun</a></li>
-                                    <li><a href="#" title="Jul" data-value="7">Jul</a></li>
-                                    <li><a href="#" title="Aug" data-value="8">Aug</a></li>
-                                    <li><a href="#" title="Sep" data-value="9">Sep</a></li>
-                                    <li><a href="#" title="Oct" data-value="10">Oct</a></li>
-                                    <li><a href="#" title="Nov" data-value="11">Nov</a></li>
-                                    <li><a href="#" title="Dec" data-value="12">Dec</a></li>
-                                </ul>
-                                <div class="clearfix"></div>
-                                <ul class="weekday">
-                                    <li><a href="#" title="Mon" data-value="1">Mon</a></li>
-                                    <li><a href="#" title="Tue" data-value="2">Tue</a></li>
-                                    <li><a href="#" title="Wed" data-value="3">Wed</a></li>
-                                    <li><a href="#" title="Thu" data-value="4">Thu</a></li>
-                                    <li><a href="#" title="Fri" data-value="5">Fri</a></li>
-                                    <li><a href="#" title="Say" data-value="6">Sat</a></li>
-                                    <li><a href="#" title="Sun" data-value="7">Sun</a></li>
-                                </ul>
-                                <div class="clearfix"></div>
+            <div class="month">
+                <ul>
+                    <li class="prev">❮</li>
+                    <li class="next">❯</li>
+                    <li style="text-align:center">
+                        Feburary<br>
+                        <span style="font-size:18px">2017</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <table class="textCenter">
+                    <tr>
+                        <td class="textColorRed">Sun</td>
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Wed</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td class="textColorBlue">Sat</td>
+                    </tr>
 
-                                <div class="month">
-                                    <div class="week">
-                                        <div class="day">1</div>
-                                        <div class="day">2</div>
-                                        <div class="day">3</div>
-                                        <div class="day">4</div>
-                                    </div>
-                                    <div class="week">
-                                        <div class="day">5</div>
-                                        <div class="day">6</div>
-                                        <div class="day">7</div>
-                                        <div class="day">8</div>
-                                        <div class="day">9</div>
-                                        <div class="day">10</div>
-                                        <div class="day">11</div>
-                                    </div>
-                                    <div class="week">
-                                        <div class="day">12</div>
-                                        <div class="day">13</div>
-                                        <div class="day">14</div>
-                                        <div class="day">15</div>
-                                        <div class="day">16</div>
-                                        <div class="day">17</div>
-                                        <div class="day">18</div>
-                                    </div>
-                                    <div class="week">
-                                        <div class="day">19</div>
-                                        <div class="day">20</div>
-                                        <div class="day">21</div>
-                                        <div class="day">22</div>
-                                        <div class="day">23</div>
-                                        <div class="day">24</div>
-                                        <div class="day">25</div>
-                                    </div>
-                                    <div class="week">
-                                        <div class="day">26</div>
-                                        <div class="day">27</div>
-                                        <div class="day">28</div>
-                                        <div class="day">29</div>
-                                        <div class="day">30</div>
-                                        <div class="day">31</div>
-                                    </div>
-                                </div>
+                </table>
+                <table id="textLeft">
+                    <tr class="trsize">
+                        <td class="textColorRed"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="textColorRed">1
+                        </td>
+                        <td class="textColorBlue">2</td>
+                    </tr>
+                    <tr class="trsize">
+                        <td class="textColorRed">3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td class="textColorBlue">9</td>
+                    </tr>
+                    <tr class="trsize">
+                        <td class="textColorRed">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td class="textColorBlue">16</td>
+                    </tr>
+                    <tr class="trsize">
+                        <td class="textColorRed">17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td class="textColorBlue">23</td>
+                    </tr>
+                    <tr class="trsize">
+                        <td class="textColorRed">24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td class="textColorBlue">30</td>
+                    </tr>
+                    <tr class="trsize">
+                        <td class="textColorRed">31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="textColorBlue"></td>
+                    </tr>
+                </table>
+            </div>
+            <!--  -->
 
+        </div>
+        <div class="col-md-4 plans">
 
+        </div>
+    </div>
 
-                            </div>
-                        </div>
-                        <div class="rightCol">
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="row" id="datesearch">
-
-                        <div class="col-md-5">
-
-                            <input class="form-control" type="text">
-
-                        </div>
-                        <div class="col-md-3">
-
-                            <button type="button" class="btn btn-success">Search</button>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!-- The right bar that holds the user hub, suggested games, and games coming up-->

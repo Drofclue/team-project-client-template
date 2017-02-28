@@ -1,0 +1,73 @@
+
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+
+table, tr, td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+#monthCenter {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 10%;
+}
+
+.trsize {
+    height: 70px;
+    table-layout: fixed;
+}
+
+
+.tdsize {
+    width: 5%;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+#textLeft {
+    text-align: left;
+    text-valign : top;
+}
+
+.textColorRed {
+    color: #FF0000;
+}
+
+.textColorBlue {
+    color: #0000FF;
+}
