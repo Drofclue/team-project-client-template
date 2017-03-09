@@ -1,54 +1,51 @@
 
+
+
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
     }
 /*height of html. adjust as percentage later on*/
+    .row.content {height: 800px;}
 
-.sidenav {
-  padding-top: 20px;
-  background-color: #69Af9A;
-  height: 100%;
-}
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
 
-.sidenav a,
-a:visited  {
-  /*overrides bootstrap link padding*/
-  padding: 0px 0px!important;
-}
+    footer {
 
-footer {
-  position: fixed;;
-  width:100%;
-  bottom: 0;
-  left: 0;
-  background-color: #414649;
-  text-align: center;
-}
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      position: relative;
+      border-top: 1px solid #000;
+    width:100%;
 
-html, body {
-    height: 100%;
-    padding:0;
-    margin:0;
+    }
 
-}
 
-.page{
-  height:100%;
-}
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
 
 .user-hub .media{
-  border: 1px solid #414649;
+  border: 1px solid #414619;
 }
 
 .user-hub hr {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-top: 1px solid #414649;
+  border-top: 1px solid #414619;
 }
 
 .user-hub .logout {
-  border-left: 1px solid #414649;
+  border-left: 1px solid #414619;
 }
 
 a,
@@ -68,150 +65,5 @@ a:visited  {
 }
 
 .right-bar{
-  color:#414649;
+  color:#414619;
 }
-
-.right-bar .media{
-  margin-top: 0px;
-}
-
-.right-bar .panel-footer{
-  padding-top: 0px;
-}
-
-.suggested-games hr{
-  border-top: 1px dotted black;
-  margin: 5px;
-}
-
-.right-bar ul{
-  padding-left: 0px;
-}
-
-.right-bar .game-title{
-  padding-bottom: 10px;
-}
-
-.right-bar .game-explanation{
-  color: gray;
-}
-
-.right-bar .title{
-  font-weight:bold;
-  text-align: left;
-  width: 30%;
-}
-
-.right-bar .description{
-  text-align: left;
-}
-
-.right-bar a:hover{
-  background-color: transparent;
-  color: #69Af9A;
-  text-decoration: none;
-}
-
-
-/**/
-/*caldendar css*/
-/**/
-/**/
-/* not required */
-*{
-	padding: 0px;
-	margin: 0px;
-  outline: none;
-}
-
-.calendar .col .content{
-	padding: 40px;
-}
-
-.calendar ul li{
-	list-style: none;
-}
-
-.calendar .leftCol{
-	width: 60%;
-}
-
-.calendar .months li,
-.calendar .weekday li,
-.calendar .days li{
-	float: left;
-	text-transform: uppercase;
-}
-.calendar .months li a,
-.calendar .weekday li a,
-.calendar .days li a{
-	display: block;
-	color: #414649;
-}
-.calendar .months li a{
-	font-size: 10px;
-	color: #414649;
-	text-align: center;
-	width: 34px;
-	margin-bottom: 20px;
-}
-.calendar .months li .selected{
-	font-weight: bold;
-	color: #414649;
-}
-.calendar .weekday li a{
-	width: 60px;
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 12px;
-}
-
-.calendar .days li .selected{
-	background-color:red!important;
-	color: #ffffff;
-}
-.calendar .days li .event{
-	color: red;
-}
-
-.week {
-  display: flex;
-}
-
-.day {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-}
-
-.week:first-of-type .day:first-of-type {
-  margin-left: 42.85714%;
-}
-
-.week:last-of-type .day:last-of-type {
-  margin-right: 14.285%;
-}
-
-.week {
-  height: 80px;
-}
-
-.day {
-  color: #A4E567;
-  padding: 5px;
-  background-color: transparentize(white, 0.30);
-  box-shadow:
-    -1px -1px #414649,
-    inset -1px -1px 0 0 #414649;
-}
-#datesearch{
-  color: #A4E567;
-  margin-left: 6%;
-
-}
-
-body{
-  margin-bottom: 100px;
-}
- /**/
- /**/
