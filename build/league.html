@@ -3,7 +3,7 @@
 
 <head>
     <title>Cherry Picker|League</title>
-    <link rel="shortcut icon" href=img/cherry_logo.png/>
+    <link rel="shortcut icon" href="img/cherry_logo.png/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- left side nav bar's css -->
@@ -22,7 +22,6 @@
 
 
 <body>
-    <div id="league"></div>
     <!-- Seperates the page into columns -->
     <div class="container-fluid text-center page">
         <div class="row content page">
@@ -33,7 +32,6 @@
                     <li class="sidebar-brand">
                         <span class="cp"><a href="#">Cherry Picker</a></span>
 
-                        </a>
                     </li>
                     <div class="row">
 
@@ -62,103 +60,7 @@
                 </ul>
             </div>
             <!--the middle content of the page which changes from page to page -->
-            <div class="col-md-7 text-left">
-                <!-- Left-aligned -->
-                <div class="media league-name">
-                    <div class="media-left">
-                        <img src="img/middle-aged-bowler.jpg" class="media-object" style="width:200px">
-                    </div>
-                    <div class="media-body">
-                        <h1 class="media-heading">Middle Aged Bowlers
-            <button type="button pull-right" class="btn btn-success">Open</button> </h1>
-                        <h3 class="media-heading member-count">273 Members</h3>
-                    </div>
-                </div>
-                <div>
-                  <div class="col-md-5">
-                  <h1 class="sportswe"><u>Sports We Play</u></h1>
-                  <div class = sportsweplay>
-                  <UL TYPE="square" class="sports">
-                      <LI>Bowling <span class="label label-default">Advanced</span>
-                          <LI>Walking <span class="label label-default">Beginner- Novice</span>
-                              <LI>Running <span class="label label-default">Intermediate- Advanced</span>
-                                  <LI>Hockey <span class="label label-default">Advanced</span>
-                                      <LI>Frisbee <span class="label label-default">Beginner</span>
-                  </UL>
-                </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="container-fluid description">
-                    <h3><b>Group Description</b></h3>
-                    <div class="ActDesc">
-                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                  </div>
-              </div>
-            </div>
-          </div>
-                <div class="row">
-                    <div class="col-md-12 upcoming-games">
-                        <div class="row">
-                            <div class="col-md-4 upcoming-games-title">
-                                Upcoming Games
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul class="media-list">
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Sunday February 26th</a>: <i>Bowling against Young Aged Bowlers @ 7:00pm EST; Amherst Bowling Company</i>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Saturday March 3rd</a>: <i>Walking against Young Aged Walkers @4:00am EST; Umass Amherst Campus</i>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Thursday April 6th</a>: <i>Running Practice @5:00pm EST; Puffers Pond</i>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Monday April 25th</a>: <i>Running against Young Aged Runners @ 2:36am EST; Sylvan Walkway</i>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="glyphicon glyphicon-time"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Tuesday April 27th</a>: <i>Bowling Practice @5:00pm EST; Location TBA</i>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left media-top">
-                                            <span class="caret"></span>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">Check Previous Matches</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-7 text-left" id="league">
             </div>
             <!-- The right bar that holds the user hub, suggested games, and games coming up-->
             <div class="col-md-3 right-bar">
@@ -256,7 +158,6 @@
                 </div>
             </section>
         </div>
-        </div>
         <div class="col-md-3 text-left">
             <section id="Customer-service-info" class="widget widget_black_studio_tinymce">
                 <h5 class="widget-title">Customer-service-info section</h5>
@@ -293,7 +194,7 @@
     <!-- Include all compiled plugins (below),
      or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
+    <script src="js/app.js"></script>
 
 </body>
 
