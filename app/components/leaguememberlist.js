@@ -11,46 +11,14 @@ export default class LeagueMemberList extends React.Component {
             <div className="row">
                 <div className="col-md-12 ">
                     <ul className="members-list">
-                        <li className="media">
-                            <div className="media-top media-left">
-                                PIC
-                            </div>
-                            <div className="media-body">
-                                <a href="#">Some Person</a>
-                            </div>
-                        </li>
-                        <li className="media">
-                            <div className="media-top media-left">
-                                PIC
-                            </div>
-                            <div className="media-body">
-                                <a href="#">Another Person</a>
-                            </div>
-                        </li>
-                        <li className="media">
-                            <div className="media-top media-left">
-                                PIC
-                            </div>
-                            <div className="media-body">
-                                <a href="#">Someone Else</a>
-                            </div>
-                        </li>
-                        <li className="media">
-                            <div className="media-top media-left">
-                                PIC
-                            </div>
-                            <div className="media-body">
-                                <a href="#">Yet Another</a>
-                            </div>
-                        </li>
-                        <li className="media">
-                            <div className="media-top media-left">
-                                PIC
-                            </div>
-                            <div className="media-body">
-                                <a href="#">Last One</a>
-                            </div>
-                        </li>
+                      {React.Children.map(this.props.children, function(child) {
+                        return (
+                          <li className="media">
+                            {child}
+                          </li>
+                        )
+                      })}
+
                     </ul>
                 </div>
             </div>
