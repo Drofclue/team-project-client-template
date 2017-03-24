@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; //eslint-disable-line no-unused-vars
 import ReactDOM from 'react-dom';
 
 // Each major browser view user interface must be imported.
@@ -7,11 +7,10 @@ import LeagueMemberListItem from './components/leaguememberlistitem.js';
 import Findagame from './components/findagame.js';
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
-
-  ReactDOM.render(
-    <League />,
-    document.getElementById('league')
-  )
+ReactDOM.render(
+  <League />,
+  document.getElementById('league')
+)
 
 ReactDOM.render(
   <LeagueMemberListItem />,
@@ -21,4 +20,19 @@ ReactDOM.render(
 ReactDOM.render(
   <Findagame />,
   document.getElementById('findagame')
+)
+
+ReactDOM.render(
+  <LeftNavBar />,
+  document.getElementById('leftnavbar')
+)
+
+ReactDOM.render(
+  <Footer />,
+  document.getElementById('foot')
+)
+
+ReactDOM.render(
+  <RightSideBar />,
+  document.getElementById('rightsidebar')
 )
