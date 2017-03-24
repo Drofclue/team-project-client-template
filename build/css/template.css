@@ -8,7 +8,7 @@
 
     .sidenav {
       padding-top: 20px;
-      background-color: #f1f1f1;
+      background-color: #69AF9A;
       height: 100%;
     }
 
@@ -42,37 +42,71 @@
       }
       .row.content {height:auto;}
     }
+    .user-hub .media{
+      border: 1px solid #414649;
+    }
 
-.user-hub .media{
-  border: 1px solid #414619;
-}
+    .user-hub hr {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border-top: 1px solid #414649;
+    }
 
-.user-hub hr {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-top: 1px solid #414649;
-}
+    .user-hub .logout {
+      border-left: 1px solid #414649;
+    }
 
-.user-hub .logout {
-  border-left: 1px solid #414619;
-}
+    a,
+    a:visited  {
+      color:#CC0C19;
+      font-weight: bold;
+    }
 
-a,
-a:visited  {
-  color:#CC0C19;
-  font-weight: bold;
-}
+    .right-bar{
+      padding-top: 20px;
+      background-color: #A4E567;
+      height: 100%;
+    }
 
-.right-bar{
-  padding-top: 20px;
-  background-color: #A4E567;
-  height: 100%;
-}
+    .right-bar .panel>.panel-body{
+      background-color: #C0FFBC;
+    }
 
-.right-bar .panel>.panel-body{
-  background-color: #C0FFBC;
-}
+    .right-bar{
+      color:#414649;
+    }
 
-.right-bar{
-  color:#414619;
-}
+    .right-bar .media{
+      margin-top: 0px;
+    }
+
+    .right-bar .panel-footer{
+      padding-top: 0px;
+    }
+
+    .suggested-games hr{
+      border-top: 1px dotted black;
+      margin: 5px;
+    }
+
+    .right-bar ul{
+      padding-left: 0px;
+    }
+
+    .right-bar .game-title{
+      padding-bottom: 10px;
+    }
+
+    .right-bar .game-explanation{
+      color: gray;
+    }
+
+    .right-bar .title{
+      font-weight:bold;
+      text-align: left;
+      width: 30%;
+    }
+
+    .right-bar .description{
+      text-align: left;
+    }
