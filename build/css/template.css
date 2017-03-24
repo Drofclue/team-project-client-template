@@ -1,6 +1,4 @@
 
-
-
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -14,15 +12,26 @@
       height: 100%;
     }
 
+    html, body {
+      height: 100%;
+    }
+
+    #wrap {
+      min-height: 100%;
+    }
+
+    #main {
+      overflow:auto;
+      padding-bottom:120px;
+    }
+
     footer {
-
-      background-color: #333;
-      color: white;
-      padding: 15px;
+      background-color: #414649;
       position: relative;
-      border-top: 1px solid #000;
-    width:100%;
-
+      margin-top: -120px;
+      height: 120px;
+      clear:both;
+      padding-top:20px;
     }
 
 
@@ -41,7 +50,7 @@
 .user-hub hr {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-top: 1px solid #414619;
+  border-top: 1px solid #414649;
 }
 
 .user-hub .logout {
