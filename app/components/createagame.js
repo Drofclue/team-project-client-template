@@ -11,7 +11,7 @@
           <div className="row content">
             <LeftNavBar />
             <div className="col-md-7 text-left">
-              <p><h2>Create a Game</h2></p>
+              <h2>Create a Game</h2>
                 <div className="panel panel-default">
                  <div className="panel-body">
                   <CreateAGameBasic />
