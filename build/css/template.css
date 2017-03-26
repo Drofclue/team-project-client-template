@@ -25,9 +25,10 @@
     }
 
     .footer{
+      padding-top: 20px;
       background-color: #414649;
       color: white;
-      height:120px;
+      height:auto;
     }
 
     @media screen and (max-width: 767px) {
