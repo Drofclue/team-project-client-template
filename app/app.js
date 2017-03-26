@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import League from './components/league.js';
 import LeagueMemberListItem from './components/leaguememberlistitem.js';
 import Findagame from './components/findagame.js';
+import LeftNavBar from './components/leftnavbar.js'
+import Footer from './components/footer.js'
+import RightSideBar from './components/rightsidebar.js'
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
 ReactDOM.render(
