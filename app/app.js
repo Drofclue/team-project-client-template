@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 // Each major browser view user interface must be imported.
 import League from './components/league.js';
 import LeagueMemberListItem from './components/leaguememberlistitem.js';
+import CreateAGame from './components/createagame.js';
 import Findagame from './components/findagame.js';
 import LeftNavBar from './components/leftnavbar.js'
 import Footer from './components/footer.js'
@@ -18,6 +19,11 @@ ReactDOM.render(
 ReactDOM.render(
   <LeagueMemberListItem />,
   document.getElementById('leaguememberlistitem')
+)
+
+ReactDOM.render(
+  <CreateAGame />,
+  document.getElementById('createagame')
 )
 
 ReactDOM.render(
