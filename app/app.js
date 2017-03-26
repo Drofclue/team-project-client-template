@@ -5,37 +5,27 @@ import ReactDOM from 'react-dom';
 import League from './components/league.js';
 import LeagueMemberListItem from './components/leaguememberlistitem.js';
 import Findagame from './components/findagame.js';
-import LeftNavBar from './components/leftnavbar.js'
-import Footer from './components/footer.js'
-import RightSideBar from './components/rightsidebar.js'
+import Template from "./components/template.js";
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
-ReactDOM.render(
-  <League />,
-  document.getElementById('league')
-)
-
-ReactDOM.render(
-  <LeagueMemberListItem />,
-  document.getElementById('leaguememberlistitem')
-)
-
-ReactDOM.render(
-  <Findagame />,
-  document.getElementById('findagame')
-)
-
-ReactDOM.render(
-  <LeftNavBar />,
-  document.getElementById('leftnavbar')
-)
-
-ReactDOM.render(
-  <Footer />,
-  document.getElementById('foot')
-)
-
-ReactDOM.render(
-  <RightSideBar />,
-  document.getElementById('rightsidebar')
-)
+if (document.getElementById('league')!=null){
+  ReactDOM.render(
+    <League />,
+    document.getElementById('league')
+  );
+}else if (document.getElementById('leaguememberlistitem')!=null){
+  ReactDOM.render(
+    <LeagueMemberListItem />,
+    document.getElementById('leaguememberlistitem')
+  );
+}else if (document.getElementById('findagame')!=null){
+  ReactDOM.render(
+    <Findagame />,
+    document.getElementById('findagame')
+  );
+}else if (document.getElementById('template')!=null){
+  ReactDOM.render(
+    <Template />,
+    document.getElementById('template')
+  );
+}

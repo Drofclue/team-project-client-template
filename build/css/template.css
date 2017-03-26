@@ -30,7 +30,7 @@
       margin-top: -120px;
       height: 120px;
       clear:both;
-      padding-top:20px;
+      padding:20px;
     }
 
 
@@ -108,4 +108,16 @@
 
     .right-bar .description{
       text-align: left;
+    }
+
+    table{
+      width: 100%;
+    }
+
+    .fade{
+      opacity: 0.8;
+      -moz-opacity: 0.8;
+    }
+    .container-fluid{
+      width: 100%;
     }
