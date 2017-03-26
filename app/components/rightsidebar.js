@@ -3,7 +3,7 @@ import React from 'react';
 export default class RightSideBar extends React.Component{
   render(){
     return(
-          <div>
+          <div className="col-md-3 right-bar">
           <div className="panel panel-default user-hub">
               <div className="panel-body">
                   <div className="row">
@@ -40,7 +40,8 @@ export default class RightSideBar extends React.Component{
                               <li className="media">
                                   <div className="media-body">
                                       <div className="game-title">----<a href="#">Not American Football</a>----</div>
-                                      <table style="width:100%">
+                                      <table>
+                                        <tbody>
                                           <tr>
                                               <td className="title">League:</td>
                                               <td className="description"><a href="#">Not American Sports</a></td>
@@ -57,6 +58,7 @@ export default class RightSideBar extends React.Component{
                                               <td className="title">Date:</td>
                                               <td className="description">6:30 pm 5/15/17</td>
                                           </tr>
+                                        </tbody>
                                       </table>
                                       <div className="game-explanation">Because you play Intermediate Soccer.</div>
                                   </div>
@@ -65,7 +67,8 @@ export default class RightSideBar extends React.Component{
                               <li className="media">
                                   <div className="media-body">
                                       <div className="game-title">----<a href="#">Not European Football</a>----</div>
-                                      <table style="width:100%">
+                                      <table>
+                                        <tbody>
                                           <tr>
                                               <td className="title">League:</td>
                                               <td className="description"><a href="#">American Sports</a></td>
@@ -82,6 +85,7 @@ export default class RightSideBar extends React.Component{
                                               <td className="title">Date:</td>
                                               <td className="description">10:00am 5/19/17</td>
                                           </tr>
+                                        </tbody>
                                       </table>
                                       <div className="game-explanation">Because you live near Hadley.</div>
                                   </div>
@@ -90,7 +94,8 @@ export default class RightSideBar extends React.Component{
                               <li className="media">
                                   <div className="media-body">
                                       <div className="game-title">----<a href="#">New to Curling</a>----</div>
-                                      <table style="width:100%">
+                                      <table>
+                                        <tbody>
                                           <tr>
                                               <td className="title">League:</td>
                                               <td className="description">Independent</td>
@@ -107,6 +112,7 @@ export default class RightSideBar extends React.Component{
                                               <td className="title">Date:</td>
                                               <td className="description">1:00pm 5/20/17</td>
                                           </tr>
+                                        </tbody>
                                       </table>
                                       <div className="game-explanation">Because you play Begginner Curling.</div>
                                   </div>

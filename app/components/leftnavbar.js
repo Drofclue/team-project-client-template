@@ -2,6 +2,7 @@ import React from 'react';
 export default class LeftNavBar extends React.Component {
   render() {
     return (
+      <div className="col-md-2 sidenav">
       <ul className="nav sidebar-nav">
         <li className="sidebar-brand">
           <span className="cp"><a href="#">Cherry Picker</a></span>
@@ -24,6 +25,7 @@ export default class LeftNavBar extends React.Component {
           <a href="#"><i className="fa fa-fw fa-envelope"></i> Messages</a>
         </li>
       </ul>
+    </div>
     )
   }
 }
