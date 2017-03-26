@@ -3,7 +3,7 @@ import React from 'react';
 export default class Footer extends React.Component{
   render(){
     return(
-      <footer className="container-fluid text-center ">
+      <div className="row text-center footer">
       <div className="col-md-3 text-left">
           <section id="logo-ad" className="widget widget_black_studio_tinymce">
               <div className="textwidget">
@@ -42,7 +42,7 @@ export default class Footer extends React.Component{
               </div>
           </section>
       </div>
-    </footer>
+    </div>
     )
   }
 }

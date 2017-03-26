@@ -24,15 +24,11 @@
       padding-bottom:120px;
     }
 
-    footer {
+    .footer{
       background-color: #414649;
-      position: relative;
-      margin-top: -120px;
-      height: 120px;
-      clear:both;
-      padding:20px;
+      color: white;
+      height:auto;
     }
-
 
     @media screen and (max-width: 767px) {
       .sidenav {
@@ -63,16 +59,14 @@
 
     .right-bar{
       padding-top: 20px;
+      padding-right: 0px;
       background-color: #A4E567;
       height: 100%;
+      color:#414649;
     }
 
     .right-bar .panel>.panel-body{
       background-color: #C0FFBC;
-    }
-
-    .right-bar{
-      color:#414649;
     }
 
     .right-bar .media{
@@ -117,7 +111,4 @@
     .fade{
       opacity: 0.8;
       -moz-opacity: 0.8;
-    }
-    .container-fluid{
-      width: 100%;
     }
