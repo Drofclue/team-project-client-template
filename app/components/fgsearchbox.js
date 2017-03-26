@@ -9,12 +9,12 @@ export default class Fgsearchbox extends React.Component {
               <label htmlFor="sport" className="col-md-3 col-form-label">Sport</label>
               <div className="col-md-9">
                   <select className="form-control">
-                    <option>(this.props.sport1)</option>
-                    <option>(this.props.sport2)</option>
-                    <option>(this.props.sport3)</option>
-                    <option>(this.props.sport4)</option>
-                    <option>(this.props.sport5)</option>
-                    <option>(this.props.sport6)</option>
+                    <option>(Baseball)</option>
+                    <option>(Basketball)</option>
+                    <option>(Hockey)</option>
+                    <option>(Soccer)</option>
+                    <option>(Tennis)</option>
+                    <option>(Dodgeball)</option>
                   </select>
               </div>
           </div>
