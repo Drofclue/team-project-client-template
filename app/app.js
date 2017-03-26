@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import League from './components/league.js';
 import LeagueMemberListItem from './components/leaguememberlistitem.js';
 import CreateAGame from './components/createagame.js';
+import CreateAGameLeague from './components/createagameleague.js';
 import Findagame from './components/findagame.js';
 import LeftNavBar from './components/leftnavbar.js'
 import Footer from './components/footer.js'
@@ -24,6 +25,11 @@ ReactDOM.render(
 ReactDOM.render(
   <CreateAGame />,
   document.getElementById('createagame')
+)
+
+ReactDOM.render(
+  <CreateAGameLeague />,
+  document.getElementById('createagameleague')
 )
 
 ReactDOM.render(
