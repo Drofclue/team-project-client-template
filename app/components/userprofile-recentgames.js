@@ -9,21 +9,21 @@ export default class UserProfileRecentGames extends React.Component {
                 <div className="col-md-12">
                     <div className="panel">
                         <div className="panel-heading recent-played-games">
-                            <p style="text-align:left;"> <b> Recently Played Games: </b> </p>
+                            <p className="userprofpic"> <b> Recently Played Games: </b> </p>
                         </div>
                         <table className="table table-hover">
                             <thead>
                                 <th>
-                                    <p style="text-align:center;"> Date </p>
+                                    <p className="center"> Date </p>
                                 </th>
                                 <th>
-                                    <p style="text-align:center;"> Location </p>
+                                    <p className="center"> Location </p>
                                 </th>
                                 <th>
-                                    <p style="text-align:center;"> Sport </p>
+                                    <p className="center"> Sport </p>
                                 </th>
                                 <th>
-                                    <p style="text-align:center;"> League </p>
+                                    <p className="center"> League </p>
                                 </th>
                             </thead>
                             <tbody>

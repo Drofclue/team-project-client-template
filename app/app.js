@@ -10,6 +10,7 @@ import LeaguePage from './components/leaguepage.js';
 import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
 import HighLightsPage from './components/highlights.js';
+import UserProfilePage from './components/userprofilepage.js';
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(

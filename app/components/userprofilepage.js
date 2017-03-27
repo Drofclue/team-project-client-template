@@ -11,7 +11,7 @@ export default class UserProfilePage extends React.Component {
         <div className="row content">
           <LeftNavBar />
           <div className="col-md-7 text-left">
-            <UserProfile> </UserProfile>
+            <UserProfile />
           </div>
           <RightSideBar />
         </div>

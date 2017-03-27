@@ -14,9 +14,9 @@ export default class UserProfileProfilePic extends React.Component {
                                    </div>
                                    <div className="col-md-6">
                                        <span> <h1> {this.props.name} </h1> </span>
-                                       <p style="text-align:left;"> <b> Username: </b> <i> {this.props.username} </i> </p>
-                                       <p style="text-align:left;"> <b> Age: </b> <i> {this.props.age} </i> </p>
-                                       <p style="text-align:left;"> <b> Gender: </b> <i> {this.props.gender} </i> </p>
+                                       <p className="userprofpic"> <b> Username: </b> <i> {this.props.username} </i> </p>
+                                       <p className="userprofpic"> <b> Age: </b> <i> {this.props.age} </i> </p>
+                                       <p className="userprofpic"> <b> Gender: </b> <i> {this.props.gender} </i> </p>
                                    </div>
                                </div>
                            </div>

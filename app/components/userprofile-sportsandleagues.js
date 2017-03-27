@@ -12,10 +12,10 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                           <table className="table table-striped sportwidget">
                               <thead>
                                   <th>
-                                      <p style="text-align:center;"> Sport </p>
+                                      <p className="center"> Sport </p>
                                   </th>
                                   <th>
-                                      <p style="text-align:center;"> Skill Level </p>
+                                      <p className="center"> Skill Level </p>
                                   </th>
                               </thead>
                               <tbody>
@@ -43,7 +43,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                           <table className="table table-striped league-table">
                               <thead>
                                   <th>
-                                      <p style="text-align:center;"> Leagues </p>
+                                      <p className="center"> Leagues </p>
                                   </th>
                               </thead>
                               <tbody>
