@@ -1,6 +1,6 @@
 import React from 'react';
-import MessageFriends from './messagefriends.js'
-import UserMessagesChat from './usermessageschat'
+import MessageFriends from './messagefriends.js';
+import UserMessagesChat from './usermessageschat.js';
 
 export default class Message extends React.Component{
 	render(){
