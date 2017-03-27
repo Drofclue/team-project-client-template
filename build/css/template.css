@@ -25,6 +25,7 @@
     }
 
     .footer{
+      padding-top: 20px;
       background-color: #414649;
       color: white;
       height:auto;
@@ -59,7 +60,6 @@
 
     .right-bar{
       padding-top: 20px;
-      padding-right: 0px;
       background-color: #A4E567;
       height: 100%;
       color:#414649;

@@ -5,7 +5,7 @@ import LeagueMember from './leaguemember';
 export default class LeagueMemberListItem extends React.Component {
   render() {
     return (
-      <div>
+      <div className="panel panel-default suggested-games">
         <div className="panel-body">
             <a href="#">League Members</a>
         </div>

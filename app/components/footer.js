@@ -11,7 +11,7 @@ export default class Footer extends React.Component{
                       <a href="#"> <img src="img/cherry_logo.png" alt="logo" width="60px" height="60" /></a>
                   </p>
                   <p>Thanks For Choosing Cherry Picker</p>
-              </div>.
+              </div>
           </section>
       </div>
       <div className="col-md-3 text-left">
