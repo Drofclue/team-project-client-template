@@ -2,7 +2,7 @@ import React from 'react';
 import LeftNavBar from './leftnavbar';
 import RightSideBar from './rightsidebar';
 import Footer from './footer.js';
-import ScheduleCalender from './schedulecalender.js';
+import ScheduleCalender from './schedulecalendar.js';
 import SchedulePlans from './scheduleplans.js';
 
 export default class CreateAGame extends React.Component {

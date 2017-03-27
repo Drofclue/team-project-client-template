@@ -11,14 +11,15 @@ export default class ScheduleCalender extends React.Component {
               <ul>
                   <li className="prev">❮</li>
                   <li className="next">❯</li>
-                  <li style="text-align:center">
+                  <li className="monthli">
                       Feburary<br />
-                      <span style="font-size:18px">2017</span>
+                    <span className="yearli">2017</span>
                   </li>
               </ul>
           </div>
           <div>
               <table className="textCenter">
+                <tbody>
                   <tr>
                       <td className="textColorRed">Sun</td>
                       <td>Mon</td>
@@ -28,9 +29,10 @@ export default class ScheduleCalender extends React.Component {
                       <td>Fri</td>
                       <td className="textColorBlue">Sat</td>
                   </tr>
-
+                </tbody>
               </table>
               <table id="textLeft">
+                <tbody>
                   <tr className="trsize">
                       <td className="textColorRed"></td>
                       <td></td>
@@ -86,13 +88,14 @@ export default class ScheduleCalender extends React.Component {
                       <td></td>
                       <td className="textColorBlue"></td>
                   </tr>
+                  </tbody>
               </table>
           </div>
 
           <div className="panel panel-default">
               <div className="panel-body">
                   <div className="form-group row">
-                      <label for="sport" className="col-md-3 col-form-label">Sport</label>
+                      <label className="col-md-3 col-form-label">Sport</label>
                       <div className="col-md-9">
                           <select className="form-control">
                       <option>Default</option>
@@ -107,7 +110,7 @@ export default class ScheduleCalender extends React.Component {
                   </div>
                   <div className="row">
 
-                      <label for="DATE" className="col-md-3 col-form-label">Date</label>
+                      <label className="col-md-3 col-form-label">Date</label>
 
                       <div className="col-md-7">
                           <input className="form-control" type="text" id="date" placeholder="Date"/>

@@ -71,3 +71,10 @@ td {
 .textColorBlue {
     color: #0000FF;
 }
+
+.monthli{
+  text-align:center;
+}
+.yearli{
+  font-size:18px;
+}

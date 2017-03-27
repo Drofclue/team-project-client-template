@@ -7,7 +7,7 @@ import CreateAGameLeague from './components/createagameleague.js';
 import Findagame from './components/findagame.js';
 import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
-//import Schedule from './components/schedule.js';
+import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
 
 if (document.getElementById('leaguepage')!=null){
@@ -35,14 +35,12 @@ if (document.getElementById('leaguepage')!=null){
     <Template />,
     document.getElementById('template')
   );
-}
-//else if (document.getElementById('schedule')!=null){
-//   ReactDOM.render(
-//     <Schedule />,
-//     document.getElementById('schedule')
-//   );
-// }
-else if (document.getElementById('messagepage')!=null){
+}else if (document.getElementById('schedule')!=null){
+  ReactDOM.render(
+    <Schedule />,
+    document.getElementById('schedule')
+  );
+}else if (document.getElementById('messagepage')!=null){
   ReactDOM.render(
     <MessagePage />,
     document.getElementById('messagepage')
