@@ -5,12 +5,9 @@ export default class MessageSidebarItem extends React.Component{
 		return(
 			<div>
 				<div className="media">
-					<div className="media-left media-top">
-						<div className="cd-timeline-img">
-							<img src={this.props.avatar} width="40" height="40"  alt="Picture" />
-						</div>
-					</div>
-
+					<span className="media-left media-top">
+						<img src={this.props.avatar} alt="avatar" className="img-circle" height="40" width="40"></img>
+					</span>
 					<div className="media-body">
 							<a href="#">{this.props.user}</a>
 							<span className="glyphicon glyphicon-remove pull-right"></span>

@@ -5,9 +5,9 @@ export default class MessageChatItem extends React.Component{
 		return(
 			<div>
 				<div className="media">
-					<div className="media-left media-top">
-						{this.props.avatar}
-					</div>
+					<span className="media-left media-top">
+						<img src={this.props.avatar} alt="avatar" className="img-circle" height="40" width="40"></img>
+					</span>
 					<div className="media-body">
 						<a href="#">{this.props.user}</a>
 						<span className="green">{this.props.status}</span>
