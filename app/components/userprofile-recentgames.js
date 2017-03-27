@@ -13,6 +13,7 @@ export default class UserProfileRecentGames extends React.Component {
                         </div>
                         <table className="table table-hover">
                             <thead>
+                              <tr>
                                 <th>
                                     <p className="center"> Date </p>
                                 </th>
@@ -25,6 +26,7 @@ export default class UserProfileRecentGames extends React.Component {
                                 <th>
                                     <p className="center"> League </p>
                                 </th>
+                              </tr>
                             </thead>
                             <tbody>
                                 <tr>
