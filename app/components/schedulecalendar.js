@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ScheduleCalender extends React.Component {
+export default class ScheduleCalendar extends React.Component {
   render() {
     return(
       <div className="col-md-8 calendar">

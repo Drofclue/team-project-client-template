@@ -7,7 +7,7 @@ import CreateAGameLeague from './components/createagameleague.js';
 import Findagame from './components/findagame.js';
 import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
-//import Schedule from './components/schedule.js';
+import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
 
 if (document.getElementById('leaguepage')!=null){
