@@ -1,16 +1,26 @@
-import React from 'react';
-import Fgresultlist from './fgresultlist';
-import Fgsearchbox from './fgsearchbox'
+  import React from 'react';
+  import LeftNavBar from './leftnavbar';
+  import RightSideBar from './rightsidebar';
+  import Footer from './footer.js';
+  import Fgresultlist from './fgresultlist';
+  import Fgsearchbox from './fgsearchbox'
 
+  export default class Findagame extends React.Component {
+    render(){
+      return (
+        <div className="container-fluid text-center">
+          <div className="row content">
+            <LeftNavBar />
+            <div className="col-md-7 text-left">
+              <p><h2>Find a Game</h2></p>
+              <Fgsearchbox></Fgsearchbox>
+              <Fgresultlist></Fgresultlist>
 
-export class Findagame extends React.Component {
-  render() {
-    return (
-      <div>
-        <p><h2>Find a Game</h2></p>
-        <Fgsearchbox></Fgsearchbox>
-        <Fgresultlist></Fgresultlist>
-      </div>
-    );
+            </div>
+            <RightSideBar />
+          </div>
+          <Footer />
+        </div>
+      )
     }
   }
