@@ -51,4 +51,9 @@ if (document.getElementById('leaguepage')!=null){
     <HighLightsPage />,
     document.getElementById('highlightspage')
   )
+}else if (document.getElementById('userprofilepage')!=null){
+  ReactDOM.render(
+    <UserProfilePage />,
+    document.getElementById('userprofilepage')
+  );
 }
