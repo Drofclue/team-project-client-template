@@ -9,6 +9,7 @@ import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
 //import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
+import Highlights from './components/highlights.js'
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
@@ -35,16 +36,19 @@ if (document.getElementById('leaguepage')!=null){
     <Template />,
     document.getElementById('template')
   );
-}
-else if (document.getElementById('schedule')!=null){
+}else if (document.getElementById('schedule')!=null){
   ReactDOM.render(
     <Schedule />,
     document.getElementById('schedule')
   );
-}
-else if (document.getElementById('messagepage')!=null){
+}else if (document.getElementById('messagepage')!=null){
   ReactDOM.render(
     <MessagePage />,
     document.getElementById('messagepage')
+  )
+}else if (document.getElementById('highlights')!=null){
+  ReactDOM.render(
+    <Highlights />,
+    document.getElementById('highlights')
   )
 }

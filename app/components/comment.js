@@ -5,9 +5,9 @@ export default class Comment extends React.Component{
     return(
       <li className="media">
           <div className="media-left media-top">
-              <div className="cd-timeline-img">
-                  <img src={this.props.avatar} width="35" height="35" alt="Picture" />
-              </div>
+            <span className="media-left media-top">
+              <img src={this.props.avatar} alt="avatar" className="img-circle" height="35" width="35"></img>
+            </span>
           </div>
           <div className="media-body">
               <a href="#">{this.props.author}</a> {this.props.children}

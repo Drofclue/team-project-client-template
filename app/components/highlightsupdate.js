@@ -8,9 +8,9 @@ export default class HighlightsUpdate extends React.Component{
             <div className="col-md-10">
                 <div className="media">
                     <div className="media-left media-top">
-                        <div className="cd-timeline-img">
-                            <img src={this.props.avatar} width="50" height="50" alt="Picture" />
-                        </div>
+                      <span className="media-left media-top">
+                        <img src={this.props.avatar} alt="avatar" className="img-circle" height="50" width="50"></img>
+                      </span>
                     </div>
                     <div className="media-body">
                         <a href="#">{this.props.author}</a>
