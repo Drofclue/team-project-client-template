@@ -10,56 +10,13 @@ export default class UserMessagesChat extends React.Component{
           <h2>Messages</h2>
           <div className="panel panel-default messages">
             <div className="panel-body">
-              <Message_Chat_Item  user='LingoDaddy24' status='● Online' message='Hey you! Are you coming to the game?'/>
+              <Message_Chat_Item avatar='img/cherry.png' user='LingoDaddy24' status=' ● Online' message='Hey you! Are you coming to the game?' timestamp='12:43PM'/>
               <hr />
-              <div className="media">
-                <div className="media-left media-top">
-                  <img src="img/you.jpeg" width="40" height="40"  alt="Picture" />
-                </div>
-                <div className="media-body">
-                  <a href="#">You</a>
-                  <br />Not feeling well today... Probably not coming
-                  <font color="grey" >
-                    <p className="timestamp pull-right">
-                      <span className="glyphicon glyphicon-time"></span>
-                      2 minutes ago
-                    </p>
-                  </font>
-                </div>
-              </div>
+              <Message_Chat_Item avatar='img/you.jpeg' user='You' message='Not feeling well today... Probably not coming' timestamp='2 minutes ago'/>
               <hr />
-              <div className="media">
-                <div className="media-left media-top">
-                  <img src="img/cherry.png" width="40" height="40"  alt="Picture" />
-                </div>
-                <div className="media-body">
-                  <a href="#">LingoDaddy24</a>
-                  <span className="green">● Online</span>
-                  <br />Damn dude hope you feel better soon!
-                  <font color="grey" >
-                    <p className="timestamp pull-right">
-                      <span className="glyphicon glyphicon-time"></span>
-                      About a minute ago
-                    </p>
-                  </font>
-                </div>
-              </div>
+              <Message_Chat_Item avatar='img/cherry.png' user='LingoDaddy24' status=' ● Online' message='Damn dude hope you feel better soon!' timestamp='About a minute ago'/>
               <hr />
-              <div className="media">
-                <div className="media-left media-top">
-                  <img src="img/you.jpeg" width="40" height="40"  alt="Picture" />
-                </div>
-                <div className="media-body">
-                  <a href="#">You</a>
-                  <br />Thanks! You guys are probably gonna get rekt without me though :p
-                  <font color="grey" >
-                    <p className="timestamp pull-right">
-                      <span className="glyphicon glyphicon-time"></span>
-                      A few seconds ago
-                    </p>
-                  </font>
-                </div>
-              </div>
+              <Message_Chat_Item avatar='img/you.jpeg' user='You' message='Thanks! You guys are probably gonna get rekt without me though :p' timestamp='A few seconds ago'/>
               <hr />
               <font color="grey" >
                 <p className="typing">

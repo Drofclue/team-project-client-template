@@ -6,7 +6,7 @@ export default class UserHub extends React.Component {
       <div className="panel panel-default user-hub">
           <div className="panel-body">
               <div className="row">
-                  <div className="col-md-2">
+                  <div className="col-md-2 removepadding">
                       <div className="media">
                           <div className="media-body">
                               <img src={this.props.userhubprofpic} alt="" className="img-rounded img-responsive" />
