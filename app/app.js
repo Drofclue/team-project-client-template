@@ -9,6 +9,7 @@ import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
 import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
+import HighLightsPage from './components/highlights.js';
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
@@ -44,5 +45,10 @@ if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
     <MessagePage />,
     document.getElementById('messagepage')
+  )
+}else if (document.getElementById('highlightspage')!=null){
+  ReactDOM.render(
+    <HighLightsPage />,
+    document.getElementById('highlightspage')
   )
 }
