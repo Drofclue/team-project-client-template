@@ -36,12 +36,12 @@ if (document.getElementById('leaguepage')!=null){
     document.getElementById('template')
   );
 }
-//else if (document.getElementById('schedule')!=null){
-//   ReactDOM.render(
-//     <Schedule />,
-//     document.getElementById('schedule')
-//   );
-// }
+else if (document.getElementById('schedule')!=null){
+  ReactDOM.render(
+    <Schedule />,
+    document.getElementById('schedule')
+  );
+}
 else if (document.getElementById('messagepage')!=null){
   ReactDOM.render(
     <MessagePage />,
