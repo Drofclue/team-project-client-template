@@ -16,7 +16,8 @@ export default class SchedulePlans extends React.Component {
                             <li className="media">
                                 <div className="media-body">
                                     <div className="game-title"> ----<a href="#">Not American Football</a>----</div>
-                                    <table style="width:100%">
+                                    <table>
+                                      <tbody>
                                         <tr>
                                             <td className="title">League:</td>
                                             <td className="description"><a href="#">Not American Sports</a></td>
@@ -33,6 +34,7 @@ export default class SchedulePlans extends React.Component {
                                             <td className="title">Date:</td>
                                             <td className="description">6:30 pm 5/15/17</td>
                                         </tr>
+                                      </tbody>
                                     </table>
 
                                 </div>
@@ -41,7 +43,8 @@ export default class SchedulePlans extends React.Component {
                             <li className="media">
                                 <div className="media-body">
                                     <div className="game-title">----<a href="#">Not European Football</a>----</div>
-                                    <table style="width:100%">
+                                    <table>
+                                      <tbody>
                                         <tr>
                                             <td className="title">League:</td>
                                             <td className="description"><a href="#">American Sports</a></td>
@@ -58,6 +61,7 @@ export default class SchedulePlans extends React.Component {
                                             <td className="title">Date:</td>
                                             <td className="description">10:00am 5/19/17</td>
                                         </tr>
+                                        </tbody>
                                     </table>
 
                                 </div>
@@ -66,7 +70,8 @@ export default class SchedulePlans extends React.Component {
                             <li className="media">
                                 <div className="media-body">
                                     <div className="game-title">----<a href="#">New to Curling</a>----</div>
-                                    <table style="width:100%">
+                                    <table>
+                                      <tbody>
                                         <tr>
                                             <td className="title">League:</td>
                                             <td className="description">Independent</td>
@@ -83,6 +88,7 @@ export default class SchedulePlans extends React.Component {
                                             <td className="title">Date:</td>
                                             <td className="description">1:00pm 5/20/17</td>
                                         </tr>
+                                      </tbody>
                                     </table>
                                     <hr />
                                 </div>

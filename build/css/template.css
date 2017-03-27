@@ -112,3 +112,7 @@
       opacity: 0.8;
       -moz-opacity: 0.8;
     }
+
+    .removepadding {
+      padding-right: 0px!important;
+    }
