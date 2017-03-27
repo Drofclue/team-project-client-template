@@ -41,10 +41,8 @@ export default class Fgsearchbox extends React.Component {
                   </label>
               </div>
           </div>
-          <p>
             <Fgsearchops>
             </Fgsearchops>
-          </p>
           <p>
               <a className="btn btn-primary pull-right" data-toggle="collapse" href="#find-results" aria-expanded="false" aria-controls="find-results">
                 Submit

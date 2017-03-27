@@ -15,7 +15,6 @@ export default class Fgresultitem extends React.Component {
                     <div className="card-block card-results">
                         <b>{this.props.gamename}</b>
                         <div className="card-block card-results ">
-                            <p>
                                 <div className="block">
                                     <span className="label label-default-cherry">Sport</span>: {this.props.sport}
                                 </div>
@@ -28,7 +27,6 @@ export default class Fgresultitem extends React.Component {
                                 <div className="block">
                                     <span className="label label-default-cherry"># of Players</span>:{this.props.curplayers} of {this.props.maxplayers}
                                 </div>
-                            </p>
                         </div>
                     </div>
                 </div>

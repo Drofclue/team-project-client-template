@@ -4,11 +4,9 @@ export default class Fgsearchops extends React.Component {
   render() {
     return (
       <div>
-        <p>
           <button className="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             More Options
           </button>
-        </p>
         <div className="collapse" id="collapseExample">
             <div className="card card-block">
                 <div className="form-group row">

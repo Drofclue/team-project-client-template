@@ -12,7 +12,7 @@
           <div className="row content">
             <LeftNavBar />
             <div className="col-md-7 text-left">
-              <p><h2>Find a Game</h2></p>
+              <h2>Find a Game</h2>
               <Fgsearchbox></Fgsearchbox>
               <Fgresultlist></Fgresultlist>
 
