@@ -5,7 +5,7 @@ export default class MessageFriends extends React.Component{
 	render(){
 		return(
 			<div className="col-md-5 text-left">
-			<p><h2>Friends</h2></p>
+			<h2>Friends</h2>
 				<div className="panel panel-default friends">
 					<div className="panel-body">
 						<ul className="nav nav-pills nav-stacked">
