@@ -8,6 +8,7 @@ import Leaguegame from './leaguegame';
 export default class League extends React.Component {
   render() {
     return (
+      <div className="col-md-7 text-left">
       <div className="media league-name">
           <Leaguedes title="Middle Aged Bowlers" status="Open"
                         count="273"  image ="img/middle-aged-bowler.jpg">
@@ -38,8 +39,9 @@ export default class League extends React.Component {
                     <Leaguegame date ="Thursday April 4th" gametitle="Running" team = "No one (practice)" time= "5:00pm EST" location="Puffers Pond" ></Leaguegame>
                     <Leaguegame date ="Monday April 18th" gametitle="Running" team = "Young Aged Bowlers" time= "2:36am EST" location="Sylvan Walkway" ></Leaguegame>
                     <Leaguegame date ="Tuesday April 27th" gametitle="Bowling" team = "No one (practice)" time= "5:00pm EST" location="TBA" ></Leaguegame>
-                    </Leagueupcoming>
-          </div>
+          </Leagueupcoming>
+        </div>
+        </div>
     )
   }
 }
