@@ -1,4 +1,5 @@
 import React from 'react';
+import Message_Chat_Item from './messagechatitem.js';
 // import MessageChatItem from './messagechatitem.js'
 
 export default class UserMessagesChat extends React.Component{
@@ -6,13 +7,10 @@ export default class UserMessagesChat extends React.Component{
     return(
       <div>
         <div className="col-md-7 text-left">
-          <p>
           <h2>Messages</h2>
-          </p>
           <div className="panel panel-default messages">
             <div className="panel-body">
-              <Message_Chat_Item  user='LingoDaddy24' status='● Online' message='Hey you! Are you coming to the game?'
-                ><Message_Chat_Item />
+              <Message_Chat_Item  user='LingoDaddy24' status='● Online' message='Hey you! Are you coming to the game?'/>
               <hr />
               <div className="media">
                 <div className="media-left media-top">
