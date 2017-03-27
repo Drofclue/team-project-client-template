@@ -7,6 +7,7 @@ import CreateAGameLeague from './components/createagameleague.js';
 import Findagame from './components/findagame.js';
 import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
+import Schedule from './components/schedule.js';
 // For each view conditionally determine which view to display
 // depending on if the ID is present in the HTML.
 if (document.getElementById('leaguepage')!=null){
@@ -33,5 +34,10 @@ if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
     <Template />,
     document.getElementById('template')
+  );
+}else if (document.getElementById('schedule')!=null){
+  ReactDOM.render(
+    <Schedule />,
+    document.getElementById('schedule')
   );
 }
