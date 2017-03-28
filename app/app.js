@@ -11,6 +11,7 @@ import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
 import HighLightsPage from './components/highlightspage.js';
 import UserProfilePage from './components/userprofilepage.js';
+import GamePage from './components/gamepage.js'
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
@@ -56,5 +57,10 @@ if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
     <UserProfilePage />,
     document.getElementById('userprofilepage')
+  );
+}else if (document.getElementById('gamepage')!=null){
+  ReactDOM.render(
+    <GamePage />,
+    document.getElementById('gamepage')
   );
 }
