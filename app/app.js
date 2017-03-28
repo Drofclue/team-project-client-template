@@ -9,7 +9,8 @@ import Template from './components/template.js';
 import LeaguePage from './components/leaguepage.js';
 import Schedule from './components/schedule.js';
 import MessagePage from './components/messagepage.js';
-import HighLightsPage from './components/highlights.js';
+import HighLightsPage from './components/highlightspage.js';
+import UserProfilePage from './components/userprofilepage.js';
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
@@ -51,4 +52,9 @@ if (document.getElementById('leaguepage')!=null){
     <HighLightsPage />,
     document.getElementById('highlightspage')
   )
+}else if (document.getElementById('userprofilepage')!=null){
+  ReactDOM.render(
+    <UserProfilePage />,
+    document.getElementById('userprofilepage')
+  );
 }
