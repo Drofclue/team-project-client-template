@@ -1,17 +1,13 @@
 
 
 .mid hr {
-	width: 715px;
+	width: 690px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-.post{
-	width: 715px;
-}
 .reactions{
 	margin-left: 15px;
-	margin-top: 10px;
 	width: 715px;
 }
 .comments{
@@ -22,12 +18,12 @@
 	padding-bottom: 0px;
 }
 .comments hr{
-	width: 685px;
+	width: 655px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 .send_message{
-	width: 600px !important;
+	width: 560px !important;
 }
 .highlights .send_button{
 	height: 34px;
