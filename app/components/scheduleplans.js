@@ -6,7 +6,7 @@ export default class SchedulePlans extends React.Component {
 
       <div className="col-md-4 plans">
 
-        <h1>Coming games</h1>
+        <h1>Coming</h1>
         <div className="panel panel-default suggested-games">
 
             <div className="panel-footer">
