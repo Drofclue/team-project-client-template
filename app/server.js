@@ -11,6 +11,11 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
+//Export data to populate user profile page
+export function getUserData(userId, cb){
+  var userData = readDocument('users', userId);
+  emulateServerReturn(userData, cb);
+}
 
 /**
  * Expand the resultItem by changing the state of the expandVal
