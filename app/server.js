@@ -66,5 +66,4 @@ export function createGame(gameName, description, location, date, time, user, ma
   // Add the game to the database.
   // Returns the game w/ an ID assigned.
   newGame = addDocument('games', newGame);
-
 }
