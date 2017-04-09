@@ -1,7 +1,20 @@
 import React from 'react';
 
+
+
 export default class Fgresultitem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = props;
+  }
+
+
   render() {
+
+    /*
+      - Function which handles when a result item has been clicked, which changes/flips the collapse value
+
+     */
     return (
         <div id="accordion" role="tablist" aria-multiselectable="true">
             <div className="card">
