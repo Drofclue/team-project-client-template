@@ -1,9 +1,9 @@
 import React from 'react';
-//import expandFgResult from './server.js';
+import expandFgResult from './server.js';
 import Fgresultitem from './fgresultitem';
 
 export default class Fgresultlist extends React.Component {
-/*  constructor(props){
+  constructor(props){
     super(props);
   }
   handleSubmitClick(clickEvent) {
@@ -42,7 +42,7 @@ export default class Fgresultlist extends React.Component {
     }
     return expanded;
   }
-*/
+
   render() {
     return (
       <div className="collapse" id="find-results">

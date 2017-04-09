@@ -13,18 +13,135 @@ var initialData = {
     "1":{
       "._id":1,
       "userName": "LingoDaddy42",
-      "name": "Lingo Daddy",
-      "gender": "Helicopter",
-      "sports": ["Baseball","Bowling","Muy Thai"],
-      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "sports": ["Baseball","Basketball","Tennis"],
       "age": "24",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
-      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in
+      "games":[2,4,7], //an array/list of the games that a user has. In the form of the Game ID #s
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
-      "msgThread":[]/* List of message Items specific to user-user conversation*/
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+    },
+    "2":{
+      "._id":2,
+      "userName": "League of Games",
+      "sports": ["Soccer"],
+      "age": "00",
+      "games":[1], //an array/list of the games that a user has. In the form of the Game ID #s
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+    },
+    "3":{
+      "._id":3,
+      "userName": "UMass Indoor Soccer (Football)",
+      "sports": ["Soccer"],
+      "age": "00",
+      "games":[1], //an array/list of the games that a user has. In the form of the Game ID #s
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+    },
+    "4":{
+      "._id":4,
+      "userName": "Fury of Balls",
+      "sports": ["Soccer"],
+      "age": "00",
+      "games":[1], //an array/list of the games that a user has. In the form of the Game ID #s
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[2], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+    },
+    "5":{
+      "._id":5,
+      "userName": "Balls of Fury",
+      "sports": ["Soccer"],
+      "age": "00",
+      "games":[1], //an array/list of the games that a user has. In the form of the Game ID #s
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[2], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
     }
   },
+  "highlightsItems": {
+    "1": {
+      "_id": 2,
+      // A list of users that liked the post. Here, "Someone Else" and "Another Person"
+      // liked this particular post.
+      "rsvpCounter": [
+        4, 5
+      ],
+      // The type and contents of this highlights item. This item happens to be a status
+      // update.
+      "type": "highlightsUpdate",
+      "contents": {
+        // ID of the user that posted the status update.
+        "user": 2,
+        // 01/24/16 3:48PM EST, converted to Unix Time
+        // (# of milliseconds since Jan 1 1970 UTC)
+        // https://en.wikipedia.org/wiki/Unix_time
+        "timestamp": 1453668480000,
+        "location": "Northampton, MA",
+        "contents": "League of Games is pleased to let everyone know that we will be having our first soccer game of the season this Saturday @ 6:00pm in the Southwest fields."
+      },
+      // List of comments on the post
+      "comments": [
+        {
+          // The user of the comment.
+          "user": 4,
+          // The contents of the comment.
+          "contents": "Hope no one comes!",
+          // The date the comment was posted.
+          // 01/24/16 22:00 EST
+          "timestamp": 1453690800000
+        },
+        {
+          "user": 5,
+          "contents": "#rekt",
+          "timestamp": 1453690800000
+        }
+      ]
+      },
+      "2": {
+        "_id": 2,
+        // A list of users that liked the post. Here, "Someone Else" and "Another Person"
+        // liked this particular post.
+        "rsvpCounter": [
+          2, 3
+        ],
+        // The type and contents of this highlights item. This item happens to be a status
+        // update.
+        "type": "highlightsUpdate",
+        "contents": {
+          // ID of the user that posted the status update.
+          "user": 1,
+          // 01/24/16 3:48PM EST, converted to Unix Time
+          // (# of milliseconds since Jan 1 1970 UTC)
+          // https://en.wikipedia.org/wiki/Unix_time
+          "timestamp": 1453668480000,
+          "location": "Northampton, MA",
+          "contents": "Indoor at 5 today. Boyden Gym."
+        }
+      }
+    },
+    // "highlgihts" collection. Highlights for each FB user.
+    "highlights": {
+      "4": {
+        "_id": 4,
+        // Listing of highlgihtsItems in the highlights.
+        "contents": [1]
+      },
+      "3": {
+        "_id": 3,
+        "contents": []
+      },
+      "2": {
+        "_id": 2,
+        "contents": []
+      },
+      "1": {
+        "_id": 1,
+        "contents": []
+      }
+    },
   // League information
    "leagues" : {
      // Example League listing, this league has id "1"
@@ -35,7 +152,22 @@ var initialData = {
        "sports":["Dodgeball","Synchronized Swimming"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[] // List of the games associated with the league, uses game ID# reference
-
+     },
+     "2":{
+       "._id":2,
+       "leagName": "League of Games",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Soccer"],
+       "members":[2,4,5], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[] // List of the games associated with the league, uses game ID# reference
+     },
+     "3":{
+       "._id":3,
+       "leagName": "UMass Indoor Soccer (Football)",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Soccer"],
+       "members":[3], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[] // List of the games associated with the league, uses game ID# reference
      }
    },
   "games": {
@@ -47,7 +179,7 @@ var initialData = {
       "date": "5/15/17",
       "time": "6:30 PM",
       "currPlayers": [1],
-      "maxPlayers": 20,
+      "maxPlayers": 30,
       "minAge": 16,
       "maxAge": 30,
       "sport": "Soccer",
@@ -70,11 +202,13 @@ var initialData = {
       "league":"American Sports"
     },
     "3":{
-      "_id":3,
+      "_id":2,
       "gameName": "New to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
       "location":"Easthampton, MA",
-      "currPlayers": [3,5,6,7],
+      "date": "5/08/17",
+      "time": "2:00 PM",
+      "currPlayers": [3],
       "maxPlayers": 4,
       "minAge": 35,
       "maxAge": 50,

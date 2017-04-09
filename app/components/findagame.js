@@ -2,8 +2,8 @@
   import LeftNavBar from './leftnavbar';
   import RightSideBar from './rightsidebar';
   import Footer from './footer.js';
-  import Fgresultlist from './fgresultlist.js';
-  import Fgsearchbox from './fgsearchbox.js';
+  //import Fgresultlist from './fgresultlist';
+  import Fgsearchbox from './fgsearchbox'
 
   export default class Findagame extends React.Component {
     render(){
@@ -14,7 +14,7 @@
             <div className="col-md-7 text-left">
               <h2>Find a Game</h2>
               <Fgsearchbox></Fgsearchbox>
-              <Fgresultlist></Fgresultlist>
+              //<Fgresultlist></Fgresultlist>
 
             </div>
             <RightSideBar />
