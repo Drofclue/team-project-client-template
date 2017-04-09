@@ -18,7 +18,8 @@ var initialData = {
       "sports": ["Baseball","Bowling","Muy Thai"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[2,4,7], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
@@ -81,50 +82,7 @@ var initialData = {
       "skillLvl": "Beginner",
       "league":"Independent"
     }
-  },
-  "suggestedGames":[
-    {
-      "_id": 1,
-      "gameName": "Not American Football",
-      "description": "Not American Football welcomes all people who want to play Fùtbol... except for people who are really good.",
-      "location": "Amherst, MA",
-      "currPlayers": [1],
-      "maxPlayers": 20,
-      "minAge": 16,
-      "maxAge": 30,
-      "sport": "Soccer",
-      "skillLvl": "Novice-Intermerdiate",
-      "league": "Not American Football"
-    },
-    {
-      "_id":2,
-      "gameName": "Not European Football",
-      "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
-      "location":"Hadley, MA",
-      "currPlayers": [5,8,9,10,11,12,13],
-      "maxPlayers": 20,
-      "minAge": 20,
-      "maxAge": 28,
-      "sport":"Football",
-      "skillLvl": "Intermediate-Advanced",
-      "league":"American Sports"
-    },
-    {
-      "_id":3,
-      "gameName": "New to Curling",
-      "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
-      "location":"Easthampton, MA",
-      "date": "5/08/17",
-      "time": "2:00 PM",
-      "currPlayers": [3],
-      "maxPlayers": 4,
-      "minAge": 35,
-      "maxAge": 50,
-      "sport":"Curling",
-      "skillLvl": "Beginner",
-      "league":"Independent"
-    }
-  ]
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));
