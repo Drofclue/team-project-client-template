@@ -1,7 +1,60 @@
 import React from 'react';
+import expandFgResult from './server.js';
+
 
 export default class Fgresultitem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = props;
+  }
+
+/*   Attempt to create a function to handle when someone clicks on a findagame result item.
+     which would make the result item listing expand, and display additional imformation about the game.
+*/
+
+  handleResultClick(clickEvent) {
+    clickEvent.preventDefault();
+      // 0 represents the 'main mouse button' -- typically a left click
+    if(clickEvent.button === 0) {
+        //callbackFfunction is the cb argument for unlike & Like comment.
+      var callbackFunction = (expandCond) => {
+      this.setState({expandVal: expandCond })
+      };
+
+      if(this.isExpanded()){
+      collapseResult(this.state._id,this.state.expandVal, callbackFunction)
+      }
+      else{
+        expandResult(this.state._id, this.state.expandVal, callbackFunction)
+      }
+    }
+  }
+
+
+  expandResult(){
+    this.setState({expandVal: true});
+  }
+
+  collapseResult(){
+    this.setState({expandVal: false});
+  }
+
+  isExpanded() {
+    var expandStatus = this.state.expandVal;
+    var expanded = false;
+    if(expandStatus === true){
+      expanded = true;
+      break;
+    }
+    return expanded;
+  }
+
   render() {
+
+    /*
+      - Function which handles when a result item has been clicked, which changes/flips the collapse value
+
+     */
     return (
         <div id="accordion" role="tablist" aria-multiselectable="true">
             <div className="card">
