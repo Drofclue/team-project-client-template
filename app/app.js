@@ -35,7 +35,7 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('template')!=null){
   ReactDOM.render(
-    <Template user={1}/>,
+    <Template />,
     document.getElementById('template')
   );
 }else if (document.getElementById('schedule')!=null){
@@ -55,7 +55,7 @@ if (document.getElementById('leaguepage')!=null){
   )
 }else if (document.getElementById('userprofilepage')!=null){
   ReactDOM.render(
-    <UserProfilePage user={1} />,
+    <UserProfilePage />,
     document.getElementById('userprofilepage')
   );
 }else if (document.getElementById('gamepage')!=null){
