@@ -1,4 +1,5 @@
 import React from 'react';
+import UserProfileRecentGame from './userprofile-recentgames-game';
 
 export default class UserProfileRecentGames extends React.Component {
   render(){
@@ -29,18 +30,8 @@ export default class UserProfileRecentGames extends React.Component {
                               </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>5/13/2017</td>
-                                    <td>Hadley, MA</td>
-                                    <td>Water Polo</td>
-                                    <td>N/A</td>
-                                </tr>
-                                <tr>
-                                    <td>5/11/2017</td>
-                                    <td>Boston, MA</td>
-                                    <td>Muy Thai</td>
-                                    <td><a href="#">Tuesday Fight Night</a></td>
-                                </tr>
+                              <UserProfileRecentGame date="5/13/2017" city="Hadley" state="MA" sport="Water Polo" league="N/A"></UserProfileRecentGame>
+                              <UserProfileRecentGame date="5/11/217" city="Boston" state="MA" sport="Muy Thai" league="Tuesday Fight Night"></UserProfileRecentGame>
                             </tbody>
                         </table>
                     </div>
