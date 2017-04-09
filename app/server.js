@@ -9,3 +9,15 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
+
+export function createGame(gameName, league, sport) {
+  var newGame = {
+    "gameName": gameName,
+    "league": league,
+    "sport": sport
+  };
+
+  // Add the game to the database.
+  // Returns the game w/ an ID assigned.
+  newGame = addDocument('games', newGame);
+}
