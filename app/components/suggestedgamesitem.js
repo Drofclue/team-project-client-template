@@ -1,5 +1,10 @@
 import React from 'react';
 export default class SuggestedGamesItem extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = props;
+  }
+  
   render(){
     return(
       <li className="media">
