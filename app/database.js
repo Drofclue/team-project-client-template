@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Modify with your startup's name!
-var startupName = "Cherry Picker";
+var startupName = null;
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
@@ -21,6 +21,32 @@ var initialData = {
       "sport": "Soccer",
       "skillLvl": "Novice-Intermerdiate",
       "league": "Not American Football"
+    },
+    "2": {
+      "_id":2,
+      "gameName": "Not European Football",
+      "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
+      "lcoation":"Hadley, MA",
+      "currPlayers": [5],
+      "maxPlayers": 30,
+      "minAge": 20,
+      "maxAge": 28,
+      "sport":"Football",
+      "skillLvl": "Intermediate-Advanced",
+      "league":"American Sports"
+    },
+    "3":{
+      "_id":2,
+      "gameName": "New to Curling",
+      "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
+      "lcoation":"Easthampton, MA",
+      "currPlayers": [3],
+      "maxPlayers": 4,
+      "minAge": 35,
+      "maxAge": 50,
+      "sport":"Curling",
+      "skillLvl": "Beginner",
+      "league":"Independent"
     }
   }
 };

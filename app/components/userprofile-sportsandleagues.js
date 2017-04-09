@@ -1,4 +1,6 @@
 import React from 'react';
+import UserProfileSport from './userprofile-sportsandleagues-sport';
+import UserProfileLeague from './userprofile-sportsandleagues-league';
 
 export default class UserProfileSportsAndLeagues extends React.Component {
   render(){
@@ -21,18 +23,9 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>Bowling</td>
-                                      <td>Advanced</td>
-                                  </tr>
-                                  <tr>
-                                      <td>Water Polo</td>
-                                      <td>Novice</td>
-                                  </tr>
-                                  <tr>
-                                      <td>Muy Thai</td>
-                                      <td>Intermediate</td>
-                                  </tr>
+                                <UserProfileSport sport="Bowling" skill="Advanced"></UserProfileSport>
+                                <UserProfileSport sport="Water Polo" skill="Novice"></UserProfileSport>
+                                <UserProfileSport sport="Muy Thai" skill="Intermediate"></UserProfileSport>
                               </tbody>
                           </table>
                       </div>
@@ -51,15 +44,9 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td><a href="#">Middle-Aged Bowling</a></td>
-                                  </tr>
-                                  <tr>
-                                      <td><a href="#">We Play Polo</a></td>
-                                  </tr>
-                                  <tr>
-                                      <td><a href="#">Tuesday Fight Night</a></td>
-                                  </tr>
+                                  <UserProfileLeague league="Middle-Aged Bowling"></UserProfileLeague>
+                                  <UserProfileLeague league="We Play Polo"></UserProfileLeague>
+                                  <UserProfileLeague league="Tuesday Fight Night"></UserProfileLeague>
                               </tbody>
                           </table>
                       </div>
