@@ -13,12 +13,15 @@ var initialData = {
     "1":{
       "._id":1,
       "userName": "LingoDaddy42",
-      "sports": ["Baseball","Basketball","Tennis"],
+      "name": "Lingo Daddy",
+      "gender": "Helicopter",
+      "sports": ["Baseball","Bowling","Muy Thai"],
+      "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
       "games":[2,4,7], //an array/list of the games that a user has. In the form of the Game ID #s
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
-      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+      "msgThread":[]/* List of message Items specific to user-user conversation*/
     }
   },
   // League information
