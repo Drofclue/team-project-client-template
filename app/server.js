@@ -11,9 +11,7 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-<<<<<<< HEAD
-export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
-=======
+
 /**
  * Expand the resultItem by changing the state of the expandVal
  * Provides an updated expandVal in the response.
@@ -47,9 +45,9 @@ export function compressFgResult(fgResultId, expandVal, cb) {
 
   // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
   emulateServerReturn(resultItem.expandVal, cb);
+}
 
-export function createGame(gameName, description, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
->>>>>>> a68fc4ca4256c1f077abf78336fa73704b8a277f
+export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
   var newGame = {
     "gameName": gameName,
     "description": description,
