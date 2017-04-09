@@ -10,9 +10,10 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function createGame(gameName, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+export function createGame(gameName, description, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
   var newGame = {
     "gameName": gameName,
+    "description": description,
     "location": location,
     "currPlayers": [user],
     "maxPlayers": maxPlayers,
