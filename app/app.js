@@ -35,7 +35,7 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('template')!=null){
   ReactDOM.render(
-    <Template />,
+    <Template user={1}/>,
     document.getElementById('template')
   );
 }else if (document.getElementById('schedule')!=null){
