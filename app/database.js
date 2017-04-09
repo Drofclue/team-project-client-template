@@ -6,7 +6,21 @@ var startupName = null;
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
-
+  "games": {
+    "1": {
+      "_id": 1,
+      "gameName": "Not American Football",
+      "description": "Not American Football welcomes all people who want to play Fùtbol... except for people who are really good.",
+      "location": "Amherst, MA",
+      "currPlayers": [1],
+      "maxPlayers": 30,
+      "minAge": 16,
+      "maxAge": 30,
+      "sport": "Soccer",
+      "skillLvl": "Novice-Intermerdiate",
+      "league": "Not American Football"
+    }
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));

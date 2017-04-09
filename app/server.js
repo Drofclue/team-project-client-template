@@ -9,3 +9,22 @@ function emulateServerReturn(data, cb) {
     cb(data);
   }, 4);
 }
+
+export function createGame(gameName, description, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+  var newGame = {
+    "gameName": gameName,
+    "description": description,
+    "location": location,
+    "currPlayers": [user],
+    "maxPlayers": maxPlayers,
+    "minAge": minAge,
+    "maxAge": maxAge,
+    "sport": sport,
+    "skillLvl": skillLvl,
+    "league": league
+  };
+
+  // Add the game to the database.
+  // Returns the game w/ an ID assigned.
+  newGame = addDocument('games', newGame);
+}
