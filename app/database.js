@@ -6,6 +6,7 @@ var startupName = "Cherry Picker";
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
+
   //  User information
   "users":{
     // This user (our default user) has id "1"
@@ -32,17 +33,22 @@ var initialData = {
        "games":[] // List of the games associated with the league, uses game ID# reference
 
      }
-
    },
-"games":{
-  //  This is the 1st game, has id  "1"
-  "1":{
-      "._id":1,
-      "gameName":"Betsy's B-Ball",
-      "sport":"Basketball",
-      "updates": [/* updates & or highlight Items listed here? */]
+  "games": {
+    "1": {
+      "_id": 1,
+      "gameName": "Not American Football",
+      "description": "Not American Football welcomes all people who want to play Fùtbol... except for people who are really good.",
+      "location": "Amherst, MA",
+      "currPlayers": [1],
+      "maxPlayers": 30,
+      "minAge": 16,
+      "maxAge": 30,
+      "sport": "Soccer",
+      "skillLvl": "Novice-Intermerdiate",
+      "league": "Not American Football"
+    }
   }
-}
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));

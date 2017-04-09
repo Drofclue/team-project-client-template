@@ -11,9 +11,6 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-
-
-
 /**
  * Expand the resultItem by changing the state of the expandVal
  * Provides an updated expandVal in the response.
@@ -47,4 +44,23 @@ export function compressFgResult(fgResultId, expandVal, cb) {
 
   // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
   emulateServerReturn(resultItem.expandVal, cb);
+
+export function createGame(gameName, description, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+  var newGame = {
+    "gameName": gameName,
+    "description": description,
+    "location": location,
+    "currPlayers": [user],
+    "maxPlayers": maxPlayers,
+    "minAge": minAge,
+    "maxAge": maxAge,
+    "sport": sport,
+    "skillLvl": skillLvl,
+    "league": league
+  };
+
+  // Add the game to the database.
+  // Returns the game w/ an ID assigned.
+  newGame = addDocument('games', newGame);
+
 }
