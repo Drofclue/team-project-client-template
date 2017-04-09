@@ -11,7 +11,7 @@ export default class SuggestedGames extends React.Component{
               <div className="row">
                   <div className="col-md-12 ">
                       <ul className="games-list">
-                        <SuggestedGamesItem gameid={this._id}/>
+                        <SuggestedGamesItem gamename="Not American Football" leaguename="Not American Sports" location="Amherst,MA" skilllvl="Novice-Intermediate" date="6:30 pm 5/15/17" explanation="Because you play Intermediate Soccer" />
                         <hr />
                         <SuggestedGamesItem gamename="Not Eruopean Football" leaguename="American Sports" location="Hadley, MA" skilllvl="Intermediate-Advanced" date="10:00am 5/19/17" explanation="Because you live near Hadley" />
                         <hr />
