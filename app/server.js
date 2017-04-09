@@ -10,11 +10,17 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-export function createGame(gameName, league, sport) {
+export function createGame(gameName, location, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
   var newGame = {
     "gameName": gameName,
-    "league": league,
-    "sport": sport
+    "location": location,
+    "currPlayers": [user],
+    "maxPlayers": maxPlayers,
+    "minAge": minAge,
+    "maxAge": maxAge,
+    "sport": sport,
+    "skillLvl": skillLvl,
+    "league": league
   };
 
   // Add the game to the database.
