@@ -1,6 +1,22 @@
 import React from 'react';
 
 export default class CreateAGameBasic extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      gameName: "",
+      description: "",
+      location: "",
+      date: "",
+      time: "",
+      maxPlayers: "",
+      minAge: "",
+      maxAge: "",
+      sport: "",
+      skillLvl: "",
+      league: ""
+    };
+  }
   render() {
     return(
       <div>
@@ -35,9 +51,9 @@ export default class CreateAGameBasic extends React.Component {
                   </div>
               </div>
               <div className="form-group row">
-                  <label htmlFor="players" className="col-md-3 col-form-label">Max. Players</label>
+                  <label htmlFor="maxPlayers" className="col-md-3 col-form-label">Max. Players</label>
                   <div className="col-md-9">
-                      <input className="form-control" type="text" id="players" placeholder="Maximum Number of Players" />
+                      <input className="form-control" type="text" id="maxPlayers" placeholder="Maximum Number of Players" />
                   </div>
               </div>
               <div className="form-group row">
