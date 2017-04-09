@@ -6,6 +6,34 @@ var startupName = null;
 
 // Put your mock objects here, as in Workshop 4
 var initialData = {
+
+  //  User information
+  "users":{
+    // This user (our default user) has id "1"
+    "1":{
+      "._id":1,
+      "userName": "LingoDaddy42",
+      "sports": ["Baseball","Basketball","Tennis"],
+      "age": "24",
+      "games":[2,4,7], //an array/list of the games that a user has. In the form of the Game ID #s
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[ /* List of message Items specific to user-user conversation*/]
+    }
+  },
+  // League information
+   "leagues" : {
+     // Example League listing, this league has id "1"
+     "1":{
+       "._id":1,
+       "leagName": "NewToSports",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Dodgeball","Synchronized Swimming"],
+       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[] // List of the games associated with the league, uses game ID# reference
+
+     }
+   },
   "games": {
     "1": {
       "_id": 1,
@@ -41,7 +69,7 @@ var initialData = {
       "_id":2,
       "gameName": "New to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
-      "lcoation":"Easthampton, MA",
+      "location":"Easthampton, MA",
       "date": "5/08/17",
       "time": "2:00 PM",
       "currPlayers": [3],
