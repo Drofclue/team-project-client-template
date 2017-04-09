@@ -12,6 +12,8 @@ var initialData = {
       "gameName": "Not American Football",
       "description": "Not American Football welcomes all people who want to play Fùtbol... except for people who are really good.",
       "location": "Amherst, MA",
+      "date": "5/15/17",
+      "time": "6:30 PM",
       "currPlayers": [1],
       "maxPlayers": 30,
       "minAge": 16,
