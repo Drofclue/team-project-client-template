@@ -16,6 +16,16 @@ export function getUserData(user, cb) {
   emulateServerReturn(userData, cb);
 }
 
+export function getGameData(game, cb) {
+  var gameData = readDocument('games', game);
+  emulateServerReturn(gameData, cb);
+}
+
+export function getSuggestedGames(user, cb) {
+  var userData = readDocument('users', user);
+  var gameData = readDocument('suggestedgames', userData);
+  emulateServerReturn(gameData,cb);
+}
 /**
  * Expand the resultItem by changing the state of the expandVal
  * Provides an updated expandVal in the response.

@@ -7,9 +7,7 @@ import {getUserData} from '../server';
 export default class Template extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      contents:[]
-    };
+    this.state=props;
   }
 
   refresh() {

@@ -73,6 +73,8 @@ var initialData = {
       "gameName": "New to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
       "location":"Easthampton, MA",
+      "date": "5/22/17",
+      "time": "7:00 PM",
       "currPlayers": [3,5,6,7],
       "maxPlayers": 4,
       "minAge": 35,
