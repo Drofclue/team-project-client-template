@@ -11,9 +11,8 @@ function emulateServerReturn(data, cb) {
   }, 4);
 }
 
-//Export data to populate user profile page
-export function getUserData(userId, cb){
-  var userData = readDocument('users', userId);
+export function getUserData(user, cb) {
+  var userData = readDocument('users', user);
   emulateServerReturn(userData, cb);
 }
 
