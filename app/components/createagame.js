@@ -3,8 +3,19 @@
   import RightSideBar from './rightsidebar';
   import Footer from './footer.js';
   import CreateAGameBasic from './createagamebasic';
+  import {createGame} from '../server';
 
   export default class CreateAGame extends React.Component {
+
+    onSubmit(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+    // Send to server.
+    // We could use geolocation to get a location, but let's fix it to Amherst
+    // for now.
+    createGame(gameName, description, location, date, time, 1, maxPlayers, minAge, maxAge, sport, skillLvl, league, () => {
+      // Database is now updated. Redirect to the game page.
+      window.alert("Database has been updated!");
+    });
+  }
     render(){
       return (
         <div className="container-fluid text-center">
@@ -14,8 +25,7 @@
               <h2>Create a Game</h2>
                 <div className="panel panel-default">
                  <div className="panel-body">
-                  <CreateAGameBasic />
-                  <button type="submit" className="btn pull-right">Submit</button>
+                  <CreateAGameBasic onSubmit={(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league) => this.onSubmit(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league)} />
                   </div>
                 </div>
             </div>
