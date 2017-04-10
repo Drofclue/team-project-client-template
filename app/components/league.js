@@ -6,6 +6,12 @@ import Groupdesc from './groupdesc';
 import Leagueupcoming from './leagueupcoming';
 import Leaguegame from './leaguegame';
 export default class League extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contents: []
+    };
+  }
   render() {
     return (
       <div className="col-md-7 text-left">

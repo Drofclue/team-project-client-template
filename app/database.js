@@ -35,6 +35,15 @@ var initialData = {
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[] // List of the games associated with the league, uses game ID# reference
 
+     },
+     "2":{
+       "._id":2,
+       "leagName": "Middle Aged Bowlers",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
+       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[] // List of the games associated with the league, uses game ID# reference
+
      }
    },
   "games": {
