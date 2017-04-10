@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default class UserProfileProfilePic extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
   render(){
     return(
       <div>

@@ -55,7 +55,7 @@ if (document.getElementById('leaguepage')!=null){
   )
 }else if (document.getElementById('userprofilepage')!=null){
   ReactDOM.render(
-    <UserProfilePage />,
+    <UserProfilePage user={1}/>,
     document.getElementById('userprofilepage')
   );
 }else if (document.getElementById('gamepage')!=null){
