@@ -10,8 +10,8 @@ export default class RightSideBar extends React.Component{
   render(){
     return(
           <div className="col-md-3 right-bar">
-            <UserHub username={this.props.userData.username} userhubprofpic="img/lingodaddy_profile_pic_userhub.jpg" />
-            <SuggestedGames suggestedgames={this.props.userData.suggestedgames}/>
+            <UserHub username={this.props.username} userhubprofpic="img/lingodaddy_profile_pic_userhub.jpg" />
+            <SuggestedGames suggestedgames={this.props.suggestedgames}/>
           </div>
     )
   }
