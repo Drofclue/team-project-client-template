@@ -5,15 +5,33 @@ export default class CreateAGameBasic extends React.Component {
     return(
       <div>
               <div className="form-group row">
-                  <label htmlFor="game-name" className="col-md-3 col-form-label">Game Name</label>
+                  <label htmlFor="gameName" className="col-md-3 col-form-label">Game Name</label>
                   <div className="col-md-9">
-                      <input className="form-control" type="text" id="game-name" placeholder="Game Name" />
+                      <input className="form-control" type="text" id="gameName" placeholder="Game Name" />
+                  </div>
+              </div>
+              <div className="form-group row">
+                  <label htmlFor="description" className="col-md-3 col-form-label">Description</label>
+                  <div className="col-md-9">
+                      <input className="form-control" type="text" id="description" placeholder="Description" />
                   </div>
               </div>
               <div className="form-group row">
                   <label htmlFor="location" className="col-md-3 col-form-label">Location</label>
                   <div className="col-md-9">
                       <input className="form-control" type="text" id="location" placeholder="Zip Code or City" />
+                  </div>
+              </div>
+              <div className="form-group row">
+                  <label htmlFor="date" className="col-md-3 col-form-label">Date</label>
+                  <div className="col-md-9">
+                      <input className="form-control" type="text" id="date" placeholder="MM/DD/YYYY" />
+                  </div>
+              </div>
+              <div className="form-group row">
+                  <label htmlFor="time" className="col-md-3 col-form-label">Time</label>
+                  <div className="col-md-9">
+                      <input className="form-control" type="text" id="time" placeholder="00:00 AM/PM" />
                   </div>
               </div>
               <div className="form-group row">
