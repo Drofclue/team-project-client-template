@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // Modify with your startup's name!
 var startupName = null;
@@ -12,14 +11,14 @@ var initialData = {
     // This user (our default user) has id "1"
     "1":{
       "._id":1,
-      "userName": "LingoDaddy42",
+      "username": "LingoDaddy42",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
       "sports": ["Baseball","Bowling","Muy Thai"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
       "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
-      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
@@ -33,6 +32,15 @@ var initialData = {
        "leagName": "NewToSports",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
+       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[] // List of the games associated with the league, uses game ID# reference
+
+     },
+     "2":{
+       "._id":2,
+       "leagName": "Middle Aged Bowlers",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[] // List of the games associated with the league, uses game ID# reference
 
@@ -74,6 +82,8 @@ var initialData = {
       "gameName": "New to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
       "location":"Easthampton, MA",
+      "date": "5/22/17",
+      "time": "7:00 PM",
       "currPlayers": [3,5,6,7],
       "maxPlayers": 4,
       "minAge": 35,
@@ -142,10 +152,7 @@ export function resetDatabase() {
   data = JSONClone(initialData);
 }
 
-/**
- * Reset database button.
- */
-class ResetDatabase extends React.Component {
+export default class ResetDatabase extends React.Component {
   render() {
     return (
       <button className="btn btn-default" type="button" onClick={() => {
@@ -157,7 +164,7 @@ class ResetDatabase extends React.Component {
   }
 }
 
-ReactDOM.render(
+/**ReactDOM.render(
   <ResetDatabase />,
   document.getElementById('db-reset')
-);
+);*/
