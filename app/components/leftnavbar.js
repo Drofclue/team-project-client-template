@@ -26,7 +26,7 @@ export default class LeftNavBar extends React.Component {
           <a href="#"><i className="fa fa-fw fa-envelope"></i> Messages</a>
         </li>
         <li role="presentation">DEBUG</li>
-        <li role="presentation" id="db-reset"><ResetDatabase /></li>
+        <ResetDatabase />
       </ul>
     </div>
     )
