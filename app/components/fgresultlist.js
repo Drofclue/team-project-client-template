@@ -3,9 +3,11 @@ import React from 'react';
 import Fgresultitem from './fgresultitem';
 
 export default class Fgresultlist extends React.Component {
-/*  constructor(props){
+  constructor(props){
     super(props);
   }
+
+  /*
   handleSubmitClick(clickEvent) {
     clickEvent.preventDefault();
       // 0 represents the 'main mouse button' -- typically a left click

@@ -149,7 +149,7 @@ export default class CreateAGameBasic extends React.Component {
               <div className="form-group row">
                   <label htmlFor="sport" className="col-md-3 col-form-label">Sport</label>
                   <div className="col-md-9">
-                      <select className="form-control" value={this.state.sport} onChange={this.handleChangeSport}>
+                      <select className="form-control" value={this.state.sport} onChange={(e) =>this.handleChangeSport(e)}>
                         <option value="baseball">Baseball</option>
                         <option value="basketball">Basketball</option>
                         <option value="bowling">Bowling</option>
@@ -162,7 +162,7 @@ export default class CreateAGameBasic extends React.Component {
               <div className="form-group row">
                   <label htmlFor="skilllevel" className="col-md-3 col-form-label">Skill Level</label>
                     <div className="col-md-9">
-                        <select className="form-control" value={this.state.skillLvl} onChange={this.handleChangeSkillLvl}>
+                        <select className="form-control" value={this.state.skillLvl} onChange={(e) =>this.handleChangeSkillLvl(e)}>
                           <option value="beginner">Beginner</option>
                           <option value="novice">Novice</option>
                           <option value="intermediate">Intermediate</option>
@@ -173,7 +173,7 @@ export default class CreateAGameBasic extends React.Component {
               <div className="form-group row">
                   <label htmlFor="league" className="col-md-3 col-form-label">League</label>
                   <div className="col-md-9">
-                      <select className="form-control" value={this.state.league} onChange={this.handleChangeLeague}>
+                      <select className="form-control" value={this.state.league} onChange={(e) =>this.handleChangeLeague(e)}>
                         <option value="">No League</option>
                         <option value="middle-aged bowling">Middle-Aged Bowling</option>
                         <option value="my really cool league">My Really Cool League</option>

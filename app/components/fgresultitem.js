@@ -4,18 +4,16 @@ import React from 'react';
 
 export default class Fgresultitem extends React.Component {
   constructor(props){
-    super(props);
+    super(props); // These are the properties from fgresultlist
     this.state = props;
   }
 
 
   render() {
 
-    /*
-      - Function which handles when a result item has been clicked, which changes/flips the collapse value
 
-     */
     return (
+      /*
         <div id="accordion" role="tablist" aria-multiselectable="true">
             <div className="card">
                 <div className="card-header" role="tab" id={this.headerid}>
@@ -27,6 +25,8 @@ export default class Fgresultitem extends React.Component {
                 <div id={this.props.collapseid} className="collapse" role="tabpanel" aria-labelledby={this.headerid}>
                     <div className="card-block card-results">
                         <b>{this.props.gamename}</b>
+                        */
+
                         <div className="card-block card-results ">
                                 <div className="block">
                                     <span className="label label-default-cherry">Sport</span>: {this.props.sport}
@@ -41,10 +41,10 @@ export default class Fgresultitem extends React.Component {
                                     <span className="label label-default-cherry"># of Players</span>:{this.props.curplayers} of {this.props.maxplayers}
                                 </div>
                         </div>
-                    </div>
+                  /*  </div>
                 </div>
            </div>
-      </div>
+      </div> */
     )
   }
 }

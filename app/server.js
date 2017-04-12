@@ -1,4 +1,5 @@
-import {readDocument, writeDocument, addDocument} from './database.js';
+import {readDocument, writeDocument, addDocument, readManyDocs} from './database.js';
+//import data from './database.js';
 
 /**
  * Emulates how a REST call is *asynchronous* -- it calls your function back
@@ -26,22 +27,13 @@ export function getSuggestedGames(user, cb) {
   var gameData = readDocument('suggestedgames', userData);
   emulateServerReturn(gameData,cb);
 }
-/**
- * Expand the resultItem by changing the state of the expandVal
- * Provides an updated expandVal in the response.
- */
-export function expandFgResult(fgResultId, expandVal, cb) {
-  var resultItem = readDocument('fgResultList', fgResultId);
-  resultItem.expandResult;
-  writeDocument('fgResultList', resultItem);
-  // Return a resolved version of the likeCounter
-  emulateServerReturn(resultItem.expandVal, cb);
-}
 
-/**
+/*
+
+
  * Compress the resultItem by changing the state of the expandVal
  * Provides an updated expandVal in the response.
- */
+
 export function compressFgResult(fgResultId, expandVal, cb) {
 
   var resultItem = readDocument('fgResultList', fgResultId);
@@ -61,7 +53,45 @@ export function compressFgResult(fgResultId, expandVal, cb) {
   emulateServerReturn(resultItem.expandVal, cb);
 }
 
-export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+
+
+
+export function readAllDbType(dbEntryType) {
+  return JSONClone(data[dbEntryType])
+}
+
+*/
+
+export function matchingGames(sport, skillLevel, loc, cb) {
+  var i = 1;
+  var checkGame;
+//  var keys = Object.keys(allGames);
+  var matchedGames = [];
+  while((checkGame = readDocument("games",i))){
+    if(checkGame.sport === sport || checkGame.skillLvl === skillLevel ||checkGame.location === location){
+      matchedGames = matchedGames + checkGame;
+    }
+    i++;
+
+
+  }
+  emulateServerReturn(matchedGames, cb);
+
+
+
+}
+
+/*
+export function search4Game(gameID, cb) {
+  var gameData = readDocument('games', gameID);
+  if (gameData._id === gameID) {
+    writeDocument('fgResultList', gameData);
+  }
+  emulateServerReturn(gameData, cb);
+
+*/
+
+export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   var newGame = {
     "gameName": gameName,
     "description": description,
@@ -80,4 +110,6 @@ export function createGame(gameName, description, location, date, time, user, ma
   // Add the game to the database.
   // Returns the game w/ an ID assigned.
   newGame = addDocument('games', newGame);
+  emulateServerReturn(newGame, cb);
+
 }

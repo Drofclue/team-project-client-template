@@ -58,13 +58,13 @@ var initialData = {
       "maxPlayers": 20,
       "minAge": 16,
       "maxAge": 30,
-      "sport": "Soccer",
-      "skillLvl": "Novice-Intermerdiate",
+      "sport": "soccer",
+      "skillLvl": "Novice",
       "league": "Not American Football"
     },
     "2": {
       "_id":2,
-      "gameName": "Not European Football",
+      "gameName": "Not European Fooaseball",
       "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
       "location":"Hadley, MA",
       "date": "5/20/17",
@@ -74,12 +74,12 @@ var initialData = {
       "minAge": 20,
       "maxAge": 28,
       "sport":"Football",
-      "skillLvl": "Intermediate-Advanced",
+      "skillLvl": "Advanced",
       "league":"American Sports"
     },
     "3":{
       "_id":3,
-      "gameName": "New to Curling",
+      "gameName": "Nude to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
       "location":"Easthampton, MA",
       "date": "5/22/17",
@@ -108,6 +108,9 @@ function JSONClone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
+export function readManyDocs(collection){
+  return JSONClone(data[collection]);
+}
 /**
  * Emulates reading a "document" from a NoSQL database.
  * Doesn't do any tricky document joins, as we will cover that in the latter
