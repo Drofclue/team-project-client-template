@@ -12,7 +12,7 @@ export default class UserProfile extends React.Component {
   render(){
     return (
       <div>
-        <UserProfileProfilePic propic="img/lingodaddy_profile_pic.jpg" name={this.props.name} username={this.props.username}age={this.props.age} gender={this.props.gender}>
+        <UserProfileProfilePic propic="img/lingodaddy_profile_pic.jpg" name={this.props.userData.name} username={this.props.userData.username}age={this.props.userData.age} gender={this.props.userData.gender}>
         </UserProfileProfilePic>
         <UserProfileSportsAndLeagues></UserProfileSportsAndLeagues>
         <UserProfileRecentGames></UserProfileRecentGames>

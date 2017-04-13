@@ -3,7 +3,7 @@ import LeftNavBar from './leftnavbar';
 import RightSideBar from './rightsidebar';
 import Footer from './footer.js';
 import UserProfile from './userprofile.js';
-import getUserData from '../server';
+import {getUserData} from '../server';
 
 export default class UserProfilePage extends React.Component {
   constructor(props) {
