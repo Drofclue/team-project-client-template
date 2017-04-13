@@ -22,6 +22,20 @@ var initialData = {
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
+    },
+    "2":{
+      "._id":1,
+      "username": "BroDaddy901",
+      "name": "Lingo Daddy",
+      "gender": "Helicopter",
+      "sports": ["Baseball","Bowling","Muy Thai"],
+      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "age": "24",
+      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[]/* List of message Items specific to user-user conversation*/
     }
   },
   // League information
@@ -29,7 +43,9 @@ var initialData = {
      // Example League listing, this league has id "1"
      "1":{
        "._id":1,
-       "leagName": "NewToSports",
+       "leagName": "Not New to Sports",
+       "status": "Open",
+       "memCount": "273",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -39,6 +55,8 @@ var initialData = {
      "2":{
        "._id":2,
        "leagName": "Middle Aged Bowlers",
+       "status": "Open",
+       "memCount": "273",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members

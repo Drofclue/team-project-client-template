@@ -22,6 +22,12 @@ export function getGameData(game, cb) {
   emulateServerReturn(gameData, cb);
 }
 
+export function getLeagueData(league, cb) {
+  var leagueData = readDocument('leagues', league);
+  emulateServerReturn(leagueData, cb);
+}
+
+
 export function getSuggestedGames(user, cb) {
   var userData = readDocument('users', user);
   var gameData = readDocument('suggestedgames', userData);
