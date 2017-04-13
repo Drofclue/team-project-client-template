@@ -8,16 +8,14 @@ import Leaguegame from './leaguegame';
 export default class League extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      contents: []
-    };
+    this.state = props
   }
   render() {
     return (
       <div className="col-md-7 text-left">
       <div className="media league-name">
-          <Leaguedes title="Middle Aged Bowlers" status="Open"
-                        count="273"  image ="img/middle-aged-bowler.jpg">
+          <Leaguedes title={this.props.leagueData.leagName} status={this.props.leagueData.status}
+                        count={this.props.leagueData.memCount}  image ="img/middle-aged-bowler.jpg">
           </Leaguedes>
           <div className="col-md-5">
           <h1 className="sportswe"><u>Sports We Play</u></h1>
