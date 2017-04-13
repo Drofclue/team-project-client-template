@@ -12,11 +12,11 @@ var initialData = {
     "1":{
       "._id":1,
       "username": "LingoDaddy42",
-      "name": "Lingo Daddy",
+      "name": "Lingo a",
       "gender": "Helicopter",
       "sports": ["Baseball","Bowling","Muy Thai"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
-      "age": "24",
+      "age": "79",
       "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
@@ -45,9 +45,10 @@ var initialData = {
        "._id":1,
        "leagName": "Not New to Sports",
        "status": "Open",
-       "memCount": "273",
+       "memCount": "209",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
+       "skill":["Novice, Intermediate"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[] // List of the games associated with the league, uses game ID# reference
 
@@ -55,10 +56,11 @@ var initialData = {
      "2":{
        "._id":2,
        "leagName": "Middle Aged Bowlers",
-       "status": "Open",
-       "memCount": "273",
+       "status": "Closed",
+       "memCount": "666",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
+       "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[] // List of the games associated with the league, uses game ID# reference
 

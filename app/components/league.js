@@ -10,6 +10,7 @@ export default class League extends React.Component {
     super(props);
     this.state = props
   }
+
   render() {
     return (
       <div className="col-md-7 text-left">

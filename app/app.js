@@ -15,7 +15,7 @@ import GamePage from './components/gamepage.js'
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
-    <LeaguePage league={1}/>,
+    <LeaguePage league={2}/>,
     document.getElementById('leaguepage')
   );
 }else if (document.getElementById('createagame')!=null){
@@ -55,7 +55,7 @@ if (document.getElementById('leaguepage')!=null){
   )
 }else if (document.getElementById('userprofilepage')!=null){
   ReactDOM.render(
-    <UserProfilePage user={1}/>,
+    <UserProfilePage user={2}/>,
     document.getElementById('userprofilepage')
   );
 }else if (document.getElementById('gamepage')!=null){
