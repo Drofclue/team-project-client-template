@@ -70,8 +70,9 @@ var initialData = {
 
      }
    },
-  "games": [
-    {"_id": 1,
+  "games": {
+    "1": {
+      "_id": 1,
       "gameName": "Not American Football",
       "description": "Not American Football welcomes all people who want to play Fùtbol... except for people who are really good.",
       "location": "Amherst, MA",
@@ -85,7 +86,7 @@ var initialData = {
       "skillLvl": "Novice",
       "league": "Not American Football"
     },
-    {
+    "2": {
       "_id":2,
       "gameName": "Not European Fooaseball",
       "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
@@ -100,7 +101,7 @@ var initialData = {
       "skillLvl": "Advanced",
       "league":"American Sports"
     },
-    {
+    "3":{
       "_id":3,
       "gameName": "Nude to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
@@ -115,7 +116,7 @@ var initialData = {
       "skillLvl": "Beginner",
       "league":"Independent"
     }
-  ]
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));

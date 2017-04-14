@@ -69,15 +69,17 @@ export function readAllDbType(dbEntryType) {
 */
 
 export function matchingGames(sport, skillLevel, loc, cb) {
-  var i = 0;
-  var allGames = readManyDocs("games");
+  var i = 1;
+  var checkGame;
 //  var keys = Object.keys(allGames);
   var matchedGames = [];
-  for(i;i< allGames.length; i++){
-    var curGame = allGames[i];
-    if(curGame.sport === sport || curGame.skillLvl === skillLevel ||curGame.location === loc){
-      matchedGames.push(curGame);
+  while((checkGame = readDocument("games",i))){
+    if(checkGame.sport === sport || checkGame.skillLvl === skillLevel ||checkGame.location === location){
+      matchedGames = matchedGames + checkGame;
     }
+    i++;
+
+
   }
   emulateServerReturn(matchedGames, cb);
 
