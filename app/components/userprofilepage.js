@@ -29,7 +29,7 @@ export default class UserProfilePage extends React.Component {
           <div className="col-md-7 text-left">
             <UserProfile userData={this.state}/>
           </div>
-          <RightSideBar />
+          <RightSideBar userData={this.state}/>
         </div>
         <Footer />
       </div>
