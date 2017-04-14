@@ -34,7 +34,7 @@ export default class League extends React.Component {
             <div className="container-fluid description">
               <h3><b>Group Description</b></h3>
               <Groupdesc>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum, sem nec gravida cursus, mi mi eleifend eros, ullamcorper molestie quam nisi at diam. Integer ligula felis, consequat in orci sed, fringilla ultricies purus. Donec vehicula, felis nec varius faucibus, arcu augue vulputate augue, sit amet fringilla sem orci cursus elit. Nullam eu lacinia eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum, sem nec gravida cursus, mi mi eleifend eros, ullamcorper molestie quam nisi at diam. Integer ligula felis, consequat in orci sed, fringilla ultricies purus. Donec vehicula, felis nec varius faucibus, arcu augue vulputate augue, sit amet fringilla sem orci cursus elit. Nullam eu lacinia eros.
+                {this.props.leagueData.description}
               </Groupdesc>
             </div>
           </div>

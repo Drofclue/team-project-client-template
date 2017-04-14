@@ -10,6 +10,7 @@ export default class LeaguePage extends React.Component {
   constructor(props) {
     super(props);
     this.state=props;
+    userContents : []
   }
   refresh() {
     getLeagueData(this.props.league, (leagueData) => {
@@ -26,7 +27,7 @@ export default class LeaguePage extends React.Component {
         <div className="row content">
           <LeftNavBar />
           <League leagueData= {this.state}/>
-          <RightSideBarLeague/>
+          <RightSideBarLeague leagueData = {this.state}/>
         </div>
         <Footer />
       </div>

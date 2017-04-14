@@ -15,7 +15,7 @@ import GamePage from './components/gamepage.js'
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
-    <LeaguePage league={2}/>,
+    <LeaguePage league={1}/>,
     document.getElementById('leaguepage')
   );
 }else if (document.getElementById('createagame')!=null){

@@ -44,25 +44,29 @@ var initialData = {
      "1":{
        "._id":1,
        "leagName": "Not New to Sports",
+       "currentUsername": "Bingomommy512",
        "status": "Open",
        "memCount": "209",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
        "skill":["Novice, Intermediate"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":[] // List of the games associated with the league, uses game ID# reference
+       "games":[],// List of the games associated with the league, uses game ID# reference
+       "description": "This is a sample description for a league page"
 
      },
      "2":{
        "._id":2,
        "leagName": "Middle Aged Bowlers",
+       "currentUsername": "Calvin",
        "status": "Closed",
        "memCount": "666",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":[] // List of the games associated with the league, uses game ID# reference
+       "games":[], // List of the games associated with the league, uses game ID# reference
+       "description": "This is a sample description for another different league page"
 
      }
    },
