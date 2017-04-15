@@ -1,4 +1,4 @@
-import {readDocument, writeDocument, addDocument, readManyDocs} from './database.js';
+import {readDocument, writeDocument, addDocument, getCollection} from './database.js';
 //import data from './database.js';
 
 /**
@@ -35,54 +35,45 @@ export function getSuggestedGames(user, cb) {
 /*
 
 
- * Compress the resultItem by changing the state of the expandVal
- * Provides an updated expandVal in the response.
+export function deleteFeedItem(feedItemId, cb) {
+ // Assumption: The current user authored this feed item.
+ deleteDocument('feedItems', feedItemId);
+ // Remove references to this feed item from all other feeds.
+ var feeds = getCollection('feeds');
+ var feedIds = Object.keys(feeds);
+ feedIds.forEach((feedId) => {
+   var feed = feeds[feedId];
+   var itemIdx = feed.contents.indexOf(feedItemId);
+   if (itemIdx !== -1) {
+     // Splice out of array.
+     feed.contents.splice(itemIdx, 1);
+     // Update feed.
+     writeDocument('feeds', feed);
+   }
+ });
 
-export function compressFgResult(fgResultId, expandVal, cb) {
-
-  var resultItem = readDocument('fgResultList', fgResultId);
-  // Find the array index that contains the user's ID.
-  // (We didn't *resolve* the FeedItem object, so it is just an array of user IDs)
-  var expandStatus = resultItem.expandVal;
-  // -1 means the user is *not* in the likeCounter, so we can simply avoid updating
-  // anything if that is the case: the user already doesn't like the item.
-  if (expandStatus === true) {
-    // calls the expandResult Function defined in fgresultitem
-    resultItem.collapseResult;
-    writeDocument('fgResultList', resultItem);
-  }
-  // Return a resolved version of the likeCounter
-
-  // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
-  emulateServerReturn(resultItem.expandVal, cb);
+ // Return nothing. The return just tells the client that
+ // the server has acknowledged the request, and that it has
+ // been a success.
+ emulateServerReturn(null, cb);
 }
-
-
-
-
-export function readAllDbType(dbEntryType) {
-  return JSONClone(data[dbEntryType])
-}
-
 */
 
-export function matchingGames(sport, skillLevel, loc, cb) {
-  var i = 1;
-  var checkGame;
-//  var keys = Object.keys(allGames);
+export function matchingGames(sportPassed, skillPassed, locPasssed, cb) {
   var matchedGames = [];
-  while((checkGame = readDocument("games",i))){
-    if(checkGame.sport === sport || checkGame.skillLvl === skillLevel ||checkGame.location === location){
-      matchedGames = matchedGames + checkGame;
+  var allGames = getCollection('games');
+  var gameIds = Object.keys(allGames);
+  gameIds.forEach((gameId) => {
+    var curGame = allGames[gameId];
+    var curSport = curGame.sport;
+    var curSkill = curGame.skillLvl;
+    var curLoc = curGame.location;
+    if (curSport === sportPassed & curSkill === skillPassed & curLoc === locPasssed) {
+      matchedGames.push(curGame);
     }
-    i++;
+  });
 
-
-  }
   emulateServerReturn(matchedGames, cb);
-
-
-
 }
 
 /*
