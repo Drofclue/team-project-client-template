@@ -3,6 +3,7 @@ import LeftNavBar from './leftnavbar';
 import RightSideBar from './rightsidebar';
 import Footer from './footer.js';
 
+
 export default class Template extends React.Component {
   render(){
     return (

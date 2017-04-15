@@ -50,7 +50,7 @@ if (document.getElementById('leaguepage')!=null){
   )
 }else if (document.getElementById('highlightspage')!=null){
   ReactDOM.render(
-    <HighLightsPage />,
+    <HighLightsPage user={2}/>,
     document.getElementById('highlightspage')
   )
 }else if (document.getElementById('userprofilepage')!=null){

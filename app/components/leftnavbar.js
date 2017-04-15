@@ -1,4 +1,6 @@
 import React from 'react';
+import {ResetDatabase} from '../database.js'
+
 export default class LeftNavBar extends React.Component {
   render() {
     return (
@@ -25,7 +27,7 @@ export default class LeftNavBar extends React.Component {
           <a href="#"><i className="fa fa-fw fa-envelope"></i> Messages</a>
         </li>
         <li role="presentation">DEBUG</li>
-        <li role="presentation" id="db-reset"></li>
+        <ResetDatabase />
       </ul>
     </div>
     )

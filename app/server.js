@@ -18,17 +18,17 @@ function emulateServerReturn(data, cb) {
  */
  function getHighlightsItemSync(highlightsItemId) {
     var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-    // Resolve 'like' counter.
-    highlightsItem.likeCounter =
-      highlightsItem.likeCounter.map((id) => readDocument('users', id));
+    // Resolve 'rsvp' counter.
+    highlightsItem.rsvpCounter =
+      highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
     // Assuming a StatusUpdate. If we had other types of
     // highlightsItems in the DB, we would
     // need to check the type and have logic for each type.
-    highlightsItem.contents.author =
-      readDocument('users', highlightsItem.contents.author);
+    highlightsItem.contents.user =
+      readDocument('users', highlightsItem.contents.user);
     // Resolve comment author.
     highlightsItem.comments.forEach((comment) => {
-      comment.author = readDocument('users', comment.author);
+      comment.user = readDocument('users', comment.user);
     });
     return highlightsItem;
   }
@@ -39,10 +39,11 @@ function emulateServerReturn(data, cb) {
    * @param cb A Function object, which we will invoke when the highlights's data is available.
    */
   export function getHighlightsData(user, cb) {
+    //console.log(user);
     // Get the User object with the id "user".
     var userData = readDocument('users', user);
     // Get the highlights object for the user.
-    var highlightsData = readDocument('highlightss', userData.highlights);
+    var highlightsData = readDocument('highlights', userData.highlights);
     // Map the highlights's highlightsItem references to actual highlightsItem objects.
     // Note: While map takes a callback function as an argument, it is
     // synchronous, not asynchronous. It calls the callback immediately.
@@ -52,56 +53,53 @@ function emulateServerReturn(data, cb) {
     // invokes (calls) the "cb" function some time in the future.
     emulateServerReturn(highlightsData, cb);
   }
+  export function postComment(highlightsItemId, author, contents, cb) {
+    // Since a CommentThread is embedded in a HighlightsItem object,
+    // we don't have to resolve it. Read the document,
+    // update the embedded object, and then update the
+    // document in the database.
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    highlightsItem.comments.push({
+      "author": author,
+      "contents": contents,
+      "postDate": new Date().getTime()
+    });
+    writeDocument('highlightsItems', highlightsItem);
+    // Return a resolved version of the highlights item so React can
+    // render it.
+    emulateServerReturn(getHighlightsItemSync(highlightsItemId), cb);
+  }
+  /**
+   * Updates a highlights item's rsvpCounter by adding the user to the rsvpCounter.
+   * Provides an updated rsvpCounter in the response.
+   */
+  export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    // Normally, we would check if the user already rsvpd this comment.
+    // But we will not do that in this mock server.
+    // ('push' modifies the array by adding userId to the end)
+    highlightsItem.rsvpCounter.push(userId);
+    writeDocument('highlightsItems', highlightsItem);
+    // Return a resolved version of the rsvpCounter
+    emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  }
 
-// export function expandFgResult(fgResultId, expandVal, cb) {
-//   var resultItem = readDocument('fgResultList', fgResultId);
-//   resultItem.expandResult;
-//   writeDocument('fgResultList', resultItem);
-//   // Return a resolved version of the likeCounter
-//   emulateServerReturn(resultItem.expandVal, cb);
-// }
-//
-// /**
-//  * Compress the resultItem by changing the state of the expandVal
-//  * Provides an updated expandVal in the response.
-//  */
-// export function compressFgResult(fgResultId, expandVal, cb) {
-//
-//   var resultItem = readDocument('fgResultList', fgResultId);
-//   // Find the array index that contains the user's ID.
-//   // (We didn't *resolve* the highlightsItem object, so it is just an array of user IDs)
-//   var expandStatus = resultItem.expandVal;
-//   // -1 means the user is *not* in the likeCounter, so we can simply avoid updating
-//   // anything if that is the case: the user already doesn't like the item.
-//   if (expandStatus === true) {
-//     // calls the expandResult Function defined in fgresultitem
-//     resultItem.collapseResult;
-//     writeDocument('fgResultList', resultItem);
-//   }
-//   // Return a resolved version of the likeCounter
-//
-//   // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
-//   emulateServerReturn(resultItem.expandVal, cb);
-// }
-//
-// export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
-//   var newGame = {
-//     "gameName": gameName,
-//     "description": description,
-//     "location": location,
-//     "date": date,
-//     "time": time,
-//     "currPlayers": [user],
-//     "maxPlayers": maxPlayers,
-//     "minAge": minAge,
-//     "maxAge": maxAge,
-//     "sport": sport,
-//     "skillLvl": skillLvl,
-//     "league": league
-//   };
-//
-//   // Add the game to the database.
-//   // Returns the game w/ an ID assigned.
-//   newGame = addDocument('games', newGame);
-//
-// }
+  /**
+   * Updates a highlights item's rsvpCounter by removing the user from the rsvpCounter.
+   * Provides an updated rsvpCounter in the response.
+   */
+  export function unrsvpHighlightsItem(highlightsItemId, userId, cb) {
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    // Find the array index that contains the user's ID.
+    // (We didn't *resolve* the HighlightsItem object, so it is just an array of user IDs)
+    var userIndex = highlightsItem.rsvpCounter.indexOf(userId);
+    // -1 means the user is *not* in the rsvpCounter, so we can simply avoid updating
+    // anything if that is the case: the user already doesn't rsvp the item.
+    if (userIndex !== -1) {
+      // 'splice' removes items from an array. This removes 1 element starting from userIndex.
+      highlightsItem.rsvpCounter.splice(userIndex, 1);
+      writeDocument('highlightsItems', highlightsItem);
+    }
+    // Return a resolved version of the rsvpCounter
+    emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  }

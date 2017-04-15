@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // Modify with your startup's name!
 var startupName = null;
@@ -7,7 +6,7 @@ var startupName = null;
 // Put your mock objects here, as in Workshop 4
 var initialData = {
 
-  //  User information
+  //  User informatio
   "users":{
     // This user (our default user) has id "1"
     "1":{
@@ -22,7 +21,8 @@ var initialData = {
     },
     "3":{
       "._id":3,
-      "userName": "UMass Indoor Soccer (Football)"
+      "userName": "UMass Indoor Soccer (Football)",
+      "highlights": 3
     },
     "4":{
       "._id":4,
@@ -62,27 +62,22 @@ var initialData = {
           "timestamp": 1453690800000
         }
       ]
-      }
-      // "2": {
-      //   "_id": 3,
-      //   // A list of users that liked the post. Here, "Someone Else" and "Another Person"
-      //   // liked this particular post.
-      //   "rsvpCounter": [],
-      //   // The type and contents of this highlights item. This item happens to be a status
-      //   // update.
-      //   "type": "highlightsUpdate",
-      //   "contents": {
-      //     // ID of the user that posted the status update.
-      //     "user": 1,
-      //     // 01/24/16 3:48PM EST, converted to Unix Time
-      //     // (# of milliseconds since Jan 1 1970 UTC)
-      //     // https://en.wikipedia.org/wiki/Unix_time
-      //     "timestamp": 1453668480000,
-      //     "location": "Northampton, MA",
-      //     "contents": "Indoor at 5 today. Boyden Gym."
-      //   }
-      // }
-    },
+    }
+    // "2": {
+    //   "_id": 3,
+    //   "rsvpCounter": [4],
+    //   // The type and contents of this highlights item. This item happens to be a status
+    //   // update.
+    //   "type": "highlightsUpdate",
+    //   "contents": {
+    //     // ID of the user that posted the status update.
+    //     "user": 3,
+    //     "timestamp": 1453668480000,
+    //     "location": "Northampton, MA",
+    //     "contents": "Indoor at 5 today. Boyden Gym."
+    //   }
+    // }
+  },
     // "highlgihts" collection. Highlights for each FB user.
     "highlights": {
       "2": {
@@ -90,6 +85,11 @@ var initialData = {
         // Listing of highlgihtsItems in the highlights.
         "contents": [1]
       }
+      // "3": {
+      //   "_id": 3,
+      //   // Listing of highlgihtsItems in the highlights.
+      //   "contents": [2]
+      // }
     }
   };
 
@@ -153,7 +153,7 @@ export function resetDatabase() {
 /**
  * Reset database button.
  */
-class ResetDatabase extends React.Component {
+export class ResetDatabase extends React.Component {
   render() {
     return (
       <button className="btn btn-default" type="button" onClick={() => {
@@ -164,8 +164,3 @@ class ResetDatabase extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <ResetDatabase />,
-  document.getElementById('db-reset')
-);
