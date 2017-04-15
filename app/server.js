@@ -79,7 +79,6 @@ function getHighlightsItemSync(highlightsItemId) {
   //   emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
   // }
 
-/*
 
 
 export function matchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed, cb) {
