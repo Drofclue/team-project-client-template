@@ -11,13 +11,22 @@ export default class HighLightsPage extends React.Component {
   this.state = {
   };
 }
+
+refresh() {
+  getHighlightsData(this.props.user, (highlightsData) => {
+    this.setState(highlightsData);
+  });
+}
+
+componentDidMount() {
+  this.refresh();
+}
   render(){
-    getHighlightsData(2, (highlightsData) => this.setState(highlightsData))
     return (
       <div className="container-fluid text-center">
         <div className="row content">
           <LeftNavBar />
-          <Highlights key={this.state._id} user={2} data={this.state}/>
+          <Highlights key={this.state._id} data={this.state}/>
           <RightSideBar />
         </div>
         <Footer />
