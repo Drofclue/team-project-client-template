@@ -13,6 +13,30 @@ import HighLightsPage from './components/highlightspage.js';
 import UserProfilePage from './components/userprofilepage.js';
 import GamePage from './components/gamepage.js'
 
+import { IndexRoute, Router, Route, browserHistory } from 'react-router' // eslint-disable-line no-unused-vars
+
+class SettingsPage extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return (
+      <p>This is the the settings page</p>
+    );
+  }
+}
+
+class TemplatePage extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return <Template user={1} />;
+  }
+}
+
+class App extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return (
+      <div>{this.props.children}</div>
+    )
+  }
+}
+
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
     <LeaguePage league={1}/>,
@@ -35,8 +59,15 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('template')!=null){
   ReactDOM.render(
-    <Template user={1}/>,
-    document.getElementById('template')
+    <Template user={1} />
+    /**(
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={TemplatePage} />
+        <Route path="settings" component={SettingsPage} />
+      </Route>
+    </Router>
+  )*/,document.getElementById('template')
   );
 }else if (document.getElementById('schedule')!=null){
   ReactDOM.render(

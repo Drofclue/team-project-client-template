@@ -113,7 +113,7 @@ var initialData = {
      }
    },
   "games": {
-    "default": {
+    "0": {
       "_id": 0,
       "gameName": "No Game Data",
       "description": "This Game Does Not Exist",
