@@ -208,7 +208,7 @@ function JSONClone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
-export function readManyDocs(collection){
+export function getCollection(collection){
   return JSONClone(data[collection]);
 }
 /**
