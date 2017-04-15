@@ -3,6 +3,12 @@ import UserProfileSport from './userprofile-sportsandleagues-sport';
 import UserProfileLeague from './userprofile-sportsandleagues-league';
 
 export default class UserProfileSportsAndLeagues extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+
   render(){
     return(
       <div>
@@ -23,9 +29,9 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                <UserProfileSport sport="Bowling" skill="Advanced"></UserProfileSport>
-                                <UserProfileSport sport="Water Polo" skill="Novice"></UserProfileSport>
-                                <UserProfileSport sport="Muy Thai" skill="Intermediate"></UserProfileSport>
+                                <UserProfileSport sport = {this.props.userData.sports}></UserProfileSport>
+                                <UserProfileSport></UserProfileSport>
+                                <UserProfileSport></UserProfileSport>
                               </tbody>
                           </table>
                       </div>
