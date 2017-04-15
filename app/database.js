@@ -36,6 +36,30 @@ var initialData = {
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
+    },
+    "3":{
+      "._id":3,
+      "username": "League of Games",
+      "highlights": 3,
+      "name": "Lingo Daddy",
+      "gender": "Helicopter",
+      "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
+      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "age": "24",
+      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[]/* List of message Items specific to user-user conversation*/
+    },
+    "4":{
+      "._id":4,
+      "userName": "Fury of Balls"
+    },
+    "5":{
+      "._id":5,
+      "userName": "Balls of Fury",
+      "sports": ["Soccer"]
     }
   },
   // League information
@@ -131,7 +155,45 @@ var initialData = {
       "skillLvl": "Beginner",
       "league":"Independent"
     }
-  }
+  },
+  "highlightsItems": {
+    "1": {
+      "_id": 3,
+      "rsvpCounter": [4,5],
+      "type": "highlightsUpdate",
+      "contents": {
+        "user": 3,
+        "timestamp": 1453668480000,
+        "location": "Northampton, MA",
+        "contents": "League of Games is pleased to let everyone know that we will be having our first soccer game of the season this Saturday @ 6:00pm in the Southwest fields."
+      },
+      // List of comments on the post
+      "comments": [
+        {
+          // The user of the comment.
+          "user": 4,
+          // The contents of the comment.
+          "contents": "Hope no one comes!",
+          // The date the comment was posted.
+          // 01/24/16 22:00 EST
+          "timestamp": 1453690800000
+        },
+        {
+          "user": 5,
+          "contents": "#rekt",
+          "timestamp": 1453690800000
+        }
+      ]
+    }
+  },
+    // "highlgihts" collection. Highlights for each FB user.
+    "highlights": {
+      "3": {
+        "_id": 3,
+        // Listing of highlgihtsItems in the highlights.
+        "contents": [1]
+      }
+    }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));
@@ -147,7 +209,7 @@ function JSONClone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
-export function readManyDocs(collection){
+export function getCollection(collection){
   return JSONClone(data[collection]);
 }
 /**

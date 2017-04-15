@@ -3,47 +3,106 @@ import HighlightsUpdate from './highlightsupdate.js'
 import HighlightsReactions from './highlightsreactions.js'
 import Comment from './comment.js'
 import CommentEntry from './commententry.js'
+import {unixTimeToString} from '../util.js'
+import {postComment} from '../server';
+import {unrsvpHighlightsItem} from '../server';
+import {rsvpHighlightsItem} from '../server';
 
 export default class HighlightsItem extends React.Component{
+	constructor(props) {
+	super(props);
+	this.state = props.data;
+	}
+	handleCommentPost(commentText) {
+    // Post a comment as user ID 1, which is our mock user!
+    postComment(this.state._id, 1, commentText, (updatedHighlightsItem) => {
+      // Update our state to trigger a re-render.
+      this.setState(updatedHighlightsItem);
+    });
+  }
+	handleRsvpClick(clickEvent) {
+    // Stop the event from propagating up the DOM tree, since we handle it here.
+    // Also prevents the link click from causing the page to scroll to the top.
+    clickEvent.preventDefault();
+    // 0 represents the 'main mouse button' -- typically a left click
+    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
+    if (clickEvent.button === 0) {
+      // Callback function for both the rsvp and unrsvp cases.
+      var callbackFunction = (updatedRsvpCounter) => {
+        // setState will overwrite the 'rsvpCounter' field on the current
+        // state, and will keep the other fields in-tact.
+        // This is called a shallow merge:
+        // https://facebook.github.io/react/docs/component-api.html#setstate
+        this.setState({rsvpCounter: updatedRsvpCounter});
+      };
+
+      if (this.didUserRsvp()) {
+        // User clicked 'unrsvp' button.
+        unrsvpHighlightsItem(this.state._id, 1, callbackFunction);
+      } else {
+        // User clicked 'rsvp' button.
+        rsvpHighlightsItem(this.state._id, 1, callbackFunction);
+      }
+    }
+	}
+	didUserRsvp() {
+    var rsvpCounter = this.state.rsvpCounter;
+    var rsvpd = false;
+    // Look for a rsvpCounter entry with userId 4 -- which is the
+    // current user.
+    for (var i = 0; i < rsvpCounter.length; i++) {
+      if (rsvpCounter[i]._id === 1) {
+        rsvpd = true;
+        break;
+      }
+    }
+    return rsvpd;
+  }
 	render(){
+		var rsvpButtonText = "Rsvp";
+    if (this.didUserRsvp()) {
+      rsvpButtonText = "Unrsvp";
+    }
+		var data = this.props.data;
+		var contents;
+		switch(data.type) {
+			case "highlightsUpdate":
+				// Create a StatusUpdate. Dynamically created React component: needs a key.
+				// Keys only need to be unique among *siblings*, so we can re-use the
+				// same key as the HighlightsItem.
+				contents = (
+					<HighlightsUpdate key={data._id} user={data.contents.user} timestamp={unixTimeToString(data.contents.timestamp)} location={data.contents.location}
+						message={data.contents.contents}>
+					</HighlightsUpdate>
+				);
+				break;
+			default:
+				throw new Error("Unknown HighlightsItem: " + data.type);
+		}
 		return(
 			<div className="col-md-7 text-left mid">
 				<h1> Highlights</h1>
 				<div className="panel panel-default highlights">
 					<div className="panel-body post">
-						<HighlightsUpdate avatar='img/profile.svg' user='League of Games' timestamp='Today at 3:48pm' location='Northampton, MA'
-							message='League of Games is pleased to let everyone know that we will be having our first soccer game of the season this Saturday @ 6:00pm in the Southwest fields.'/>
+						{contents}
 						<HighlightsReactions/>
 						<div className="panel-footer comments">
 							<div className="row people_reacted">
 								<div className="col-md-12">
-									<a href="#">13 people</a> are going
+									<a href="#">{data.rsvpCounter.length} people</a> are going
 								</div>
 							</div>
 							<hr />
-							<Comment avatar='img/bof.png' user='Fury of Balls' message='Hope no one comes!' timestamp='20 hrs'/>
-							<hr />
-							<Comment avatar='img/fob.png' user='Balls of Fury' message='#rekt' timestamp='19 hrs'/>
-							<hr />
-							<CommentEntry avatar='img/you.jpeg'/>
-						</div>
-					</div>
-				</div>
-				<div className="panel panel-default highlights">
-					<div className="panel-body post">
-						<HighlightsUpdate avatar='img/profile.svg' user='UMass Indoor Soccer (Football)' timestamp='Yesterday at 2:05pm' location='Amherst, MA'
-							message='Indoor at 5 today. Boyden gym.'/>
-						<hr />
-						<HighlightsReactions/>
-						<hr />
-						<div className="panel-footer comments">
-							<div className="row people_reacted">
-								<div className="col-md-12">
-									<a href="#">2 people</a> are going
-								</div>
-							</div>
-							<hr />
-							<CommentEntry avatar='img/you.jpeg'/>
+							<CommentEntry onPost={(commentText) => this.handleCommentPost(commentText)}>
+								{
+									data.comments.map((comment, i) => {
+										// i is comment's index in comments array
+										return (
+											<Comment key={i} username={comment.user} timestamp={comment.timestamp} message={comment.contents}></Comment>
+										);
+									})
+								}
+							</CommentEntry>
 						</div>
 					</div>
 				</div>
