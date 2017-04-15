@@ -1,4 +1,5 @@
 import React from 'react';
+import {unixTimeToString} from '../util';
 
 export default class Comment extends React.Component{
   render(){
@@ -10,9 +11,9 @@ export default class Comment extends React.Component{
             </span>
           </div>
           <div className="media-body">
-              <a href="#">{this.props.user}</a>
+              <a href="#">{this.props.user.username}</a>
                 {this.props.message}
-              <br /><a href="#">Like</a> · <a href="#">Reply</a> · {this.props.timestamp}
+              <br /><a href="#">Like</a> · {unixTimeToString(this.props.timestamp)}
           </div>
       </div>
     )
