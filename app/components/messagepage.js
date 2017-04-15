@@ -3,15 +3,29 @@ import LeftNavBar from './leftnavbar';
 import RightSideBar from './rightsidebar';
 import Footer from './footer.js';
 import Message from './message.js';
+import {getUserData} from '../server';
 
 export default class MessagePage extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+  refresh() {
+    getUserData(this.props.user, (userData) => {
+      this.setState(userData);
+    });
+  }
+
+  componentDidMount() {
+    this.refresh();
+  }
   render(){
     return (
       <div className="container-fluid text-center">
         <div className="row content">
           <LeftNavBar />
           <Message />
-          <RightSideBar />
+          <RightSideBar userData={this.state}/>
         </div>
         <Footer />
       </div>

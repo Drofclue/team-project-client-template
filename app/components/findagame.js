@@ -4,16 +4,22 @@
   import Footer from './footer.js';
   import Fgresultlist from './fgresultlist.js';
   import Fgsearchbox from './fgsearchbox.js';
-
+  import {getUserData} from '../server';
 
   export default class Findagame extends React.Component {
     constructor(props){
       super(props)
-      this.state = props.data;
-
+      this.state = props;
+    }
+    refresh() {
+      getUserData(this.props.user, (userData) => {
+        this.setState(userData);
+      });
     }
 
-
+    componentDidMount() {
+      this.refresh();
+    }
 
     render(){
       return (
@@ -26,7 +32,7 @@
               <Fgresultlist></Fgresultlist>
 
             </div>
-            <RightSideBar />
+            <RightSideBar userData={this.state}/>
           </div>
           <Footer />
         </div>

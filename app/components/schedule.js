@@ -4,8 +4,22 @@ import RightSideBar from './rightsidebar';
 import Footer from './footer.js';
 import ScheduleCalendar from './schedulecalendar.js';
 import SchedulePlans from './scheduleplans.js';
+import {getUserData} from '../server';
 
 export default class Schedule extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+  refresh() {
+    getUserData(this.props.user, (userData) => {
+      this.setState(userData);
+    });
+  }
+
+  componentDidMount() {
+    this.refresh();
+  }
   render(){
     return (
       <div className="container-fluid text-center">
@@ -19,7 +33,7 @@ export default class Schedule extends React.Component {
                 </div>
               </div>
           </div>
-          <RightSideBar />
+          <RightSideBar userData={this.state}/>
         </div>
         <Footer />
       </div>

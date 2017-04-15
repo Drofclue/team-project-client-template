@@ -4,8 +4,22 @@
   import Footer from './footer.js';
   import CreateAGameBasic from './createagamebasic';
   import {createGame} from '../server';
+  import {getUserData} from '../server';
 
   export default class CreateAGame extends React.Component {
+    constructor(props){
+      super(props);
+      this.state=props;
+    }
+    refresh() {
+      getUserData(this.props.user, (userData) => {
+        this.setState(userData);
+      });
+    }
+
+    componentDidMount() {
+      this.refresh();
+    }
 
     onSubmit(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
     // Send to server.
@@ -29,7 +43,7 @@
                   </div>
                 </div>
             </div>
-            <RightSideBar />
+            <RightSideBar userData={this.state}/>
           </div>
           <Footer />
         </div>

@@ -4,8 +4,23 @@
   import Footer from './footer.js';
   import CreateAGameBasic from './createagamebasic';
   import CreateAGameLeagueOptions from './createagameleagueoptions'
+  import {getUserData} from '../server';
 
   export default class CreateAGameLeague extends React.Component {
+    constructor(props){
+      super(props);
+      this.state=props;
+    }
+    refresh() {
+      getUserData(this.props.user, (userData) => {
+        this.setState(userData);
+      });
+    }
+
+    componentDidMount() {
+      this.refresh();
+    }
+
     render(){
       return (
         <div className="container-fluid text-center">
@@ -21,7 +36,7 @@
                   </div>
                 </div>
             </div>
-            <RightSideBar />
+            <RightSideBar userData={this.state}/>
           </div>
           <Footer />
         </div>

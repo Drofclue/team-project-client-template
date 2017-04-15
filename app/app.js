@@ -20,17 +20,17 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('createagame')!=null){
   ReactDOM.render(
-    <CreateAGame />,
+    <CreateAGame user={1} />,
     document.getElementById('createagame')
   );
 }else if (document.getElementById('createagameleague')!=null){
   ReactDOM.render(
-    <CreateAGameLeague />,
+    <CreateAGameLeague user={1}/>,
     document.getElementById('createagameleague')
   );
 }else if (document.getElementById('findagame')!=null){
   ReactDOM.render(
-    <Findagame />,
+    <Findagame user={1}/>,
     document.getElementById('findagame')
   );
 }else if (document.getElementById('template')!=null){
@@ -40,17 +40,17 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('schedule')!=null){
   ReactDOM.render(
-    <Schedule />,
+    <Schedule user={1}/>,
     document.getElementById('schedule')
   );
 }else if (document.getElementById('messagepage')!=null){
   ReactDOM.render(
-    <MessagePage />,
+    <MessagePage user={1}/>,
     document.getElementById('messagepage')
   )
 }else if (document.getElementById('highlightspage')!=null){
   ReactDOM.render(
-    <HighLightsPage />,
+    <HighLightsPage user={1}/>,
     document.getElementById('highlightspage')
   )
 }else if (document.getElementById('userprofilepage')!=null){
@@ -60,7 +60,7 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('gamepage')!=null){
   ReactDOM.render(
-    <GamePage />,
+    <GamePage user={1}/>,
     document.getElementById('gamepage')
   );
 }
