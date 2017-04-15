@@ -5,12 +5,12 @@ export default class UserProfileSport extends React.Component {
     super(props);
     this.state=props;
   }
-  
+
   render(){
     return(
       <tr>
           <td>{this.props.sport}</td>
-          <td>{this.props.skill}</td>
+          <td>{this.props.skillLvl}</td>
       </tr>
     )
   }

@@ -14,7 +14,7 @@ var initialData = {
       "username": "LingoDaddy42",
       "name": "Lingo a",
       "gender": "Helicopter",
-      "sports": ["Baseball","Bowling","Muy Thai"],
+      "sports": [1,2,3], //an array of sports that a user participates in. Uses ID numbers
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "79",
       "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -28,7 +28,7 @@ var initialData = {
       "username": "BroDaddy901",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
-      "sports": ["Baseball","Bowling","Muy Thai"],
+      "sports": [1,2,3],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
       "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
