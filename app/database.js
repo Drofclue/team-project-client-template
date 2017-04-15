@@ -36,11 +36,11 @@ var initialData = {
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
-    }
+    },
     "3":{
       "._id":3,
       "username": "League of Games",
-      "highlights": 3
+      "highlights": 3,
       "name": "Lingo Daddy",
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
@@ -61,6 +61,7 @@ var initialData = {
       "userName": "Balls of Fury",
       "sports": ["Soccer"]
     }
+  },
   // League information
    "leagues" : {
      // Example League listing, this league has id "1"
@@ -154,7 +155,7 @@ var initialData = {
       "skillLvl": "Beginner",
       "league":"Independent"
     }
-  }
+  },
   "highlightsItems": {
     "1": {
       "_id": 3,
