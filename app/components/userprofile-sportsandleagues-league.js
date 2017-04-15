@@ -1,5 +1,5 @@
 import React from 'react';
-import getLeagueData from '../server';
+import {getLeagueData} from '../server';
 
 export default class UserProfileLeague extends React.Component {
   constructor(props){
@@ -8,7 +8,7 @@ export default class UserProfileLeague extends React.Component {
   }
 
   refresh() {
-    getLeagueData(this.props.leagueID, (leagueData) => {
+    getLeagueData(this.props.league, (leagueData) => {
       this.setState(leagueData);
     });
   }
@@ -16,6 +16,7 @@ export default class UserProfileLeague extends React.Component {
   componentDidMount() {
     this.refresh();
   }
+
   render(){
     return(
       <tr>

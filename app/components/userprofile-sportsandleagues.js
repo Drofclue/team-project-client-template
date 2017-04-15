@@ -51,7 +51,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                  {this.props.leagues ? <UserProfileLeague leagueID={this.props.leagues[0]}/>:null}
+                                  {this.props.leagues ? <UserProfileLeague league={this.props.leagues[0]}/>:null}
                               </tbody>
                           </table>
                       </div>
