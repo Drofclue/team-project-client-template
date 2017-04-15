@@ -71,6 +71,21 @@ var initialData = {
      }
    },
   "games": {
+    "default": {
+      "_id": 0,
+      "gameName": "No Game Data",
+      "description": "This Game Does Not Exist",
+      "location": "N/A",
+      "date": "N/A",
+      "time": "N/A",
+      "currPlayers": [],
+      "maxPlayers": 0,
+      "minAge": 0,
+      "maxAge": 0,
+      "sport": "N/A",
+      "skillLvl": "N/A",
+      "league": "N/A"
+    },
     "1": {
       "_id": 1,
       "gameName": "Not American Football",
@@ -103,7 +118,7 @@ var initialData = {
     },
     "3":{
       "_id":3,
-      "gameName": "Nude to Curling",
+      "gameName": "New to Curling",
       "description":"Want to learn to play the traditional Olympic sport of Canada, come to Eashampton and we can learn together!",
       "location":"Easthampton, MA",
       "date": "5/22/17",

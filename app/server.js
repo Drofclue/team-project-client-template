@@ -27,11 +27,9 @@ export function getLeagueData(league, cb) {
   emulateServerReturn(leagueData, cb);
 }
 
-
 export function getSuggestedGames(user, cb) {
   var userData = readDocument('users', user);
-  var gameData = readDocument('suggestedgames', userData);
-  emulateServerReturn(gameData,cb);
+  emulateServerReturn(userData, cb);
 }
 
 /*

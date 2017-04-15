@@ -5,6 +5,7 @@ export default class UserHub extends React.Component {
     super(props);
     this.state=props;
   }
+  
   render(){
     return(
       <div className="panel panel-default user-hub">
