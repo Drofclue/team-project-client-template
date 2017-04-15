@@ -10,6 +10,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
   }
 
   render(){
+
     return(
       <div>
       <div className="container-fluid">
@@ -29,9 +30,9 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                <UserProfileSport sport = {this.props.sports} skill = {this.props.skillLvls}></UserProfileSport>
-                                <UserProfileSport></UserProfileSport>
-                                <UserProfileSport></UserProfileSport>
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[0]} skill={this.props.skillLvls[0]} />:null}
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[1]} skill={this.props.skillLvls[1]}/>:null}
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[2]} skill={this.props.skillLvls[2]}/>:null}
                               </tbody>
                           </table>
                       </div>
@@ -50,9 +51,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                  <UserProfileLeague league="Middle-Aged Bowling"></UserProfileLeague>
-                                  <UserProfileLeague league="We Play Polo"></UserProfileLeague>
-                                  <UserProfileLeague league="Tuesday Fight Night"></UserProfileLeague>
+                                  {this.props.leagues ? <UserProfileLeague leagueID={this.props.leagues[0]}/>:null}
                               </tbody>
                           </table>
                       </div>
