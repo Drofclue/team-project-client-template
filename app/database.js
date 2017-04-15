@@ -24,7 +24,7 @@ var initialData = {
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "2":{
-      "._id":1,
+      "._id":2,
       "username": "BroDaddy901",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
@@ -36,11 +36,10 @@ var initialData = {
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
-    }
+    },
     "3":{
       "._id":3,
-      "username": "League of Games",
-      "highlights": 3
+      "userName": "Fury of Balls",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
@@ -54,13 +53,33 @@ var initialData = {
     },
     "4":{
       "._id":4,
-      "userName": "Fury of Balls"
+      "username": "League of Games",
+      "highlights": 4,
+      "name": "Lingo Daddy",
+      "gender": "Helicopter",
+      "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
+      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "age": "24",
+      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "5":{
       "._id":5,
       "userName": "Balls of Fury",
-      "sports": ["Soccer"]
-    }
+      "name": "Lingo Daddy",
+      "gender": "Helicopter",
+      "sports": ["Soccer"],
+      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "age": "24",
+      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+      "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
+      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "msgThread":[]/* List of message Items specific to user-user conversation*/
+    },
   // League information
    "leagues" : {
      // Example League listing, this league has id "1"
@@ -76,7 +95,6 @@ var initialData = {
        "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[],// List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for a league page"
-
      },
      "2":{
        "._id":2,
@@ -154,14 +172,14 @@ var initialData = {
       "skillLvl": "Beginner",
       "league":"Independent"
     }
-  }
+  },
   "highlightsItems": {
     "1": {
-      "_id": 3,
-      "rsvpCounter": [4,5],
+      "_id": 4,
+      "rsvpCounter": [3,5],
       "type": "highlightsUpdate",
       "contents": {
-        "user": 3,
+        "user": 4,
         "timestamp": 1453668480000,
         "location": "Northampton, MA",
         "contents": "League of Games is pleased to let everyone know that we will be having our first soccer game of the season this Saturday @ 6:00pm in the Southwest fields."
@@ -170,7 +188,7 @@ var initialData = {
       "comments": [
         {
           // The user of the comment.
-          "user": 4,
+          "user": 3,
           // The contents of the comment.
           "contents": "Hope no one comes!",
           // The date the comment was posted.
@@ -187,12 +205,13 @@ var initialData = {
   },
     // "highlgihts" collection. Highlights for each FB user.
     "highlights": {
-      "3": {
-        "_id": 3,
+      "4": {
+        "_id": 4,
         // Listing of highlgihtsItems in the highlights.
         "contents": [1]
       }
     }
+  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));

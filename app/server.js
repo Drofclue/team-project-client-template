@@ -32,6 +32,53 @@ export function getSuggestedGames(user, cb) {
   emulateServerReturn(userData, cb);
 }
 
+function getHighlightsItemSync(highlightsItemId) {
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    highlightsItem.rsvpCounter =
+      highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
+    highlightsItem.contents.user =
+      readDocument('users', highlightsItem.contents.user);
+    highlightsItem.comments.forEach((comment) => {
+      comment.user = readDocument('users', comment.user);
+    });
+    return highlightsItem;
+  }
+
+  export function getHighlightsData(user, cb) {
+    var userData = readDocument('users', user);
+    var highlightsData = readDocument('highlights', userData.highlights);
+    highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
+    emulateServerReturn(highlightsData, cb);
+  }
+
+  // export function postComment(highlightsItemId, author, contents, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   highlightsItem.comments.push({
+  //     "author": author,
+  //     "contents": contents,
+  //     "postDate": new Date().getTime()
+  //   });
+  //   writeDocument('highlightsItems', highlightsItem);
+  //   emulateServerReturn(getHighlightsItemSync(highlightsItemId), cb);
+  // }
+
+  // export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   highlightsItem.rsvpCounter.push(userId);
+  //   writeDocument('highlightsItems', highlightsItem);
+  //   emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  // }
+  //
+  // export function unrsvpHighlightsItem(highlightsItemId, userId, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   var userIndex = highlightsItem.rsvpCounter.indexOf(userId);
+  //   if (userIndex !== -1) {
+  //     highlightsItem.rsvpCounter.splice(userIndex, 1);
+  //     writeDocument('highlightsItems', highlightsItem);
+  //   }
+  //   emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  // }
+
 /*
 
 
