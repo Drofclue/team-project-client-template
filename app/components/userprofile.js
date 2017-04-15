@@ -14,8 +14,8 @@ export default class UserProfile extends React.Component {
       <div>
         <UserProfileProfilePic propic="img/lingodaddy_profile_pic.jpg" name={this.props.userData.name} username={this.props.userData.username}age={this.props.userData.age} gender={this.props.userData.gender}>
         </UserProfileProfilePic>
-        <UserProfileSportsAndLeagues userData={this.props.userData}></UserProfileSportsAndLeagues>
-        <UserProfileRecentGames></UserProfileRecentGames>
+        <UserProfileSportsAndLeagues sports={this.props.userData.sports} skillLvls={this.props.userData.skillLvl}></UserProfileSportsAndLeagues>
+        <UserProfileRecentGames recentGames={this.props.userData.games} ></UserProfileRecentGames>
       </div>
     )
   }

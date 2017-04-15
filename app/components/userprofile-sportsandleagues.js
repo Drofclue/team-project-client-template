@@ -29,7 +29,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                <UserProfileSport sport = {this.props.userData.sports}></UserProfileSport>
+                                <UserProfileSport sport = {this.props.sports} skill = {this.props.skillLvls}></UserProfileSport>
                                 <UserProfileSport></UserProfileSport>
                                 <UserProfileSport></UserProfileSport>
                               </tbody>

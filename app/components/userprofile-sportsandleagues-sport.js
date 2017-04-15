@@ -10,7 +10,7 @@ export default class UserProfileSport extends React.Component {
     return(
       <tr>
           <td>{this.props.sport}</td>
-          <td>{this.props.skillLvl}</td>
+          <td>{this.props.skill}</td>
       </tr>
     )
   }
