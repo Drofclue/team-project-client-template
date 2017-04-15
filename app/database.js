@@ -17,7 +17,7 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "79",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -31,7 +31,7 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -45,7 +45,7 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -60,7 +60,7 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -74,7 +74,7 @@ var initialData = {
       "sports": ["Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[4,5,6], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#

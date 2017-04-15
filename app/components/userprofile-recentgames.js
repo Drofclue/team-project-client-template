@@ -2,6 +2,12 @@ import React from 'react';
 import UserProfileRecentGame from './userprofile-recentgames-game';
 
 export default class UserProfileRecentGames extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+
   render(){
     return(
       <div>
@@ -30,8 +36,8 @@ export default class UserProfileRecentGames extends React.Component {
                               </tr>
                             </thead>
                             <tbody>
-                              <UserProfileRecentGame date="5/13/2017" city="Hadley" state="MA" sport="Water Polo" league="N/A"></UserProfileRecentGame>
-                              <UserProfileRecentGame date="5/11/217" city="Boston" state="MA" sport="Muy Thai" league="Tuesday Fight Night"></UserProfileRecentGame>
+                              {this.props.games ? <UserProfileRecentGame gameID={this.props.games[0]} />:null}
+                              {this.props.games ? <UserProfileRecentGame gameID={this.props.games[1]}/>:null}
                             </tbody>
                         </table>
                     </div>
