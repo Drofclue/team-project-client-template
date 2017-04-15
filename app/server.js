@@ -1,4 +1,4 @@
-import {readDocument, writeDocument, addDocument, readManyDocs} from './database.js';
+import {readDocument, writeDocument, addDocument, getCollection} from './database.js';
 //import data from './database.js';
 
 /**
@@ -61,7 +61,7 @@ function getHighlightsItemSync(highlightsItemId) {
   //   writeDocument('highlightsItems', highlightsItem);
   //   emulateServerReturn(getHighlightsItemSync(highlightsItemId), cb);
   // }
-
+  //
   // export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
   //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
   //   highlightsItem.rsvpCounter.push(userId);
@@ -82,65 +82,28 @@ function getHighlightsItemSync(highlightsItemId) {
 /*
 
 
- * Compress the resultItem by changing the state of the expandVal
- * Provides an updated expandVal in the response.
-
-export function compressFgResult(fgResultId, expandVal, cb) {
-
-  var resultItem = readDocument('fgResultList', fgResultId);
-  // Find the array index that contains the user's ID.
-  // (We didn't *resolve* the FeedItem object, so it is just an array of user IDs)
-  var expandStatus = resultItem.expandVal;
-  // -1 means the user is *not* in the likeCounter, so we can simply avoid updating
-  // anything if that is the case: the user already doesn't like the item.
-  if (expandStatus === true) {
-    // calls the expandResult Function defined in fgresultitem
-    resultItem.collapseResult;
-    writeDocument('fgResultList', resultItem);
-  }
-  // Return a resolved version of the likeCounter
-
-  // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
-  emulateServerReturn(resultItem.expandVal, cb);
-}
-
-
-
-
-export function readAllDbType(dbEntryType) {
-  return JSONClone(data[dbEntryType])
-}
-
-*/
-
-export function matchingGames(sport, skillLevel, loc, cb) {
-  var i = 1;
-  var checkGame;
-//  var keys = Object.keys(allGames);
+export function matchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed, cb) {
   var matchedGames = [];
-  while((checkGame = readDocument("games",i))){
-    if(checkGame.sport === sport || checkGame.skillLvl === skillLevel ||checkGame.location === location){
-      matchedGames = matchedGames + checkGame;
+  var allGames = getCollection('games');
+  var gameIds = Object.keys(allGames);
+  gameIds.forEach((gameId) => {
+    var curGame = allGames[gameId];
+    var curSport = curGame.sport;
+    var curSkill = curGame.skillLvl;
+    var curLoc = curGame.location;
+    var curMaxPlay = curGame.maxPlayers;
+    var curMinAge = curGame.minAge;
+    var curMaxAge = curGame.maxAge;
+    var curLeague = curGame.league;
+    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') || (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))) {
+      matchedGames.push(curGame);
     }
-    i++;
+  });
 
-
-  }
   emulateServerReturn(matchedGames, cb);
-
-
-
 }
 
-/*
-export function search4Game(gameID, cb) {
-  var gameData = readDocument('games', gameID);
-  if (gameData._id === gameID) {
-    writeDocument('fgResultList', gameData);
-  }
-  emulateServerReturn(gameData, cb);
 
-*/
 
 export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   var newGame = {

@@ -39,7 +39,7 @@ var initialData = {
     },
     "3":{
       "._id":3,
-      "userName": "Fury of Balls",
+      "username": "Fury of Balls",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
@@ -68,7 +68,7 @@ var initialData = {
     },
     "5":{
       "._id":5,
-      "userName": "Balls of Fury",
+      "username": "Balls of Fury",
       "name": "Lingo Daddy",
       "gender": "Helicopter",
       "sports": ["Soccer"],
@@ -79,7 +79,8 @@ var initialData = {
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
-    },
+    }
+  },
   // League information
    "leagues" : {
      // Example League listing, this league has id "1"
@@ -211,7 +212,6 @@ var initialData = {
         "contents": [1]
       }
     }
-  }
 };
 
 var data = JSON.parse(localStorage.getItem(startupName));
@@ -227,7 +227,7 @@ function JSONClone(obj) {
   return JSON.parse(JSON.stringify(obj));
 }
 
-export function readManyDocs(collection){
+export function getCollection(collection){
   return JSONClone(data[collection]);
 }
 /**

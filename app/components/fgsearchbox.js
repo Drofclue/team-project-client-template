@@ -17,11 +17,11 @@ export default class Fgsearchbox extends React.Component {
 
   }
 
-  onSubmit(sport, location, skillLvl /*, maxPlayers, minAge, maxAge, league*/) {
+  onSubmit(sport, location, skillLvl , maxPlayers, minAge, maxAge, league) {
   // Send to server.
   // We could use geolocation to get a location, but let's fix it to Amherst
   // for now.
-  matchingGames(sport, skillLvl, location, (games) => {
+  matchingGames(sport, skillLvl, location, maxPlayers, minAge, maxAge, league, (games) => {
     this.setState({foundGames: games});
     // Database is now updated. Redirect to the game page.
     window.alert("Found "+games.length+ " games based on your search");
@@ -32,14 +32,14 @@ export default class Fgsearchbox extends React.Component {
   fgHandler() {
 
     var locationText = this.state.location.trim();
-    /*var maxPlayersText = this.state.maxPlayers.trim();
+    var maxPlayersText = this.state.maxPlayers.trim();
     var minAgeText = this.state.minAge.trim();
-    var maxAgeText = this.state.maxAge.trim();*/
+    var maxAgeText = this.state.maxAge.trim();
     var sportText = this.state.sport;
     var skillLvlText = this.state.skillLvl;
-     // var leagueText = this.state.league;
+    var leagueText = this.state.league;
     if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-      this.onSubmit(sportText, locationText, skillLvlText/*, gameNameText, descriptionText,  dateText, timeText, maxPlayersText, minAgeText, maxAgeText, leagueText */);
+      this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText );
     }
     else{
       window.alert("Please fill out all of the required fields!");
@@ -53,7 +53,7 @@ export default class Fgsearchbox extends React.Component {
   }
 
   handleChangeSkillLvl(e) {
-    e.preventDefault();
+
     this.setState({skillLvl: e.target.value});
   }
 
@@ -63,53 +63,7 @@ export default class Fgsearchbox extends React.Component {
   }
 
 
-  /*
-      var callbackFunction = ()
-  //  handleSubmitClick(clickEvent) {
-      clickEvent.preventDefault();
-        // 0 represents the 'main mouse button' -- typically a left click
-      if(clickEvent.button === 0) {
-          //callbackFfunction is the cb argument for unlike & Like comment.
-        var callbackFunction = (expandCond) => {
-        this.setState({expandVal: expandCond })
-        };
-
-        if(this.isExpanded()){
-        collapseResult(this.state._id,this.state.expandVal, callbackFunction)
-        }
-        else{
-          expandResult(this.state._id, this.state.expandVal, callbackFunction)
-        }
-      }
-    }
-
-
-    expandResult(){
-      this.setState({expandVal: true});
-    }
-
-    collapseResult(){
-      this.setState({expandVal: false});
-    }
-
-    isExpanded() {
-      var expandStatus = this.state.expandVal;
-      var expanded = false;
-      if(expandStatus === true){
-        expanded = true;
-        break;
-      }
-      return expanded;
-    }
-
-
-
-
-
-    searchGames()
-
-  }
-  */
+  
   render() {
 
     return (
