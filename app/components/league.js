@@ -8,8 +8,10 @@ import Leaguegame from './leaguegame';
 export default class League extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props
-  }
+    this.state = props;
+    }
+
+
 
   render() {
     return (
@@ -21,12 +23,7 @@ export default class League extends React.Component {
           <div className="col-md-5">
           <h1 className="sportswe"><u>Sports We Play</u></h1>
           <div className= "sportsweplay">
-          <Leaguesports>
-          <Leaguesport sport ="Bowling" skill = "Advanced"></Leaguesport>
-          <Leaguesport sport ="Walking" skill = "Beginner-Novice"></Leaguesport>
-          <Leaguesport sport ="Running" skill = "Intermediate"></Leaguesport>
-          <Leaguesport sport ="Hockey" skill = "Advanced"></Leaguesport>
-          <Leaguesport sport ="Frisbee" skill = "Beginner"></Leaguesport>
+          <Leaguesports sports= {this.props.leagueData.sports} skills = {this.props.leagueData.skill}>
           </Leaguesports>
           </div>
           </div>

@@ -31,6 +31,7 @@ export default class SuggestedGames extends React.Component{
                       <ul className="games-list">
                         {
                          this.state.suggestedgames.map((game, i)=> {
+                           if(i<3){
                            if(i!==0){
                              return (
                                <div>
@@ -43,7 +44,7 @@ export default class SuggestedGames extends React.Component{
                                <SuggestedGamesItem gameId={this.state.suggestedgames[i]} />
                               );
                             }
-                         })
+                         }})
                         }
                       </ul>
                   </div>

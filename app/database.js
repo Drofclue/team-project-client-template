@@ -12,6 +12,7 @@ var initialData = {
     "1":{
       "._id":1,
       "username": "LingoDaddy42",
+      "highlights": 4,
       "name": "Lingo a",
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo"],
@@ -27,6 +28,7 @@ var initialData = {
       "._id":2,
       "username": "BroDaddy901",
       "name": "Lingo Daddy",
+      "highlights": 4,
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
@@ -42,6 +44,7 @@ var initialData = {
       "._id":3,
       "username": "Fury of Balls",
       "name": "Lingo Daddy",
+      "highlights": 4,
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
@@ -71,6 +74,7 @@ var initialData = {
       "._id":5,
       "username": "Balls of Fury",
       "name": "Lingo Daddy",
+      "highlights": 4,
       "gender": "Helicopter",
       "sports": ["Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
@@ -93,8 +97,8 @@ var initialData = {
        "memCount": "209",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
-       "skill":["Novice, Intermediate"],
-       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "skill":["Novice","Intermediate"],
+       "members":[1, 2, 3, 4, 5], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[],// List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for a league page"
      },
@@ -107,14 +111,28 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
-       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[], // List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for another different league page"
 
-     }
-   },
+     },
+
+     "3":{
+       "._id":3,
+       "leagName": "Jesuit Club of Birmingham Alabama",
+       "currentUsername": "JesusFreak4210",
+       "status": "Open",
+       "memCount": "2",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
+       "skill":["Novice", "Beginner", "Beginner- Advanced"],
+       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[], // List of the games associated with the league, uses game ID# reference
+       "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
+   }
+ },
   "games": {
-    "default": {
+    "0": {
       "_id": 0,
       "gameName": "No Game Data",
       "description": "This Game Does Not Exist",
