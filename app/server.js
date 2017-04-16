@@ -46,7 +46,9 @@ function getHighlightsItemSync(highlightsItemId) {
 
   export function getHighlightsData(user, cb) {
     var userData = readDocument('users', user);
+  
     var highlightsData = readDocument('highlights', userData.highlights);
+
     highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
     emulateServerReturn(highlightsData, cb);
   }
@@ -81,7 +83,7 @@ function getHighlightsItemSync(highlightsItemId) {
 
 
 
-export function matchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed, cb) {
+export function matchingGames(sportPassed, skillPassed, locPasssed,/* maxPlayPassed, minAgePassed, maxAgePassed, leagPassed,*/ cb) {
   var matchedGames = [];
   var allGames = getCollection('games');
   var gameIds = Object.keys(allGames);
@@ -90,11 +92,12 @@ export function matchingGames(sportPassed, skillPassed, locPasssed, maxPlayPasse
     var curSport = curGame.sport;
     var curSkill = curGame.skillLvl;
     var curLoc = curGame.location;
-    var curMaxPlay = curGame.maxPlayers;
+  /*  var curMaxPlay = curGame.maxPlayers;
     var curMinAge = curGame.minAge;
     var curMaxAge = curGame.maxAge;
     var curLeague = curGame.league;
-    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') || (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))) {
+    */
+    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') /*|| (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))*/)) {
       matchedGames.push(curGame);
     }
   });
