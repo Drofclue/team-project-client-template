@@ -17,7 +17,7 @@ export default class LeftNavBar extends React.Component {
           </p>
         </div>
         <li>
-          <a href="#"><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</a>
+          <a href="schedule.html"><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</a>
         </li>
         <li role="presentation">DEBUG</li>
         <ResetDatabase />
