@@ -96,8 +96,8 @@ var initialData = {
        "memCount": "209",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
-       "skill":["Novice, Intermediate"],
-       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "skill":["Novice","Intermediate"],
+       "members":[1, 2, 3, 4, 5], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[],// List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for a league page"
      },
@@ -110,7 +110,7 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
-       "members":[1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":[], // List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for another different league page"
 
