@@ -33,6 +33,7 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
+      "highlights": 4,
       "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events

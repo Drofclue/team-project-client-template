@@ -1,7 +1,15 @@
 import React from 'react';
 import Fgsearchops from './fgsearchops';
 import {matchingGames} from '../server.js';
+import Fgresultitem from "./fgresultitem";
 
+//import Fgresultlist from './fgresultlist';
+//import {outputResults} from './fgresultlist';
+
+
+
+
+export function giveGames(){return this.matchedGames}
 
 export default class Fgsearchbox extends React.Component {
   constructor(props){
@@ -13,38 +21,48 @@ export default class Fgsearchbox extends React.Component {
       maxAge: "",
       sport: "baseball",
       skillLvl: "beginner",
-      foundGames: []};
+      matchedGames: [],
+      gamesfound: false
+
+    };
 
   }
 
-  onSubmit(sport, location, skillLvl , maxPlayers, minAge, maxAge, league) {
-  // Send to server.
-  // We could use geolocation to get a location, but let's fix it to Amherst
-  // for now.
-  matchingGames(sport, skillLvl, location, maxPlayers, minAge, maxAge, league, (games) => {
-    this.setState({foundGames: games});
-    // Database is now updated. Redirect to the game page.
+  onSubmit(sport, location, skillLvl /*, maxPlayers, minAge, maxAge, league*/) {
+
+  matchingGames(sport, skillLvl, location, /*maxPlayers, minAge, maxAge, league,*/ (games) => {
+    this.setState({matchedGames: (games)});
+    if (this.state.matchedGames) {this.setState({gamesfound: true});}
     window.alert("Found "+games.length+ " games based on your search");
+
   });
+
+
 }
 
 
   fgHandler() {
-
+    var sportText = this.state.sport.trim();
+    var skillLvlText = this.state.skillLvl.trim();
     var locationText = this.state.location.trim();
-    var maxPlayersText = this.state.maxPlayers.trim();
+/*  var maxPlayersText = this.state.maxPlayers.trim();
     var minAgeText = this.state.minAge.trim();
     var maxAgeText = this.state.maxAge.trim();
-    var sportText = this.state.sport;
-    var skillLvlText = this.state.skillLvl;
-    var leagueText = this.state.league;
+    var leagueText = this.state.league;*/
     if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-      this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText );
+      this.onSubmit(sportText, locationText, skillLvlText/*, maxPlayersText, minAgeText, maxAgeText, leagueText */);
+
     }
     else{
       window.alert("Please fill out all of the required fields!");
     }
+
+
   }
+
+
+
+
 
 
   handleChangeSport(e) {
@@ -63,10 +81,36 @@ export default class Fgsearchbox extends React.Component {
   }
 
 
-  
-  render() {
 
-    return (
+  render() {
+    var data = this.state;
+    var contents;
+    switch(data.gamesfound) {
+      case true:
+    // Create a StatusUpdate. Dynamically created React component: needs a key.
+    // Keys only need to be unique among *siblings*, so we can re-use the
+    // same key as the FeedItem.
+    contents = (
+      <div className="panel panel-default panel-results">
+        {data.matchedGames.map((game) => {
+    return (<div className="card">
+       <b>{game.gameName}</b>
+      <Fgresultitem gameName={game.gameName} sport={game.sport} description={game.description} location={game.location} time={game.time} curplayers={game.currPlayers} maxplayers={game.maxPlayers}
+        ></Fgresultitem>
+        </div>
+    )
+  })}
+          </div>
+
+
+
+    );
+    break;
+  default:
+    null//window.alert("Search criteria needed...");
+}
+
+    return (<div>
       <div className="panel-body">
           <div className="form-group row">
               <label htmlFor="sport" className="col-md-3 col-form-label">Sport</label>
@@ -107,8 +151,19 @@ export default class Fgsearchbox extends React.Component {
             <Fgsearchops>
             </Fgsearchops>
           <p>
-              <button type="submit" className="btn pull-right" onClick={(e) => this.fgHandler(e)}>Submit</button>
+              <button type="submit" className="btn pull-right" onClick={(e) => this.fgHandler(e)}>Submit </button>
+
           </p>
+
+
+
+
+
+
+      </div>
+      <div className="panel panel-default panel-results">{contents}
+
+      </div>
       </div>
     )
   }
