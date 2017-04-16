@@ -10,7 +10,7 @@ export default class RightSideBarLeague extends React.Component{
     return(
           <div className="col-md-3 right-bar">
             <UserHub username= {this.props.leagueData.currentUsername} userhubprofpic="img/lingodaddy_profile_pic_userhub.jpg" />
-            <LeagueMemberListItem />
+            <LeagueMemberListItem name = {this.props.leagueData.members}/>
           </div>
     )
   }

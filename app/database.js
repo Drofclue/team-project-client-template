@@ -33,7 +33,6 @@ var initialData = {
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "highlights": 4,
       "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
@@ -98,7 +97,7 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "sports":["Dodgeball","Synchronized Swimming"],
        "skill":["Novice","Intermediate"],
-       "members":[1, 2, 3, 4, 5], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
        "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
        "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
@@ -114,7 +113,7 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
-       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
        "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
        "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
@@ -132,7 +131,7 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced"],
-       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
        "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
        "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
@@ -148,7 +147,7 @@ var initialData = {
      "admin": "LingoDaddy42", // a specific user
      "sports":["Bowling","Walking", "Swimming", "Four Square"],
      "skill":["Novice", "Beginner", "Beginner", "Advanced"],
-     "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+     "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
      "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
      "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
      "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
