@@ -39,7 +39,7 @@ class App extends React.Component { // eslint-disable-line no-unused-vars
 
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
-    <LeaguePage league={3}/>,
+    <LeaguePage league={1}/>,
     document.getElementById('leaguepage')
   );
 }else if (document.getElementById('createagame')!=null){

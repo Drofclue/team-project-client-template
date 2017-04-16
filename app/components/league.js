@@ -1,10 +1,8 @@
 import React from 'react';
 import Leaguedes from './leaguedes';
 import Leaguesports from './leaguesports';
-import Leaguesport from './leaguesport';
 import Groupdesc from './groupdesc';
 import Leagueupcoming from './leagueupcoming';
-import Leaguegame from './leaguegame';
 export default class League extends React.Component {
   constructor(props) {
     super(props);
@@ -35,12 +33,7 @@ export default class League extends React.Component {
               </Groupdesc>
             </div>
           </div>
-          <Leagueupcoming>
-                    <Leaguegame date ="Sunday February 28th" gametitle="Bowling" team= "Young Aged Bowlers" time= "7:00pm EST" location="Amherst Bowling Company" ></Leaguegame>
-                    <Leaguegame date ="Saturday March 3rd" gametitle="Walking" team = "Young Aged Walkers" time= "4:00am EST" location="Umass Amherst Campus" ></Leaguegame>
-                    <Leaguegame date ="Thursday April 4th" gametitle="Running" team = "No one (practice)" time= "5:00pm EST" location="Puffers Pond" ></Leaguegame>
-                    <Leaguegame date ="Monday April 18th" gametitle="Running" team = "Young Aged Bowlers" time= "2:36am EST" location="Sylvan Walkway" ></Leaguegame>
-                    <Leaguegame date ="Tuesday April 27th" gametitle="Bowling" team = "No one (practice)" time= "5:00pm EST" location="TBA" ></Leaguegame>
+          <Leagueupcoming games = {this.props.leagueData.games} dates = {this.props.leagueData.dates} times = {this.props.leagueData.times} locations = {this.props.leagueData.locations} league = {this.props.leagueData.leagName}>
           </Leagueupcoming>
         </div>
         </div>

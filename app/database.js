@@ -36,7 +36,7 @@ var initialData = {
       "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
-      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "leagues":[2], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "3":{
@@ -51,7 +51,7 @@ var initialData = {
       "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
-      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "leagues":[3], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "4":{
@@ -98,7 +98,10 @@ var initialData = {
        "sports":["Dodgeball","Synchronized Swimming"],
        "skill":["Novice","Intermediate"],
        "members":[1, 2, 3, 4, 5], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":[],// List of the games associated with the league, uses game ID# reference
+       "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
+       "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
+       "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+       "locations":["Puffers Pond", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
        "description": "This is a sample description for a league page"
      },
      "2":{
@@ -111,7 +114,10 @@ var initialData = {
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
        "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":[], // List of the games associated with the league, uses game ID# reference
+       "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
+       "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
+       "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+       "locations":["Not Puffers", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
        "description": "This is a sample description for another different league page"
 
      },
@@ -126,9 +132,28 @@ var initialData = {
        "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced"],
        "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":[], // List of the games associated with the league, uses game ID# reference
+       "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
+       "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
+       "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+       "locations":["Puffers Pond", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
        "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
-   }
+   },
+   "4":{
+     "._id":4,
+     "leagName": "Runners club of alberta",
+     "currentUsername": "Jaxon",
+     "status": "Open",
+     "memCount": "4",
+     "admin": "LingoDaddy42", // a specific user
+     "sports":["Bowling","Walking", "Swimming", "Four Square"],
+     "skill":["Novice", "Beginner", "Beginner", "Advanced"],
+     "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+     "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
+     "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
+     "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+     "locations":["Puffers Pond", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
+     "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
+ }
  },
   "games": {
     "0": {
