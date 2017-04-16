@@ -114,8 +114,22 @@ var initialData = {
        "games":[], // List of the games associated with the league, uses game ID# reference
        "description": "This is a sample description for another different league page"
 
-     }
-   },
+     },
+
+     "3":{
+       "._id":3,
+       "leagName": "Jesuit Club of Birmingham Alabama",
+       "currentUsername": "JesusFreak4210",
+       "status": "Open",
+       "memCount": "2",
+       "admin": "LingoDaddy42", // a specific user
+       "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
+       "skill":["Novice", "Beginner", "Beginner- Advanced"],
+       "members":[2, 3, 4, 5, 1], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[], // List of the games associated with the league, uses game ID# reference
+       "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
+   }
+ },
   "games": {
     "0": {
       "_id": 0,
