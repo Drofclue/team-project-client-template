@@ -1,32 +1,33 @@
 import React from 'react';
 import LeftNavBar from './leftnavbar';
 import RightSideBar from './rightsidebar';
+import Highlights from './highlights'
 import Footer from './footer.js';
-import Highlights from './highlights.js';
-import {getHighlightsData} from '../server'
+import {getUserData} from '../server';
 
 export default class HighLightsPage extends React.Component {
   constructor(props) {
-  super(props);
-  this.state = {
-  };
-}
+    super(props);
+    this.state=props;
+  }
+  refresh() {
+    getUserData(this.props.user, (userData) => {
+      this.setState(userData);
+    });
+  }
 
-refresh() {
-  getHighlightsData(this.props.user, (highlightsData) => {
-    this.setState(highlightsData);
-  });
-}
+  componentDidMount() {
+    this.refresh();
+  }
 
-componentDidMount() {
-  this.refresh();
-}
   render(){
     return (
       <div className="container-fluid text-center">
         <div className="row content">
           <LeftNavBar userData={this.state}/>
-          <Highlights key={this.state._id} data={this.state}/>
+            <div className="col-md-7 text-left">
+              <Highlights data={this.state}/>
+            </div>
           <RightSideBar userData={this.state}/>
         </div>
         <Footer />

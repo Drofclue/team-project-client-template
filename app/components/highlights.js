@@ -1,5 +1,6 @@
 import React from 'react';
 import HighlightsItem from './highlightsitem.js'
+import {getHighlightsData} from '../server'
 
 export default class Highlights extends React.Component {
   constructor(props) {
@@ -7,6 +8,16 @@ export default class Highlights extends React.Component {
   this.state = {
     contents: []
   };
+}
+
+refresh() {
+  getHighlightsData(this.props.data, (highlightsData) => {
+    this.setState(highlightsData);
+  });
+}
+
+componentDidMount() {
+  this.refresh();
 }
 
 
