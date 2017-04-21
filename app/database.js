@@ -28,6 +28,7 @@ var initialData = {
     "2":{
       "._id":2,
       "username": "BroDaddy901",
+      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
       "highlights": 4,
       "gender": "Helicopter",
@@ -43,6 +44,7 @@ var initialData = {
     "3":{
       "._id":3,
       "username": "Fury of Balls",
+      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
       "highlights": 4,
       "gender": "Helicopter",
@@ -58,6 +60,7 @@ var initialData = {
     "4":{
       "._id":4,
       "username": "League of Games",
+      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "highlights": 4,
       "name": "Lingo Daddy",
       "gender": "Helicopter",
@@ -73,6 +76,7 @@ var initialData = {
     "5":{
       "._id":5,
       "username": "Balls of Fury",
+      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
       "highlights": 4,
       "gender": "Helicopter",
