@@ -5,6 +5,7 @@ export default class UserHub extends React.Component {
     super(props);
     this.state=props;
   }
+
   render(){
     return(
       <div className="panel panel-default user-hub">
@@ -18,7 +19,7 @@ export default class UserHub extends React.Component {
                       </div>
                   </div>
                   <div className="col-md-10">
-                      <p className="pull-left">Hello, <a href="#">{this.props.username}</a></p>
+                      <p className="pull-left">Hello, <a href="userprofile.html">{this.props.username}</a></p>
                   </div>
               </div>
               <hr />

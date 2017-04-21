@@ -1,4 +1,5 @@
 import React from 'react';
+import {unixTimeToString} from '../util';
 
 export default class HighlightsUpdate extends React.Component{
   render(){
@@ -15,8 +16,8 @@ export default class HighlightsUpdate extends React.Component{
                            </span>
                         </div>
                         <div className="media-body">
-                           <a href="#">{this.props.user}</a>
-                           <br /> {this.props.timestamp} · {this.props.location} ·
+                           <a href="#">{this.props.user.userName}</a>
+                           <br /> {unixTimeToString(this.props.timestamp)} · {this.props.location} ·
                            <span className="glyphicon glyphicon-user"></span>
                         </div>
                      </div>

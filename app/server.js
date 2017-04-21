@@ -1,4 +1,5 @@
-import {readDocument, writeDocument, addDocument} from './database.js';
+import {readDocument, writeDocument, addDocument, getCollection} from './database.js';
+//import data from './database.js';
 
 /**
  * Emulates how a REST call is *asynchronous* -- it calls your function back
@@ -21,47 +22,92 @@ export function getGameData(game, cb) {
   emulateServerReturn(gameData, cb);
 }
 
+export function getLeagueData(league, cb) {
+  var leagueData = readDocument('leagues', league);
+  emulateServerReturn(leagueData, cb);
+}
+
 export function getSuggestedGames(user, cb) {
   var userData = readDocument('users', user);
-  var gameData = readDocument('suggestedgames', userData);
-  emulateServerReturn(gameData,cb);
-}
-/**
- * Expand the resultItem by changing the state of the expandVal
- * Provides an updated expandVal in the response.
- */
-export function expandFgResult(fgResultId, expandVal, cb) {
-  var resultItem = readDocument('fgResultList', fgResultId);
-  resultItem.expandResult;
-  writeDocument('fgResultList', resultItem);
-  // Return a resolved version of the likeCounter
-  emulateServerReturn(resultItem.expandVal, cb);
+  emulateServerReturn(userData, cb);
 }
 
-/**
- * Compress the resultItem by changing the state of the expandVal
- * Provides an updated expandVal in the response.
- */
-export function compressFgResult(fgResultId, expandVal, cb) {
-
-  var resultItem = readDocument('fgResultList', fgResultId);
-  // Find the array index that contains the user's ID.
-  // (We didn't *resolve* the FeedItem object, so it is just an array of user IDs)
-  var expandStatus = resultItem.expandVal;
-  // -1 means the user is *not* in the likeCounter, so we can simply avoid updating
-  // anything if that is the case: the user already doesn't like the item.
-  if (expandStatus === true) {
-    // calls the expandResult Function defined in fgresultitem
-    resultItem.collapseResult;
-    writeDocument('fgResultList', resultItem);
+function getHighlightsItemSync(highlightsItemId) {
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    highlightsItem.rsvpCounter =
+      highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
+    highlightsItem.contents.user =
+      readDocument('users', highlightsItem.contents.user);
+    highlightsItem.comments.forEach((comment) => {
+      comment.user = readDocument('users', comment.user);
+    });
+    return highlightsItem;
   }
-  // Return a resolved version of the likeCounter
 
-  // Don't know how this emulate server return works, so not sure how to fit it in with our use needs
-  emulateServerReturn(resultItem.expandVal, cb);
+  export function getHighlightsData(user, cb) {
+    var userData = readDocument('users', user);
+  
+    var highlightsData = readDocument('highlights', userData.highlights);
+
+    highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
+    emulateServerReturn(highlightsData, cb);
+  }
+
+  // export function postComment(highlightsItemId, author, contents, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   highlightsItem.comments.push({
+  //     "author": author,
+  //     "contents": contents,
+  //     "postDate": new Date().getTime()
+  //   });
+  //   writeDocument('highlightsItems', highlightsItem);
+  //   emulateServerReturn(getHighlightsItemSync(highlightsItemId), cb);
+  // }
+  //
+  // export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   highlightsItem.rsvpCounter.push(userId);
+  //   writeDocument('highlightsItems', highlightsItem);
+  //   emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  // }
+  //
+  // export function unrsvpHighlightsItem(highlightsItemId, userId, cb) {
+  //   var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+  //   var userIndex = highlightsItem.rsvpCounter.indexOf(userId);
+  //   if (userIndex !== -1) {
+  //     highlightsItem.rsvpCounter.splice(userIndex, 1);
+  //     writeDocument('highlightsItems', highlightsItem);
+  //   }
+  //   emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
+  // }
+
+
+
+export function matchingGames(sportPassed, skillPassed, locPasssed,/* maxPlayPassed, minAgePassed, maxAgePassed, leagPassed,*/ cb) {
+  var matchedGames = [];
+  var allGames = getCollection('games');
+  var gameIds = Object.keys(allGames);
+  gameIds.forEach((gameId) => {
+    var curGame = allGames[gameId];
+    var curSport = curGame.sport;
+    var curSkill = curGame.skillLvl;
+    var curLoc = curGame.location;
+  /*  var curMaxPlay = curGame.maxPlayers;
+    var curMinAge = curGame.minAge;
+    var curMaxAge = curGame.maxAge;
+    var curLeague = curGame.league;
+    */
+    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') /*|| (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))*/)) {
+      matchedGames.push(curGame);
+    }
+  });
+
+  emulateServerReturn(matchedGames, cb);
 }
 
-export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+
+
+export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   var newGame = {
     "gameName": gameName,
     "description": description,
@@ -80,4 +126,6 @@ export function createGame(gameName, description, location, date, time, user, ma
   // Add the game to the database.
   // Returns the game w/ an ID assigned.
   newGame = addDocument('games', newGame);
+  emulateServerReturn(newGame, cb);
+
 }

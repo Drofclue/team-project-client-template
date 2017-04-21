@@ -1,80 +1,39 @@
-
-.month {
-    padding: 15px 25px;
-    width: 100%;
-    background: #69af9a;
+#calendar-container .header{
+  background: none;
 }
 
-.month ul {
-    margin: 0;
-    padding: 0;
+#calendar-container{
+  width: 100%;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: Arial;
+  margin:auto;
 }
 
-.month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+#calendar-container>div{
+  padding: 0;
+  margin-bottom: 10px;
 }
 
-.month .prev {
-    float: left;
-    padding-top: 10px;
-}
-
-.month .next {
-    float: right;
-    padding-top: 10px;
+#calendar-month-year{
+  margin: 5px;
 }
 
 
-table, tr, td {
-    border: 1px solid #000000;
-    border-collapse: collapse;
+#calendar-dates>table>tr>td{
+  padding: 5px;
 }
 
-#monthCenter {
-    text-align: center;
+#calendar-dates>table>tr>td{
+  text-decoration: none;
+  margin:20px 20px 20px 20px;
+  width:300px;
+  height:50px;
+  border:1px solid black;
 }
 
-table {
-    width: 100%;
-}
-
-td {
-    width: 10%;
-}
-
-.trsize {
-    height: 70px;
-    table-layout: fixed;
-}
-
-
-.tdsize {
-    width: 5%;
-}
-
-.textCenter {
-    text-align: center;
-}
-
-#textLeft {
-    text-align: left;
-    text-valign : top;
-}
-
-.textColorRed {
-    color: #FF0000;
-}
-
-.textColorBlue {
-    color: #0000FF;
-}
-
-.monthli{
-  text-align:center;
-}
-.yearli{
-  font-size:18px;
+#modalText{
+  text-overflow: ellipsis;
 }

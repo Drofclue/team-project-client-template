@@ -3,7 +3,14 @@ import UserProfileSport from './userprofile-sportsandleagues-sport';
 import UserProfileLeague from './userprofile-sportsandleagues-league';
 
 export default class UserProfileSportsAndLeagues extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+
   render(){
+
     return(
       <div>
       <div className="container-fluid">
@@ -23,9 +30,9 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                <UserProfileSport sport="Bowling" skill="Advanced"></UserProfileSport>
-                                <UserProfileSport sport="Water Polo" skill="Novice"></UserProfileSport>
-                                <UserProfileSport sport="Muy Thai" skill="Intermediate"></UserProfileSport>
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[0]} skill={this.props.skillLvls[0]} />:null}
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[1]} skill={this.props.skillLvls[1]}/>:null}
+                                {this.props.sports ? <UserProfileSport sport={this.props.sports[2]} skill={this.props.skillLvls[2]}/>:null}
                               </tbody>
                           </table>
                       </div>
@@ -44,9 +51,7 @@ export default class UserProfileSportsAndLeagues extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                  <UserProfileLeague league="Middle-Aged Bowling"></UserProfileLeague>
-                                  <UserProfileLeague league="We Play Polo"></UserProfileLeague>
-                                  <UserProfileLeague league="Tuesday Fight Night"></UserProfileLeague>
+                                  {this.props.leagues ? <UserProfileLeague league={this.props.leagues[0]}/>:null}
                               </tbody>
                           </table>
                       </div>

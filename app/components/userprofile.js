@@ -4,13 +4,18 @@ import UserProfileSportsAndLeagues from './userprofile-sportsandleagues';
 import UserProfileRecentGames from './userprofile-recentgames';
 
 export default class UserProfile extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
+
   render(){
     return (
       <div>
-        <UserProfileProfilePic propic="img/lingodaddy_profile_pic.jpg" name="Lingo Daddy" username="Lingodaddy_24" age="59" gender="Helicopter">
+        <UserProfileProfilePic propic="img/lingodaddy_profile_pic.jpg" name={this.props.userData.name} username={this.props.userData.username}age={this.props.userData.age} gender={this.props.userData.gender}>
         </UserProfileProfilePic>
-        <UserProfileSportsAndLeagues></UserProfileSportsAndLeagues>
-        <UserProfileRecentGames></UserProfileRecentGames>
+        <UserProfileSportsAndLeagues sports={this.props.userData.sports} skillLvls={this.props.userData.skillLvl} leagues={this.props.userData.leagues}></UserProfileSportsAndLeagues>
+        <UserProfileRecentGames games={this.props.userData.games} ></UserProfileRecentGames>
       </div>
     )
   }

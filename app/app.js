@@ -13,54 +13,85 @@ import HighLightsPage from './components/highlightspage.js';
 import UserProfilePage from './components/userprofilepage.js';
 import GamePage from './components/gamepage.js'
 
+import { IndexRoute, Router, Route, browserHistory } from 'react-router' // eslint-disable-line no-unused-vars
+
+class SettingsPage extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return (
+      <p>This is the the settings page</p>
+    );
+  }
+}
+
+class TemplatePage extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return <Template user={1} />;
+  }
+}
+
+class App extends React.Component { // eslint-disable-line no-unused-vars
+  render() {
+    return (
+      <div>{this.props.children}</div>
+    )
+  }
+}
+
 if (document.getElementById('leaguepage')!=null){
   ReactDOM.render(
-    <LeaguePage />,
+    <LeaguePage league={1}/>,
     document.getElementById('leaguepage')
   );
 }else if (document.getElementById('createagame')!=null){
   ReactDOM.render(
-    <CreateAGame />,
+    <CreateAGame user={1} />,
     document.getElementById('createagame')
   );
 }else if (document.getElementById('createagameleague')!=null){
   ReactDOM.render(
-    <CreateAGameLeague />,
+    <CreateAGameLeague user={1}/>,
     document.getElementById('createagameleague')
   );
 }else if (document.getElementById('findagame')!=null){
   ReactDOM.render(
-    <Findagame />,
+    <Findagame user={1}/>,
     document.getElementById('findagame')
   );
 }else if (document.getElementById('template')!=null){
   ReactDOM.render(
-    <Template user={1}/>,
-    document.getElementById('template')
+    <Template user={1} />
+    /**(
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={TemplatePage} />
+        <Route path="settings" component={SettingsPage} />
+      </Route>
+    </Router>
+  )*/,document.getElementById('template')
   );
 }else if (document.getElementById('schedule')!=null){
   ReactDOM.render(
-    <Schedule />,
+    <Schedule user={1}/>,
     document.getElementById('schedule')
   );
 }else if (document.getElementById('messagepage')!=null){
   ReactDOM.render(
-    <MessagePage />,
+    <MessagePage user={1}/>,
     document.getElementById('messagepage')
   )
 }else if (document.getElementById('highlightspage')!=null){
   ReactDOM.render(
-    <HighLightsPage />,
+    <HighLightsPage user={1}/>,
     document.getElementById('highlightspage')
   )
 }else if (document.getElementById('userprofilepage')!=null){
   ReactDOM.render(
-    <UserProfilePage />,
+    <UserProfilePage user={1}/>,
     document.getElementById('userprofilepage')
   );
 }else if (document.getElementById('gamepage')!=null){
   ReactDOM.render(
-    <GamePage />,
+    <GamePage user={1}/>,
     document.getElementById('gamepage')
   );
 }
