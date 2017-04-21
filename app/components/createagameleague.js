@@ -25,7 +25,7 @@
       return (
         <div className="container-fluid text-center">
           <div className="row content">
-            <LeftNavBar />
+            <LeftNavBar userData={this.state}/>
             <div className="col-md-7 text-left">
               <h2>Create a Game</h2>
                 <div className="panel panel-default">

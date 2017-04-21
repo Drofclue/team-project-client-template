@@ -16,7 +16,7 @@ export default class LeftNavBar extends React.Component {
         <div className="row">
           <p> <img src="img/cherrypickericon_websize.png" useMap="#mymap" border="0" alt="logo" width="200px" height="200px" />
             <map name="mymap">
-              <area shape="circle" coords="73,135,31 " href="findagame.html" />
+              <Link to={"/findagame/"+this.props.userData.user}><area shape="circle" coords="73,135,31 "/></Link>
               <area shape="circle" coords="140,130,31" href="createagame.html" />
             </map>
           </p>

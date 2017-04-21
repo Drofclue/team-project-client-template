@@ -25,7 +25,7 @@ export default class LeaguePage extends React.Component {
     return (
       <div className="container-fluid text-center">
         <div className="row content">
-          <LeftNavBar />
+          <LeftNavBar leagueData={this.state}/>
           <League leagueData= {this.state}/>
           <RightSideBarLeague leagueData = {this.state}/>
         </div>

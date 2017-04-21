@@ -25,7 +25,7 @@ export default class GamePage extends React.Component {
     return(
       <div className="container-fluid text-center">
         <div className="row content">
-          <LeftNavBar />
+          <LeftNavBar userData={this.state}/>
           <div className="col-md-7 text-left">
             <GamePageData league={this.state.league} desc={this.state.description}
             sport={this.state.sport} location={this.state.location} skill={this.state.skillLvl} date={this.state.date} time={this.state.time} partnum={this.state.currPlayers}>

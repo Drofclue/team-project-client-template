@@ -25,7 +25,7 @@ export default class UserProfilePage extends React.Component {
     return(
       <div className="container-fluid text-center">
         <div className="row content">
-          <LeftNavBar />
+          <LeftNavBar userData={this.state}/>
           <div className="col-md-7 text-left">
             <UserProfile userData={this.state}/>
           </div>

@@ -23,6 +23,12 @@ class SettingsPage extends React.Component {
   }
 }
 
+class FindGamePage extends React.Component {
+  render() {
+    return <Findagame user={1}/>;
+  }
+}
+
 class TemplatePage extends React.Component {
   render() {
     return <Template user={1} />;
@@ -76,11 +82,12 @@ if (document.getElementById('leaguepage')!=null){
     //<Template user={1} />
     (
     <Router history={browserHistory}>
-      <Route path="/template.html" component={App}>
+      <Route path="/" component={App}>
         <IndexRoute component={TemplatePage} />
         <Route path="/settings/:id" component={SettingsPage} />
         <Route path="/schedule/:id" component={SchedulePage} />
         <Route path="/highlights/:id" component={HighLightPage}/>
+        <Route path="findagame/:id" component={FindGamePage}/>
       </Route>
     </Router>
   ),document.getElementById('template')

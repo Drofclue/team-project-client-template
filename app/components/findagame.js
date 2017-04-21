@@ -4,7 +4,7 @@
   import Footer from './footer.js';
   import Fgresultlist from './fgresultlist.js';
   import Fgsearchbox from './fgsearchbox.js';
-  
+
 
   export default class Findagame extends React.Component {
     constructor(props){
@@ -17,7 +17,7 @@
       return (
         <div className="container-fluid text-center">
           <div className="row content">
-            <LeftNavBar />
+            <LeftNavBar userData={this.state}/>
             <div className="col-md-7 text-left">
               <h2>Find a Game</h2>
               <Fgsearchbox></Fgsearchbox>
