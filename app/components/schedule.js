@@ -22,7 +22,7 @@ export default class Schedule extends React.Component {
         return (
             <div className="container-fluid text-center">
                 <div className="row content">
-                    <LeftNavBar/>
+                    <LeftNavBar userData={this.state}/>
                     <div className="col-md-7 text-left">
                         <div className="panel panel-default">
                             <div className="panel-body">

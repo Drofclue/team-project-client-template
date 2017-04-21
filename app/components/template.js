@@ -24,7 +24,7 @@ export default class Template extends React.Component {
     return (
       <div className="container-fluid text-center">
         <div className="row content">
-          <LeftNavBar />
+          <LeftNavBar userData={this.state}/>
           <div className="col-md-7 text-left">
 
           </div>

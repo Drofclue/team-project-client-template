@@ -15,21 +15,35 @@ import GamePage from './components/gamepage.js'
 
 import { IndexRoute, Router, Route, browserHistory } from 'react-router' // eslint-disable-line no-unused-vars
 
-class SettingsPage extends React.Component { // eslint-disable-line no-unused-vars
+class SettingsPage extends React.Component {
   render() {
     return (
-      <p>This is the the settings page</p>
+      <p>This is the the settings page for user with ID {this.props.params.id}.</p>
     );
   }
 }
 
-class TemplatePage extends React.Component { // eslint-disable-line no-unused-vars
+class TemplatePage extends React.Component {
   render() {
     return <Template user={1} />;
   }
 }
 
-class App extends React.Component { // eslint-disable-line no-unused-vars
+class SchedulePage extends React.Component {
+  render(){
+    return <Schedule user={1} />;
+  }
+}
+
+class HighLightPage extends React.Component {
+  render(){
+    return (
+      <HighLightsPage user={1}/>
+    );
+  }
+}
+
+class App extends React.Component {
   render() {
     return (
       <div>{this.props.children}</div>
@@ -59,15 +73,17 @@ if (document.getElementById('leaguepage')!=null){
   );
 }else if (document.getElementById('template')!=null){
   ReactDOM.render(
-    <Template user={1} />
-    /**(
+    //<Template user={1} />
+    (
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/template.html" component={App}>
         <IndexRoute component={TemplatePage} />
-        <Route path="settings" component={SettingsPage} />
+        <Route path="/settings/:id" component={SettingsPage} />
+        <Route path="/schedule/:id" component={SchedulePage} />
+        <Route path="/highlights/:id" component={HighLightPage}/>
       </Route>
     </Router>
-  )*/,document.getElementById('template')
+  ),document.getElementById('template')
   );
 }else if (document.getElementById('schedule')!=null){
   ReactDOM.render(

@@ -36,12 +36,12 @@ export default class SuggestedGames extends React.Component{
                              return (
                                <div>
                                <hr />
-                               <SuggestedGamesItem gameId={this.state.suggestedgames[i]} />
+                               <SuggestedGamesItem key={i} gameId={this.state.suggestedgames[i]} />
                                </div>
                              );
                            }else{
                              return (
-                               <SuggestedGamesItem gameId={this.state.suggestedgames[i]} />
+                               <SuggestedGamesItem key={i} gameId={this.state.suggestedgames[i]} />
                               );
                             }
                          }})

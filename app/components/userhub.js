@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class UserHub extends React.Component {
   constructor(props){
@@ -25,7 +26,7 @@ export default class UserHub extends React.Component {
               <hr />
               <div className="row">
                   <div className="col-md-6">
-                      <a href="#"><span className="pull-right"><i className="fa fa-fw fa-cog"></i>Settings</span></a>
+                      <Link to={"/settings/"+1}><span className="pull-right"><i className="fa fa-fw fa-cog"></i>Settings</span></Link>
                   </div>
                   <div className="col-md-6 logout">
                       <a href="#"><span className= "pull-left"><i className="fa fa-fw fa-sign-out"></i>Logout</span></a>

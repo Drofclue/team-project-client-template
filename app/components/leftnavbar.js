@@ -1,12 +1,17 @@
 import React from 'react';
 import ResetDatabase from '../database';
+import {Link} from 'react-router';
 export default class LeftNavBar extends React.Component {
+  constructor(props){
+    super(props);
+    this.state=props;
+  }
   render() {
     return (
       <div className="col-md-2 sidenav">
       <ul className="nav sidebar-nav">
         <li className="sidebar-brand">
-          <span className="cp"><a href="highlights.html">Cherry Picker</a></span>
+          <span className="cp"><Link to={"/highlights/"+this.props.userData.user}>Cherry Picker</Link></span>
         </li>
         <div className="row">
           <p> <img src="img/cherrypickericon_websize.png" useMap="#mymap" border="0" alt="logo" width="200px" height="200px" />
@@ -17,7 +22,7 @@ export default class LeftNavBar extends React.Component {
           </p>
         </div>
         <li>
-          <a href="schedule.html"><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</a>
+          <Link to={"/schedule/"+this.props.userData.user}><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</Link>
         </li>
         <li role="presentation">DEBUG</li>
         <ResetDatabase />

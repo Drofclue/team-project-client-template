@@ -25,9 +25,9 @@ componentDidMount() {
     return (
       <div className="container-fluid text-center">
         <div className="row content">
-          <LeftNavBar />
+          <LeftNavBar userData={this.state}/>
           <Highlights key={this.state._id} data={this.state}/>
-          <RightSideBar />
+          <RightSideBar userData={this.state}/>
         </div>
         <Footer />
       </div>
