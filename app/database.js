@@ -14,12 +14,12 @@ var initialData = {
       "username": "LingoDaddy42",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "highlights": 4,
-      "name": "Lingo a",
+      "name": "Lingo A'Daddy",
       "gender": "Helicopter",
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "79",
-      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[4,5], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -29,13 +29,13 @@ var initialData = {
       "_id":2,
       "username": "BroDaddy901",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
-      "name": "Lingo Daddy",
+      "name": "Brosidan Daddy",
       "highlights": 4,
-      "gender": "Helicopter",
+      "gender": "Tractor",
       "sports": ["Muy Thai","Baseball","Water Polo"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
       "age": "24",
-      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[2], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -43,15 +43,15 @@ var initialData = {
     },
     "3":{
       "_id":3,
-      "username": "Fury of Balls",
+      "username": "FuriousSquirrel4500",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
-      "name": "Lingo Daddy",
+      "name": "Paul Lactose",
       "highlights": 4,
-      "gender": "Helicopter",
+      "gender": "Male",
       "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
       "skillLvl": ["Novice", "Intermediate", "Advanced"],
-      "age": "24",
-      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
+      "age": "42",
+      "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[3], // The list of leagues the user is associated with, by refernce of the league ID#
@@ -59,18 +59,18 @@ var initialData = {
     },
     "4":{
       "_id":4,
-      "username": "League of Games",
+      "username": "donnydad",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "highlights": 4,
-      "name": "Lingo Daddy",
-      "gender": "Helicopter",
-      "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
-      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "name": "Elrond Hubbard",
+      "gender": "Space Alien",
+      "sports": ["Soccer"],
+      "skillLvl": ["Advanced"],
       "age": "24",
-      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
-      "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
+      "leagues":[5], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "5":{
@@ -174,7 +174,39 @@ var initialData = {
      "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
      "locations":["Puffers Pond", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
      "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
- }
+ },
+ "5":{
+   "_id":5,
+   "leagName": "Not American Football",
+   "currentUsername": "PancakeBilly65",
+   "status": "Open",
+   "memCount": "4",
+   "admin": "LingoDaddy42", // a specific user
+   "sports":["Soccer"],
+   "skill":["Novice"],
+   "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+   "games":["Soccer Game 1", "Soccer Game 2", "Soccer Game 3", "Last Soccer Game"],// List of the games associated with the league, uses game ID# reference
+   "dates":["June 1st 2018", "June 29th 2018", "July 2nd 2017", "July 8th 2017"],
+   "times":["4:00PM EST", "5:00PM EST", "4:30PM EST", "9:00PM EST"],
+   "locations":["Puffers Pond", "Puffers Pond", "Puffers Pond", "Mullins Center"],
+   "description": "We do soccer. Not Football. Ever."
+},
+"6":{
+  "_id":6,
+  "leagName": "American Sports",
+  "currentUsername": "CupcakeBilly65",
+  "status": "Open",
+  "memCount": "1",
+  "admin": "LingoDaddy4233", // a specific user
+  "sports":["Football"],
+  "skill":["Novice"],
+  "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+  "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
+  "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
+  "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+  "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
+  "description": "We do football. Not soccer. Ever."
+}
  },
   "games": {
     "0": {
@@ -203,14 +235,14 @@ var initialData = {
       "maxPlayers": 20,
       "minAge": 16,
       "maxAge": 30,
-      "sport": "soccer",
+      "sport": "Soccer",
       "skillLvl": "Novice",
-      "league": "Not American Football",
+      "league": "Not American Sports",
       "leagueid":2
     },
     "2": {
       "_id":2,
-      "gameName": "Not European Fooaseball",
+      "gameName": "Not European Football",
       "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
       "location":"Hadley, MA",
       "date": "5/20/17",
@@ -222,7 +254,7 @@ var initialData = {
       "sport":"Football",
       "skillLvl": "Advanced",
       "league":"American Sports",
-      "leagueid": 1
+      "leagueid": 6
     },
     "3":{
       "_id":3,
@@ -236,6 +268,38 @@ var initialData = {
       "minAge": 35,
       "maxAge": 50,
       "sport":"Curling",
+      "skillLvl": "Beginner",
+      "league":"Independent",
+      "leagueid": 0
+    },
+    "4":{
+      "_id":4,
+      "gameName": "Senior Fight Night",
+      "description":"Get together and spar your friends, neighbors, and loved ones!",
+      "location":"Northampton, MA",
+      "date": "5/9/17",
+      "time": "1:00 AM",
+      "currPlayers": [3,5,6,7],
+      "maxPlayers": 4,
+      "minAge": 50,
+      "maxAge": 75,
+      "sport":"Muy Thai",
+      "skillLvl": "Novice",
+      "league":"Independent",
+      "leagueid": 0
+    },
+    "5":{
+      "_id":5,
+      "gameName": "Water Polo Throwdown",
+      "description":"Everyone is welcome to come play some polo... IN A POOL!",
+      "location":"Boston, MA",
+      "date": "5/7/17",
+      "time": "6:00 AM",
+      "currPlayers": [3,5,6,7],
+      "maxPlayers": 4,
+      "minAge": 1,
+      "maxAge": 99,
+      "sport":"Water Polo",
       "skillLvl": "Beginner",
       "league":"Independent",
       "leagueid": 0

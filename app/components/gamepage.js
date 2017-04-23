@@ -9,8 +9,8 @@ export default class GamePage extends React.Component {
   }
 
   refresh() {
-    getGameData(this.props.gameid, (userData) => {
-      this.setState(userData);
+    getGameData(this.props.gameid, (gameData) => {
+      this.setState(gameData);
     });
   }
 
@@ -20,7 +20,7 @@ export default class GamePage extends React.Component {
 
   render(){
     return(
-            <GamePageData league={this.state.league} desc={this.state.description}
+            <GamePageData league={this.state.league} leagueid = {this.state.leagueid} desc={this.state.description}
             sport={this.state.sport} location={this.state.location} skill={this.state.skillLvl} date={this.state.date} time={this.state.time} partnum={this.state.currPlayers}>
             </GamePageData>
     )

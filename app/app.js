@@ -53,6 +53,12 @@ class GoToSchedule extends React.Component {
   }
 }
 
+class GoToCreateAGame extends React.Component {
+  render(){
+    return <CreateAGame user={this.props.params.id}/>
+  }
+}
+
 class App extends React.Component {
   render(){
     return(
@@ -61,7 +67,7 @@ class App extends React.Component {
           <IndexRoute/>
           <Route path="settings/:id" component={SettingsPage}/>
           <Route path="findagame" component={Findagame}/>
-          <Route path="createagame/:id" component={CreateAGame}/>
+          <Route path="createagame/:id" component={GoToCreateAGame}/>
           <Route path="game/:id" component={GoToGame}/>
           <Route path="league/:id" component={GoToLeague}/>
           <Route path="user/:id" component={GoToUser}/>
@@ -77,23 +83,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('template')
 )
-/**
-if (document.getElementById('leaguepage')!=null){
-  ReactDOM.render(
-    <LeaguePage league={1}/>,
-    document.getElementById('leaguepage')
-  );
-}
-}
-}else if (document.getElementById('schedule')!=null){
-  ReactDOM.render(
-    <Schedule user={1}/>,
-    document.getElementById('schedule')
-  );
-}
-}else if (document.getElementById('highlightspage')!=null){
-  ReactDOM.render(
-    <HighLightsPage user={1}/>,
-    document.getElementById('highlightspage')
-  )
-*/

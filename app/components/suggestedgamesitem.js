@@ -25,19 +25,19 @@ export default class SuggestedGamesItem extends React.Component{
                 <tbody>
                   <tr>
                       <td className="title">League:</td>
-                      <td className="description"><Link to={"/league/"+this.state.leagueid}>{this.state.league}</Link></td>
+                      <td className="descriptionrb"><Link to={"/league/"+this.state.leagueid}>{this.state.league}</Link></td>
                   </tr>
                   <tr>
                       <td className="title">Location:</td>
-                      <td className="description">{this.state.location}</td>
+                      <td className="descriptionrb">{this.state.location}</td>
                   </tr>
                   <tr>
                       <td className="title">Skill Level:</td>
-                      <td className="description">{this.state.skillLvl}</td>
+                      <td className="descriptionrb">{this.state.skillLvl}</td>
                   </tr>
                   <tr>
                       <td className="title">Date:</td>
-                      <td className="description">{this.state.time} {this.state.date}</td>
+                      <td className="descriptionrb">{this.state.time} {this.state.date}</td>
                   </tr>
                 </tbody>
               </table>
