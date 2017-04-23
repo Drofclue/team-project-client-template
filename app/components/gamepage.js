@@ -9,8 +9,8 @@ export default class GamePage extends React.Component {
   }
 
   refresh() {
-    getGameData(this.props.gameid, (userData) => {
-      this.setState(userData);
+    getGameData(this.props.gameid, (gameData) => {
+      this.setState(gameData);
     });
   }
 

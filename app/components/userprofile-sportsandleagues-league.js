@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import {getLeagueData} from '../server';
 
 export default class UserProfileLeague extends React.Component {
@@ -20,7 +21,7 @@ export default class UserProfileLeague extends React.Component {
   render(){
     return(
       <tr>
-          <td><a href="#">{this.state.leagName}</a></td>
+          <td><Link to ={"/league/"+ this.state._id}>{this.state.leagName}</Link></td>
       </tr>
     )
   }
