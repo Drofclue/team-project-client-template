@@ -6,7 +6,6 @@ import CreateAGame from './components/createagame.js';
 import Findagame from './components/findagame.js';
 import LeaguePage from './components/leaguepage.js';
 import Schedule from './components/schedule.js';
-import MessagePage from './components/messagepage.js';
 import HighLightsPage from './components/highlightspage.js';
 import UserProfilePage from './components/userprofilepage.js';
 import GamePage from './components/gamepage.js'
@@ -17,8 +16,40 @@ import { IndexRoute, Router, Route, hashHistory } from 'react-router' // eslint-
 class SettingsPage extends React.Component {
   render() {
     return (
-      <p>This is the the settings page for user with ID 1.</p>
+      <p>This is the the settings page for user with ID {this.props.params.id}.</p>
     );
+  }
+}
+
+class LogoutPage extends React.Component {
+  render() {
+    return (
+      <p>This is the logout page for user with ID {this.props.params.id}.</p>
+    )
+  }
+}
+
+class GoToGame extends React.Component {
+  render(){
+    return <GamePage gameid={this.props.params.id}/>
+  }
+}
+
+class GoToLeague extends React.Component {
+  render(){
+    return <LeaguePage league={this.props.params.id}/>
+  }
+}
+
+class GoToUser extends React.Component {
+  render(){
+    return <UserProfilePage user={this.props.params.id}/>
+  }
+}
+
+class GoToSchedule extends React.Component {
+  render(){
+    return <Schedule user={this.props.params.id}/>
   }
 }
 
@@ -28,9 +59,14 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path="/" component={Origin}>
           <IndexRoute/>
-          <Route path="/settings/:id" component={SettingsPage}/>
+          <Route path="settings/:id" component={SettingsPage}/>
           <Route path="findagame" component={Findagame}/>
           <Route path="createagame/:id" component={CreateAGame}/>
+          <Route path="game/:id" component={GoToGame}/>
+          <Route path="league/:id" component={GoToLeague}/>
+          <Route path="user/:id" component={GoToUser}/>
+          <Route path="logout/:id" component={LogoutPage}/>
+          <Route path="schedule/:id" component={GoToSchedule}/>
         </Route>
       </Router>
     )
@@ -47,59 +83,17 @@ if (document.getElementById('leaguepage')!=null){
     <LeaguePage league={1}/>,
     document.getElementById('leaguepage')
   );
-}else if (document.getElementById('createagame')!=null){
-  ReactDOM.render(
-    <CreateAGame user={1} />,
-    document.getElementById('createagame')
-  );
-}else if (document.getElementById('createagameleague')!=null){
-  ReactDOM.render(
-    <CreateAGameLeague user={1}/>,
-    document.getElementById('createagameleague')
-  );
-}else if (document.getElementById('findagame')!=null){
-  ReactDOM.render(
-    <Findagame user={1}/>,
-    document.getElementById('findagame')
-  );
-}else if (document.getElementById('template')!=null){
-  ReactDOM.render(
-    //<Template user={1} />
-    (
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={TemplatePage} />
-        <Route path="settings/:id" component={SettingsPage} />
-        <Route path="schedule/:id" component={SchedulePage} />
-        <Route path="highlights/:id" component={HighLightPage}/>
-        <Route path="findagame/:id" component={FindGamePage}/>
-      </Route>
-    </Router>
-  ),document.getElementById('template')
-  );
+}
+}
 }else if (document.getElementById('schedule')!=null){
   ReactDOM.render(
     <Schedule user={1}/>,
     document.getElementById('schedule')
   );
-}else if (document.getElementById('messagepage')!=null){
-  ReactDOM.render(
-    <MessagePage user={1}/>,
-    document.getElementById('messagepage')
-  )
+}
 }else if (document.getElementById('highlightspage')!=null){
   ReactDOM.render(
     <HighLightsPage user={1}/>,
     document.getElementById('highlightspage')
   )
-}else if (document.getElementById('userprofilepage')!=null){
-  ReactDOM.render(
-    <UserProfilePage user={1}/>,
-    document.getElementById('userprofilepage')
-  );
-}else if (document.getElementById('gamepage')!=null){
-  ReactDOM.render(
-    <GamePage user={1}/>,
-    document.getElementById('gamepage')
-  );
-}*/
+*/

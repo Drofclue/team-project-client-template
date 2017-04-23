@@ -1,7 +1,4 @@
 import React from 'react';
-import LeftNavBar from './leftnavbar';
-import RightSideBar from './rightsidebar';
-import Footer from './footer.js';
 import ScheduleCalendar from './schedulecalendar.js';
 import {getUserData} from '../server';
 
@@ -20,20 +17,11 @@ export default class Schedule extends React.Component {
     }
     render() {
         return (
-            <div className="container-fluid text-center">
-                <div className="row content">
-                    <LeftNavBar userData={this.state}/>
-                    <div className="col-md-7 text-left">
                         <div className="panel panel-default">
                             <div className="panel-body">
                                 <ScheduleCalendar/>
                             </div>
                         </div>
-                    </div>
-                    <RightSideBar userData={this.state}/>
-                </div>
-                <Footer/>
-            </div>
         )
     }
 }

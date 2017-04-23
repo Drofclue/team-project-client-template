@@ -13,7 +13,6 @@ export default class League extends React.Component {
 
   render() {
     return (
-      <div className="col-md-7 text-left">
       <div className="media league-name">
           <Leaguedes title={this.props.leagueData.leagName} status={this.props.leagueData.status}
                         count={this.props.leagueData.memCount}  image ="img/middle-aged-bowler.jpg">
@@ -35,7 +34,6 @@ export default class League extends React.Component {
           </div>
           <Leagueupcoming games = {this.props.leagueData.games} dates = {this.props.leagueData.dates} times = {this.props.leagueData.times} locations = {this.props.leagueData.locations} league = {this.props.leagueData.leagName}>
           </Leagueupcoming>
-        </div>
         </div>
     )
   }

@@ -26,7 +26,7 @@ var initialData = {
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "2":{
-      "._id":2,
+      "_id":2,
       "username": "BroDaddy901",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
@@ -42,7 +42,7 @@ var initialData = {
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "3":{
-      "._id":3,
+      "_id":3,
       "username": "Fury of Balls",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
@@ -58,7 +58,7 @@ var initialData = {
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "4":{
-      "._id":4,
+      "_id":4,
       "username": "League of Games",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "highlights": 4,
@@ -74,7 +74,7 @@ var initialData = {
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "5":{
-      "._id":5,
+      "_id":5,
       "username": "Balls of Fury",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "name": "Lingo Daddy",
@@ -93,8 +93,24 @@ var initialData = {
   // League information
    "leagues" : {
      // Example League listing, this league has id "1"
+     "0":{
+       "_id":0,
+       "leagName": "This is an Independent Event",
+       "currentUsername": "",
+       "status": "",
+       "memCount": "",
+       "admin": "", // a specific user
+       "sports":[],
+       "skill":[],
+       "members":[], // store the list of members as the User ID's, that way easy to pass/use information about the members
+       "games":[],// List of the games associated with the league, uses game ID# reference
+       "dates":[],
+       "times":[],
+       "locations":[],
+       "description": ""
+     },
      "1":{
-       "._id":1,
+       "_id":1,
        "leagName": "Not New to Sports",
        "currentUsername": "Bingomommy512",
        "status": "Open",
@@ -110,7 +126,7 @@ var initialData = {
        "description": "This is a sample description for a league page"
      },
      "2":{
-       "._id":2,
+       "_id":2,
        "leagName": "Middle Aged Bowlers",
        "currentUsername": "Calvin",
        "status": "Closed",
@@ -128,7 +144,7 @@ var initialData = {
      },
 
      "3":{
-       "._id":3,
+       "_id":3,
        "leagName": "Jesuit Club of Birmingham Alabama",
        "currentUsername": "JesusFreak4210",
        "status": "Open",
@@ -144,7 +160,7 @@ var initialData = {
        "description": "ent league page This is a sample description for another different league page v This is a sample description for another different league page ent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league pageent league page This is a sample description for another different league page v This is a sample description for another different league page"
    },
    "4":{
-     "._id":4,
+     "_id":4,
      "leagName": "Runners club of alberta",
      "currentUsername": "Jaxon",
      "status": "Open",
@@ -189,7 +205,8 @@ var initialData = {
       "maxAge": 30,
       "sport": "soccer",
       "skillLvl": "Novice",
-      "league": "Not American Football"
+      "league": "Not American Football",
+      "leagueid":2
     },
     "2": {
       "_id":2,
@@ -204,7 +221,8 @@ var initialData = {
       "maxAge": 28,
       "sport":"Football",
       "skillLvl": "Advanced",
-      "league":"American Sports"
+      "league":"American Sports",
+      "leagueid": 1
     },
     "3":{
       "_id":3,
@@ -219,7 +237,8 @@ var initialData = {
       "maxAge": 50,
       "sport":"Curling",
       "skillLvl": "Beginner",
-      "league":"Independent"
+      "league":"Independent",
+      "leagueid": 0
     }
   },
   "highlightsItems": {

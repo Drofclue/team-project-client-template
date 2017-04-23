@@ -20,16 +20,16 @@ export default class UserHub extends React.Component {
                       </div>
                   </div>
                   <div className="col-md-10">
-                      <p className="pull-left">Hello, <a href="userprofile.html">{this.props.username}</a></p>
+                      <p className="pull-left">Hello, <Link to={"/user/"+this.props.userid}>{this.props.username}</Link></p>
                   </div>
               </div>
               <hr />
               <div className="row">
                   <div className="col-md-6">
-                      <Link to={"/settings/"+1}><span className="pull-right"><i className="fa fa-fw fa-cog"></i>Settings</span></Link>
+                      <Link to={"/settings/"+this.props.userid}><span className="pull-right"><i className="fa fa-fw fa-cog"></i>Settings</span></Link>
                   </div>
                   <div className="col-md-6 logout">
-                      <a href="#"><span className= "pull-left"><i className="fa fa-fw fa-sign-out"></i>Logout</span></a>
+                      <Link to={"/logout/"+this.props.userid}><span className= "pull-left"><i className="fa fa-fw fa-sign-out"></i>Logout</span></Link>
                   </div>
               </div>
           </div>

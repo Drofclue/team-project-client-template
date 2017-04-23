@@ -1,7 +1,4 @@
 import React from 'react';
-import LeftNavBar from './leftnavbar';
-import RightSideBar from './rightsidebar';
-import Footer from './footer.js';
 import UserProfile from './userprofile.js';
 import {getUserData} from '../server';
 
@@ -23,16 +20,7 @@ export default class UserProfilePage extends React.Component {
 
   render(){
     return(
-      <div className="container-fluid text-center">
-        <div className="row content">
-          <LeftNavBar userData={this.state}/>
-          <div className="col-md-7 text-left">
             <UserProfile userData={this.state}/>
-          </div>
-          <RightSideBar userData={this.state}/>
-        </div>
-        <Footer />
-      </div>
     )
   }
 }

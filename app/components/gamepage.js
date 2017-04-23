@@ -1,8 +1,5 @@
 import React from 'react';
-import LeftNavBar from './leftnavbar.js';
-import Footer from './footer';
 import GamePageData from './gamepage-data.js'
-import GamePageRightBar from './gamepage-rightbar.js'
 import {getGameData} from '../server.js'
 
 export default class GamePage extends React.Component {
@@ -12,7 +9,7 @@ export default class GamePage extends React.Component {
   }
 
   refresh() {
-    getGameData(this.props.user, (userData) => {
+    getGameData(this.props.gameid, (userData) => {
       this.setState(userData);
     });
   }
@@ -23,18 +20,9 @@ export default class GamePage extends React.Component {
 
   render(){
     return(
-      <div className="container-fluid text-center">
-        <div className="row content">
-          <LeftNavBar userData={this.state}/>
-          <div className="col-md-7 text-left">
             <GamePageData league={this.state.league} desc={this.state.description}
             sport={this.state.sport} location={this.state.location} skill={this.state.skillLvl} date={this.state.date} time={this.state.time} partnum={this.state.currPlayers}>
             </GamePageData>
-          </div>
-          <GamePageRightBar />
-        </div>
-        <Footer />
-      </div>
     )
   }
 }

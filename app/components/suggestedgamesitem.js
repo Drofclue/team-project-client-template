@@ -1,5 +1,6 @@
 import React from 'react';
 import {getGameData} from '../server';
+import {Link} from 'react-router';
 export default class SuggestedGamesItem extends React.Component{
   constructor(props){
     super(props);
@@ -19,12 +20,12 @@ export default class SuggestedGamesItem extends React.Component{
     return(
       <li className="media">
           <div className="media-body">
-              <div className="game-title">----<a href="#">{this.state.gameName}</a>----</div>
+              <div className="game-title">----<Link to={"/game/"+this.state._id}>{this.state.gameName}</Link>----</div>
               <table>
                 <tbody>
                   <tr>
                       <td className="title">League:</td>
-                      <td className="description"><a href="#">{this.state.league}</a></td>
+                      <td className="description"><Link to={"/league/"+this.state.leagueid}>{this.state.league}</Link></td>
                   </tr>
                   <tr>
                       <td className="title">Location:</td>

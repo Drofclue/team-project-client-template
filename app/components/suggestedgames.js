@@ -23,7 +23,7 @@ export default class SuggestedGames extends React.Component{
     return(
       <div className="panel panel-default suggested-games">
           <div className="panel-body">
-              <a href="#">Suggested Games</a>
+              Suggested Games
           </div>
           <div className="panel-footer">
               <div className="row">
