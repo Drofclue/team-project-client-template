@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class GamePageData extends React.Component {
   render(){
@@ -21,7 +22,7 @@ export default class GamePageData extends React.Component {
                   <td><h3><b>Sport: </b>{this.props.sport}</h3></td>
                 </tr>
                 <tr>
-                  <td><h3><b>League: </b><a href="#">{this.props.league}</a></h3></td>
+                  <td><h3><b>League: </b><Link to ={"/league/"+ this.props.leagueid}>{this.props.league}</Link></h3></td>
                 </tr>
                 <tr>
                   <td><h3><b>Location: </b>{this.props.location}</h3></td>
