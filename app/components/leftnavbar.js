@@ -11,18 +11,18 @@ export default class LeftNavBar extends React.Component {
       <div className="col-md-2 sidenav">
       <ul className="nav sidebar-nav">
         <li className="sidebar-brand">
-          <span className="cp"><Link to={"/highlights/"+this.props.userData.user}>Cherry Picker</Link></span>
+          <span className="cp"><Link to={"/"}>Cherry Picker</Link></span>
         </li>
         <div className="row">
           <p> <img src="img/cherrypickericon_websize.png" useMap="#mymap" border="0" alt="logo" width="200px" height="200px" />
             <map name="mymap">
-              <Link to={"/findagame/"+this.props.userData.user}><area shape="circle" coords="73,135,31 "/></Link>
-              <area shape="circle" coords="140,130,31" href="createagame.html" />
+              <Link to={"findagame/"}><area shape="circle" coords="73,135,31 "/></Link>
+              <Link to={"createagame/"+this.state.userData._id}><area shape="circle" coords="140,130,31" /></Link>
             </map>
           </p>
         </div>
         <li>
-          <Link to={"/schedule/"+this.props.userData.user}><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</Link>
+          <Link to={"/schedule/"+this.state.userData._id}><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</Link>
         </li>
         <li role="presentation">DEBUG</li>
         <ResetDatabase />

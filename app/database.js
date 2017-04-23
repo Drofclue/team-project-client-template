@@ -10,7 +10,7 @@ var initialData = {
   "users":{
     // This user (our default user) has id "1"
     "1":{
-      "._id":1,
+      "_id":1,
       "username": "LingoDaddy42",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
       "highlights": 4,

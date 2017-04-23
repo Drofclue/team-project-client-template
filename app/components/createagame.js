@@ -1,7 +1,4 @@
   import React from 'react';
-  import LeftNavBar from './leftnavbar';
-  import RightSideBar from './rightsidebar';
-  import Footer from './footer.js';
   import CreateAGameBasic from './createagamebasic';
   import {createGame} from '../server';
   import {getUserData} from '../server';
@@ -32,20 +29,13 @@
   }
     render(){
       return (
-        <div className="container-fluid text-center">
-          <div className="row content">
-            <LeftNavBar userData={this.state}/>
-            <div className="col-md-7 text-left">
+        <div>
               <h2>Create a Game</h2>
                 <div className="panel panel-default">
                  <div className="panel-body">
                   <CreateAGameBasic onSubmit={(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league) => this.onSubmit(gameName, description, location, date, time, maxPlayers, minAge, maxAge, sport, skillLvl, league)} />
                   </div>
                 </div>
-            </div>
-            <RightSideBar userData={this.state}/>
-          </div>
-          <Footer />
         </div>
       )
     }

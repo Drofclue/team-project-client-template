@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Footer extends React.Component{
   render(){
@@ -8,7 +9,7 @@ export default class Footer extends React.Component{
           <section id="logo-ad" className="widget widget_black_studio_tinymce">
               <div className="textwidget">
                   <p>
-                      <a href="#"> <img src="img/cherry_logo.png" alt="logo" width="60px" height="60" /></a>
+                      <Link to={"/"}><img src="img/cherry_logo.png" alt="logo" width="60px" height="60" /></Link>
                   </p>
                   <p>Thanks For Choosing Cherry Picker</p>
               </div>
