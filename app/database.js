@@ -205,12 +205,12 @@ var initialData = {
       "maxAge": 30,
       "sport": "soccer",
       "skillLvl": "Novice",
-      "league": "Not American Football",
+      "league": "Not American Sports",
       "leagueid":2
     },
     "2": {
       "_id":2,
-      "gameName": "Not European Fooaseball",
+      "gameName": "Not European Football",
       "description":"Grid Iron Football is the greatest sport of all time, hands down! None of that spherical ball stuff, all about the hand egg!",
       "location":"Hadley, MA",
       "date": "5/20/17",
