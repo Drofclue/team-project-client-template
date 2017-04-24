@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "username": {
+      "id": "username",
+      "type": "string"
+    },
+    "profilepicture": {
+      "id": "profilepicture",
+      "type": "string"
+    },
+    "name": {
+      "id": "name",
+      "type": "string"
+    },
+    "highlights": {
+      "id": "highlights",
+      "type": "integer"
+    },
+    "gender": {
+      "id": "gender",
+      "type": "string"
+            },
+    "sports": {
+      "id": "sports",
+      "type": "array"
+    },
+    "skillLvl": {
+      "id": "skillLvl",
+      "type": "array"
+    },
+    "age": {
+      "id": "age",
+      "type": "string"
+    },
+    "games": {
+      "id": "games",
+      "type": "array"
+    },
+    "suggestedgames": {
+      "id": "suggestedgames",
+      "type": "array"
+    },
+    "schedule": {
+      "id": "schedule",
+      "type": "array"
+    },
+    "leagues": {
+      "id": "leagues",
+      "type": "array"
+    },
+    "msgThread": {
+      "id": "msgThread",
+      "type": "array"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "username",
+    "profilepicture",
+    "name",
+    "highlights",
+    "gender",
+    "sports",
+    "skillLvl",
+    "age",
+    "games",
+    "suggestedgames",
+    "schedule",
+    "leagues",
+    "msgThread"
+  ]
+}
