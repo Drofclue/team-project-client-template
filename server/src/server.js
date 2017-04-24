@@ -77,10 +77,7 @@ app.post('/gameitem',
   }
 });
 
-// Starts the server on port 3000!
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+
 
 function matchingGames(sportPassed, skillPassed, locPasssed) {
   var matchedGames = [];
@@ -128,3 +125,11 @@ function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, m
 app.get('/findagame/', function(req, res){
   var
 })
+
+
+
+
+// Starts the server on port 3000!
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
