@@ -11,7 +11,7 @@ export default class Highlights extends React.Component {
 }
 
 refresh() {
-  getHighlightsData(this.props.data, (highlightsData) => {
+  getHighlightsData(this.props.data._id, (highlightsData) => {
     this.setState(highlightsData);
   });
 }

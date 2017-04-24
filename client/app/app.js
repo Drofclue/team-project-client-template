@@ -64,7 +64,7 @@ class App extends React.Component {
     return(
       <Router history={hashHistory}>
         <Route path="/" component={Origin}>
-          <IndexRoute/>
+          <IndexRoute component={HighLightsPage}/>
           <Route path="settings/:userid" component={SettingsPage}/>
           <Route path="findagame" component={Findagame}/>
           <Route path="createagame/:userid" component={GoToCreateAGame}/>

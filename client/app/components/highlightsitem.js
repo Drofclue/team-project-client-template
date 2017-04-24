@@ -46,7 +46,7 @@ export default class HighlightsItem extends React.Component{
     }
 	}
 	didUserRsvp() {
-    var rsvpCounter = this.state.rsvpCounter;
+    var rsvpCounter = this.state.contents[0].rsvpCounter;
     var rsvpd = false;
     // Look for a rsvpCounter entry with userId 4 -- which is the
     // current user.
@@ -65,20 +65,11 @@ export default class HighlightsItem extends React.Component{
     }
 		var data = this.props.data;
 		var contents;
-		switch(data.type) {
-			case "highlightsUpdate":
-				// Create a StatusUpdate. Dynamically created React component: needs a key.
-				// Keys only need to be unique among *siblings*, so we can re-use the
-				// same key as the HighlightsItem.
 				contents = (
 					<HighlightsUpdate key={data._id} user={data.contents.user} timestamp={unixTimeToString(data.contents.timestamp)} location={data.contents.location}
 						message={data.contents.contents}>
 					</HighlightsUpdate>
 				);
-				break;
-			default:
-				throw new Error("Unknown HighlightsItem: " + data.type);
-		}
 		return(
 			<div className="col-md-7 text-left mid">
 				<h1> Highlights</h1>
@@ -89,16 +80,16 @@ export default class HighlightsItem extends React.Component{
 						<div className="panel-footer comments">
 							<div className="row people_reacted">
 								<div className="col-md-12">
-									<a href="#">{data.rsvpCounter.length} people</a> are going
+									<a href="#">{data.contents[0].rsvpCounter.length} people</a> are going
 								</div>
 							</div>
 							<hr />
 							<CommentEntry onPost={(commentText) => this.handleCommentPost(commentText)}>
 								{
-									data.comments.map((comment, i) => {
+									data.contents[0].comments.map((comment, i) => {
 										// i is comment's index in comments array
 										return (
-											<Comment key={i} username={comment.user} timestamp={comment.timestamp} message={comment.contents}></Comment>
+											<Comment key={i} username={comment.user.username} timestamp={comment.timestamp} message={comment.contents}></Comment>
 										);
 									})
 								}
