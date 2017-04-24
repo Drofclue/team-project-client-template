@@ -131,7 +131,7 @@ export function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPa
 
 
 
-export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
+/*export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   var newGame = {
     "gameName": gameName,
     "description": description,
@@ -151,5 +151,26 @@ export function createGame(gameName, description, location, date, time, user, ma
   // Returns the game w/ an ID assigned.
   newGame = addDocument('games', newGame);
   emulateServerReturn(newGame, cb);
+
+}*/
+
+export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
+  sendXHR('POST', '/gameitem', {
+    gameName: gameName,
+    description: description,
+    location: location,
+    date: date,
+    time: time,
+    currPlayers: [user],
+    maxPlayers: maxPlayers,
+    minAge: minAge,
+    maxAge: maxAge,
+    sport: sport,
+    skillLvl: skillLvl,
+    league: league
+  }, (xhr) => {
+    // Return the new game.
+    cb(JSON.parse(xhr.responseText));
+  });
 
 }
