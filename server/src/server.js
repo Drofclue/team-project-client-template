@@ -60,6 +60,8 @@ function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, m
   return(matchedGames);
 }
 
+
+
 /*
  * GET /findagame/ the games which match the search criteria
 */
