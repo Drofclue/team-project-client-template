@@ -15,16 +15,42 @@ var getCollection = database.getCollection;
 // '..' means "go up one directory", so this translates into `client/build`!
 app.use(express.static('../client/build'));
 
-var database = require('./database');
 var GameSchema = require('./schemas/game.json');
 var validate = require('express-jsonschema').validate;
-var writeDocument = database.writeDocument;
-var addDocument = database.addDocument;
 
+var bodyParser = require('body-parser');
 // Support receiving text in HTTP request bodies
 app.use(bodyParser.text());
 // Support receiving JSON in HTTP request bodies
 app.use(bodyParser.json());
+
+/**
+ * Get the user ID from a token. Returns -1 (an invalid ID)
+ * if it fails.
+ */
+function getUserIdFromToken(authorizationLine) {
+  try {
+    // Cut off "Bearer " from the header value.
+    var token = authorizationLine.slice(7);
+    // Convert the base64 string to a UTF-8 string.
+    var regularString = new Buffer(token, 'base64').toString('utf8');
+    // Convert the UTF-8 string into a JavaScript object.
+    var tokenObj = JSON.parse(regularString);
+    var id = tokenObj['id'];
+    // Check that id is a number.
+    if (typeof id === 'number') {
+      return id;
+    } else {
+      // Not a number. Return -1, an invalid ID.
+      return -1;
+    }
+  } catch (e) {
+    // Return an invalid ID.
+    return -1;
+  }
+}
+
+
 
 /**
  * Adds a new game to the database.
@@ -54,8 +80,8 @@ function createGame(gameName, description, location, date, time, currPlayers, ma
   return newGame;
 }
 
-// `POST /gameitem { ... }`
-app.post('/gameitem',
+// `POST /game { ... }`
+app.post('/game',
          validate({ body: GameSchema }), function(req, res) {
   // If this function runs, `req.body` passed JSON validation!
   var body = req.body;
@@ -68,7 +94,7 @@ app.post('/gameitem',
     // When POST creates a new resource, we should tell the client about it
     // in the 'Location' header and use status code 201.
     res.status(201);
-    res.set('Location', '/gameitem/' + newUpdate._id);
+    res.set('Location', '/game/' + newUpdate._id);
      // Send the update!
     res.send(newUpdate);
   } else {
@@ -122,9 +148,9 @@ function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, m
 /*
  * GET /findagame/ the games which match the search criteria
 */
-app.get('/findagame/', function(req, res){
-  var
-})
+//app.get('/findagame/', function(req, res){
+//  var
+//})
 
 
 
