@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "leagName": {
+      "id": "leagName",
+      "type": "string"
+    },
+    "picture": {
+      "id": "picture",
+      "type": "string"
+    },
+    "currentUsername": {
+      "id": "currentUsername",
+      "type": "string"
+    },
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "memCount": {
+      "id": "memCount",
+      "type": "string"
+            },
+    "admin": {
+      "id": "admin",
+      "type": "string"
+    },
+    "sports": {
+      "id": "sports",
+      "type": "array"
+    },
+    "skill": {
+      "id": "skill",
+      "type": "array"
+    },
+    "members": {
+      "id": "members",
+      "type": "array"
+    },
+    "games": {
+      "id": "games",
+      "type": "array"
+    },
+    "dates": {
+      "id": "dates",
+      "type": "array"
+    },
+    "times": {
+      "id": "times",
+      "type": "array"
+    },
+    "locations": {
+      "id": "locations",
+      "type": "array"
+    },
+    "description": {
+      "id": "description",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "leagName",
+    "picture",
+    "currentUsername",
+    "status",
+    "memCount",
+    "admin",
+    "sports",
+    "skill",
+    "members",
+    "games",
+    "dates",
+    "times",
+    "locations",
+    "description"
+  ]
+}
