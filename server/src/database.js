@@ -40,17 +40,17 @@ var initialData = {
       "3":{
         "_id":3,
         "username": "FuriousSquirrel4500",
-        "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
+        "profilepicture": "img/middle-aged-bowler.jpg",
         "name": "Paul Lactose",
         "highlights": 4,
         "gender": "Male",
-        "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
-        "skillLvl": ["Novice", "Intermediate", "Advanced"],
+        "sports": ["Running","Water Polo", "Basketball"],
+        "skillLvl": ["Advanced", "Intermediate", "Advanced"],
         "age": "42",
-        "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
+        "games":[5,6], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
         "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
-        "leagues":[3], // The list of leagues the user is associated with, by refernce of the league ID#
+        "leagues":[1,2], // The list of leagues the user is associated with, by refernce of the league ID#
         "msgThread":[]/* List of message Items specific to user-user conversation*/
       },
       "4":{
@@ -71,16 +71,16 @@ var initialData = {
       },
       "5":{
         "_id":5,
-        "username": "Balls of Fury",
+        "username": "FuriousBallWoman",
         "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
-        "name": "Lingo Daddy",
+        "name": "Brenda Fiddlebiscuits",
         "highlights": 4,
-        "gender": "Helicopter",
-        "sports": ["Soccer"],
-        "skillLvl": ["Novice", "Intermediate", "Advanced"],
-        "age": "24",
-        "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
-        "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+        "gender": "Female",
+        "sports": ["Curling"],
+        "skillLvl": ["Beginner"],
+        "age": "102",
+        "games":[3], //an array/list of the games that a user has. In the form of the Game ID #s
+        "suggestedgames":[1,2,4], //an arrayList of the games that are suggested for the user to participate in by Game ID
         "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
         "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
         "msgThread":[]/* List of message Items specific to user-user conversation*/
@@ -92,9 +92,10 @@ var initialData = {
        "0":{
          "_id":0,
          "leagName": "This is an Independent Event",
-         "currentUsername": "",
+         "picture": "img/lingodaddy_profile_pic_userhub.jpg",
+         "currentUsername": "a",
          "status": "",
-         "memCount": "",
+         "memCount": "s",
          "admin": "", // a specific user
          "sports":[],
          "skill":[],
@@ -108,6 +109,7 @@ var initialData = {
        "1":{
          "_id":1,
          "leagName": "Not New to Sports",
+         "picture": "img/middle-aged-bowler.jpg",
          "currentUsername": "Bingomommy512",
          "status": "Open",
          "memCount": "209",
@@ -124,9 +126,10 @@ var initialData = {
        "2":{
          "_id":2,
          "leagName": "Middle Aged Bowlers",
-         "currentUsername": "Calvin",
+         "picture": "img/middle-aged-bowler.jpg",
+         "currentUsername": "FuriousBallWoman",
          "status": "Closed",
-         "memCount": "666",
+         "memCount": "696",
          "admin": "LingoDaddy42", // a specific user
          "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
          "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
@@ -142,6 +145,7 @@ var initialData = {
        "3":{
          "_id":3,
          "leagName": "Jesuit Club of Birmingham Alabama",
+         "picture": "img/middle-aged-bowler.jpg",
          "currentUsername": "JesusFreak4210",
          "status": "Open",
          "memCount": "2",
@@ -158,6 +162,7 @@ var initialData = {
      "4":{
        "_id":4,
        "leagName": "Runners club of alberta",
+       "picture": "img/middle-aged-bowler.jpg",
        "currentUsername": "Jaxon",
        "status": "Open",
        "memCount": "4",
@@ -173,7 +178,8 @@ var initialData = {
    },
    "5":{
      "_id":5,
-     "leagName": "Not American Football",
+     "leagName": "Not American Sports",
+     "picture": "img/middle-aged-bowler.jpg",
      "currentUsername": "PancakeBilly65",
      "status": "Open",
      "memCount": "4",
@@ -190,6 +196,43 @@ var initialData = {
   "6":{
     "_id":6,
     "leagName": "American Sports",
+    "picture": "img/hulk-hogan-usa-flag.jpg",
+    "currentUsername": "CupcakeBilly65",
+    "status": "Open",
+    "memCount": "1",
+    "admin": "LingoDaddy4233", // a specific user
+    "sports":["Football"],
+    "skill":["Novice"],
+    "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+    "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
+    "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
+    "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+    "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
+    "description": "We do football. Not soccer. Ever."
+  },
+
+  "7":{
+    "_id":7,
+    "leagName": "British Sports",
+    "picture": "img/jogger.jpg",
+    "currentUsername": "dringo",
+    "status": "Closed",
+    "memCount": "19302",
+    "admin": "LingoDaddy4233", // a specific user
+    "sports":["Tea Drinking"],
+    "skill":["Advanced"],
+    "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+    "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
+    "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
+    "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+    "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
+    "description": "We like to drink tea. Sometimes. Okay all the time"
+  },
+
+  "8":{
+    "_id":8,
+    "leagName": "American Sports",
+    "picture": "img/jogger.jpg",
     "currentUsername": "CupcakeBilly65",
     "status": "Open",
     "memCount": "1",
@@ -234,7 +277,7 @@ var initialData = {
         "sport": "Soccer",
         "skillLvl": "Novice",
         "league": "Not American Sports",
-        "leagueid":2
+        "leagueid":5
       },
       "2": {
         "_id":2,
