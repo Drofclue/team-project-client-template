@@ -2,6 +2,7 @@ import React from 'react';
 import Fgsearchops from './fgsearchops';
 import {matchingGames, opsMatchingGames} from '../server.js';
 import Fgresultitem from "./fgresultitem";
+import {Link} from 'react-router';
 
 //import Fgresultlist from './fgresultlist';
 //import {outputResults} from './fgresultlist';
@@ -117,7 +118,7 @@ export default class Fgsearchbox extends React.Component {
       <div className="panel panel-default panel-results">
         {data.matchedGames.map((game) => {
     return (<div className="card">
-       <b>{game.gameName}</b>
+       <b><Link to={"/game/"+game._id}>{game.gameName}</Link></b>
       <Fgresultitem gameName={game.gameName} sport={game.sport} description={game.description} location={game.location} time={game.time} curplayers={game.currPlayers} maxplayers={game.maxPlayers}
         ></Fgresultitem>
         </div>
@@ -134,7 +135,7 @@ export default class Fgsearchbox extends React.Component {
     return (<div>
       <div className="panel-body">
           <div className="form-group row">
-              <label htmlFor="sport" className="col-md-3 col-form-label">Sport</label>
+              <label htmlFor="sport" className="col-md-3 col-form-label">Sport *</label>
               <div className="col-md-9" >
                   <select className="form-control" value={this.state.sport} onChange={(e)=>this.handleChangeSport(e)} >
                     <option value= "baseball">Baseball</option>
@@ -147,14 +148,14 @@ export default class Fgsearchbox extends React.Component {
               </div>
           </div>
           <div className="form-group row">
-              <label htmlFor="location" className="col-md-3 col-form-label">Location</label>
+              <label htmlFor="location" className="col-md-3 col-form-label">Location *</label>
               <div className="col-md-9">
                   <input className="form-control" type="text" id="location" placeholder="Zip Code or City" value = {this.state.location} onChange={(e) => this.handleChangeLocation(e)}/>
               </div>
           </div>
           <div className="form-group row">
-              <label htmlFor="skilllevel" className="col-md-3 col-form-label">Skill Level</label>
-              <div className="col-md-9 form-inline centering"  value = {this.state.skillLvl} onChange={(e)=> {this.handleChangeSkillLvl(e)}}>
+              <label htmlFor="skilllevel" className="col-md-3 col-form-label">Skill Level *</label>
+              <div className="col-md-9 form-inl]ine centering"  value = {this.state.skillLvl} onChange={(e)=> {this.handleChangeSkillLvl(e)}}>
                   <label hmtlFor="optionbeginner" className="checkbox inline">
                     <input id="optionbeginner" type="checkbox" id="inlineCheckboxBeginner" value="beginner" /> Beginner
                   </label>
