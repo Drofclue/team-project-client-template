@@ -10,7 +10,6 @@ import HighLightsPage from './components/highlightspage.js';
 import UserProfilePage from './components/userprofilepage.js';
 import GamePage from './components/gamepage.js'
 import Origin from './pages/origin.js';
-import ErrorBanner from './components/errorbanner.js';
 
 import { IndexRoute, Router, Route, hashHistory } from 'react-router' // eslint-disable-line no-unused-vars
 
@@ -66,7 +65,6 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path="/" component={Origin}>
           <IndexRoute/>
-          <ErrorBanner />
           <Route path="settings/:userid" component={SettingsPage}/>
           <Route path="findagame" component={Findagame}/>
           <Route path="createagame/:userid" component={GoToCreateAGame}/>

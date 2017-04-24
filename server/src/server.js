@@ -55,7 +55,7 @@ function getUserIdFromToken(authorizationLine) {
 /**
  * Adds a new game to the database.
  */
-function createGame(gameName, description, location, date, time, currPlayers, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
+function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
   // The new game. The database will assign the ID for us.
   var newGame = {
     "gameName": gameName,
@@ -63,7 +63,7 @@ function createGame(gameName, description, location, date, time, currPlayers, ma
     "location": location,
     "date": date,
     "time": time,
-    "currPlayers": currPlayers,
+    "currPlayers": [user],
     "maxPlayers": maxPlayers,
     "minAge": minAge,
     "maxAge": maxAge,
