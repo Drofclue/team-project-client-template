@@ -1,6 +1,7 @@
   import React from 'react';
-  import Fgresultlist from './fgresultlist.js';
+  //import Fgresultlist from './fgresultlist.js';
   import Fgsearchbox from './fgsearchbox.js';
+
 
 
   export default class Findagame extends React.Component {
@@ -15,7 +16,7 @@
         <div>
           <h2>Find a Game</h2>
           <Fgsearchbox></Fgsearchbox>
-          <Fgresultlist></Fgresultlist>
+
         </div>
       )
     }
