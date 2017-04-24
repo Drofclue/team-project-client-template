@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "gameName": {
+      "id": "gameName",
+      "type": "string"
+    },
+    "description": {
+      "id": "description",
+      "type": "string"
+    },
+    "location": {
+      "id": "location",
+      "type": "string"
+    },
+    "date": {
+      "id": "date",
+      "type": "string"
+    },
+    "time": {
+      "id": "time",
+      "type": "string"
+    },
+    "currPlayers": {
+      "id": "currPlayers",
+      "type": "array"
+    },
+    "maxPlayers": {
+      "id": "maxPlayers",
+      "type": "integer"
+    },
+    "minAge": {
+      "id": "minAge",
+      "type": "integer"
+    },
+    "maxAge": {
+      "id": "maxAge",
+      "type": "integer"
+    },
+    "sport": {
+      "id": "sport",
+      "type": "string"
+    },
+    "skillLvl": {
+      "id": "skillLvl",
+      "type": "string"
+    },
+    "league": {
+      "id": "league",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "gameName",
+    "description",
+    "location",
+    "date",
+    "time",
+    "currPlayers",
+    "maxPlayers",
+    "minAge",
+    "maxAge",
+    "sport",
+    "skillLvl",
+    "league"
+  ]
+}
