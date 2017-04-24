@@ -3,6 +3,7 @@ import LeftNavBar from '../components/leftnavbar.js';
 import Footer from '../components/footer.js';
 import RightSideBar from '../components/rightsidebar.js';
 import {getUserData} from '../server';
+import ErrorBanner from '../components/errorbanner.js';
 
 export default class Origin extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ export default class Origin extends React.Component {
         <div className="row content">
           {(this.state !== null) ? <LeftNavBar userData={this.state.user}/> : null }
           <div className="col-md-7 text-left">
+            <ErrorBanner />
           {
             this.props.children
           }
