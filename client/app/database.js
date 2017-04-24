@@ -48,13 +48,13 @@ var initialData = {
       "name": "Paul Lactose",
       "highlights": 4,
       "gender": "Male",
-      "sports": ["Muy Thai","Baseball","Water Polo", "Soccer"],
-      "skillLvl": ["Novice", "Intermediate", "Advanced"],
+      "sports": ["Running","Water Polo", "Basketball"],
+      "skillLvl": ["Advanced", "Intermediate", "Advanced"],
       "age": "42",
-      "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
+      "games":[5,6], //an array/list of the games that a user has. In the form of the Game ID #s
       "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
-      "leagues":[3], // The list of leagues the user is associated with, by refernce of the league ID#
+      "leagues":[1,2], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
     },
     "4":{
@@ -75,16 +75,16 @@ var initialData = {
     },
     "5":{
       "_id":5,
-      "username": "Balls of Fury",
+      "username": "FuriousBallWoman",
       "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
-      "name": "Lingo Daddy",
+      "name": "Brenda Fiddlebiscuits",
       "highlights": 4,
-      "gender": "Helicopter",
-      "sports": ["Soccer"],
-      "skillLvl": ["Novice", "Intermediate", "Advanced"],
-      "age": "24",
-      "games":[1,2], //an array/list of the games that a user has. In the form of the Game ID #s
-      "suggestedgames":[1,2,3], //an arrayList of the games that are suggested for the user to participate in by Game ID
+      "gender": "Female",
+      "sports": ["Curling"],
+      "skillLvl": ["Beginner"],
+      "age": "102",
+      "games":[3], //an array/list of the games that a user has. In the form of the Game ID #s
+      "suggestedgames":[1,2,4], //an arrayList of the games that are suggested for the user to participate in by Game ID
       "schdeule":[1], // The schdeule uses the users ID# to fill/list the events
       "leagues":[1], // The list of leagues the user is associated with, by refernce of the league ID#
       "msgThread":[]/* List of message Items specific to user-user conversation*/
@@ -128,9 +128,9 @@ var initialData = {
      "2":{
        "_id":2,
        "leagName": "Middle Aged Bowlers",
-       "currentUsername": "Calvin",
+       "currentUsername": "FuriousBallWoman",
        "status": "Closed",
-       "memCount": "666",
+       "memCount": "696",
        "admin": "LingoDaddy42", // a specific user
        "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
        "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
@@ -177,7 +177,7 @@ var initialData = {
  },
  "5":{
    "_id":5,
-   "leagName": "Not American Football",
+   "leagName": "Not American Sports",
    "currentUsername": "PancakeBilly65",
    "status": "Open",
    "memCount": "4",
@@ -238,7 +238,7 @@ var initialData = {
       "sport": "Soccer",
       "skillLvl": "Novice",
       "league": "Not American Sports",
-      "leagueid":2
+      "leagueid":5
     },
     "2": {
       "_id":2,
