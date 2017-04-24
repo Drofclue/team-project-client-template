@@ -19,7 +19,7 @@ export default class GamePageData extends React.Component {
                   <td><h5>{this.props.desc}</h5></td>
                 </tr>
                 <tr>
-                  <td><h3><b>Sport: </b>{this.props.sport}</h3></td>
+                  <td><h3><b>Sport: </b> {this.props.sport} </h3></td>
                 </tr>
                 <tr>
                   <td><h3><b>League: </b><Link to ={"/league/"+ this.props.leagueid}>{this.props.league}</Link></h3></td>
