@@ -213,6 +213,42 @@ var initialData = {
   "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
   "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
   "description": "We do football. Not soccer. Ever."
+},
+
+"7":{
+  "_id":7,
+  "leagName": "British Sports",
+  "picture": "img/jogger.jpg",
+  "currentUsername": "dringo",
+  "status": "Closed",
+  "memCount": "19302",
+  "admin": "LingoDaddy4233", // a specific user
+  "sports":["Tea Drinking"],
+  "skill":["Advanced"],
+  "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+  "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
+  "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
+  "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+  "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
+  "description": "We like to drink tea. Sometimes. Okay all the time"
+},
+
+"8":{
+  "_id":8,
+  "leagName": "American Sports",
+  "picture": "img/jogger.jpg",
+  "currentUsername": "CupcakeBilly65",
+  "status": "Open",
+  "memCount": "1",
+  "admin": "LingoDaddy4233", // a specific user
+  "sports":["Football"],
+  "skill":["Novice"],
+  "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
+  "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
+  "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
+  "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
+  "locations":["Umass Amherst Campus", "Umass Amherst Campus", "Route 9", "Umass Amherst Campus"],
+  "description": "We do football. Not soccer. Ever."
 }
  },
   "games": {
