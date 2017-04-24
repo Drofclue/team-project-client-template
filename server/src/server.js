@@ -63,6 +63,3 @@ function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, m
 /*
  * GET /findagame/ the games which match the search criteria
 */
-app.get('/findagame/', function(req, res){
-  var
-})
