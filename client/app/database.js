@@ -44,7 +44,7 @@ var initialData = {
     "3":{
       "_id":3,
       "username": "FuriousSquirrel4500",
-      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
+      "profilepicture": "img/middle-aged-bowler.jpg",
       "name": "Paul Lactose",
       "highlights": 4,
       "gender": "Male",
@@ -96,9 +96,10 @@ var initialData = {
      "0":{
        "_id":0,
        "leagName": "This is an Independent Event",
-       "currentUsername": "",
+       "picture": "img/lingodaddy_profile_pic_userhub.jpg",
+       "currentUsername": "a",
        "status": "",
-       "memCount": "",
+       "memCount": "s",
        "admin": "", // a specific user
        "sports":[],
        "skill":[],
@@ -112,6 +113,7 @@ var initialData = {
      "1":{
        "_id":1,
        "leagName": "Not New to Sports",
+       "picture": "img/middle-aged-bowler.jpg",
        "currentUsername": "Bingomommy512",
        "status": "Open",
        "memCount": "209",
@@ -128,6 +130,7 @@ var initialData = {
      "2":{
        "_id":2,
        "leagName": "Middle Aged Bowlers",
+       "picture": "img/middle-aged-bowler.jpg",
        "currentUsername": "FuriousBallWoman",
        "status": "Closed",
        "memCount": "696",
@@ -146,6 +149,7 @@ var initialData = {
      "3":{
        "_id":3,
        "leagName": "Jesuit Club of Birmingham Alabama",
+       "picture": "img/middle-aged-bowler.jpg",
        "currentUsername": "JesusFreak4210",
        "status": "Open",
        "memCount": "2",
@@ -162,6 +166,7 @@ var initialData = {
    "4":{
      "_id":4,
      "leagName": "Runners club of alberta",
+     "picture": "img/middle-aged-bowler.jpg",
      "currentUsername": "Jaxon",
      "status": "Open",
      "memCount": "4",
@@ -178,6 +183,7 @@ var initialData = {
  "5":{
    "_id":5,
    "leagName": "Not American Sports",
+   "picture": "img/middle-aged-bowler.jpg",
    "currentUsername": "PancakeBilly65",
    "status": "Open",
    "memCount": "4",
@@ -194,6 +200,7 @@ var initialData = {
 "6":{
   "_id":6,
   "leagName": "American Sports",
+  "picture": "img/hulk-hogan-usa-flag.jpg",
   "currentUsername": "CupcakeBilly65",
   "status": "Open",
   "memCount": "1",

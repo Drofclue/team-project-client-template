@@ -15,7 +15,7 @@ export default class League extends React.Component {
     return (
       <div className="media league-name">
           <Leaguedes title={this.props.leagueData.leagName} status={this.props.leagueData.status}
-                        count={this.props.leagueData.memCount}  image ="img/middle-aged-bowler.jpg">
+                        count={this.props.leagueData.memCount}  image ={this.props.leagueData.picture}>
           </Leaguedes>
           <div className="col-md-5">
           <h1 className="sportswe"><u>Sports We Play</u></h1>
