@@ -1,6 +1,6 @@
 import React from 'react';
 import Fgsearchops from './fgsearchops';
-import {matchingGames} from '../server.js';
+import {matchingGames, opsMatchingGames} from '../server.js';
 import Fgresultitem from "./fgresultitem";
 
 //import Fgresultlist from './fgresultlist';
@@ -28,16 +28,23 @@ export default class Fgsearchbox extends React.Component {
 
   }
 
-  onSubmit(sport, location, skillLvl /*, maxPlayers, minAge, maxAge, league*/) {
+  onSubmit(sport, location, skillLvl, maxPlayers, minAge, maxAge, league) {
+    if(this.ops.state.showOps == true){opsMatchingGames(sport, skillLvl, location, maxPlayers, minAge, maxAge, league,(games) => {
+      this.setState({matchedGames: (games)});
+      if (this.state.matchedGames) {this.setState({gamesfound: true});}
+      window.alert("Found "+games.length+ " games based on your search");
 
-  matchingGames(sport, skillLvl, location, /*maxPlayers, minAge, maxAge, league,*/ (games) => {
-    this.setState({matchedGames: (games)});
-    if (this.state.matchedGames) {this.setState({gamesfound: true});}
-    window.alert("Found "+games.length+ " games based on your search");
+    });}
+    else{
+    matchingGames(sport, skillLvl, location, /*maxPlayers, minAge, maxAge, league,*/ (games) => {
+      this.setState({matchedGames: (games)});
+      if (this.state.matchedGames) {this.setState({gamesfound: true});}
+      window.alert("Found "+games.length+ " games based on your search");
 
-  });
+    });
 
 
+  }
 }
 
 
@@ -45,23 +52,39 @@ export default class Fgsearchbox extends React.Component {
     var sportText = this.state.sport.trim();
     var skillLvlText = this.state.skillLvl.trim();
     var locationText = this.state.location.trim();
-/*  var maxPlayersText = this.state.maxPlayers.trim();
+    var maxPlayersText = this.state.maxPlayers.trim();
     var minAgeText = this.state.minAge.trim();
     var maxAgeText = this.state.maxAge.trim();
-    var leagueText = this.state.league;*/
-    if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-      this.onSubmit(sportText, locationText, skillLvlText/*, maxPlayersText, minAgeText, maxAgeText, leagueText */);
+    var leagueText = this.state.league;
+    if(this.ops.state.showOps === false){
+      if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
+        this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText);
 
+      }
+      else{
+        window.alert("Please fill out all of the required fields!");
+      }
     }
     else{
-      window.alert("Please fill out all of the required fields!");
+      this.state.maxPlayers = this.ops.state.opMaxPlayers;
+      this.state.minAge = this.ops.state.opMinAge;
+      this.state.maxAge = this.ops.state.opMaxAge;
+      this.state.league = this.ops.state.opLeague;
+      var maxPlayersText = this.state.maxPlayers.trim();
+      var minAgeText = this.state.minAge.trim();
+      var maxAgeText = this.state.maxAge.trim();
+      var leagueText = this.state.league.trim();
+
+      if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
+        this.onSubmit(sportText, locationText, skillLvlText/*, maxPlayersText, minAgeText, maxAgeText, leagueText */);
+
+      }
+      else{
+        window.alert("Please fill out all of the required fields!");
+      }
     }
 
-
-  }
-
-
-
+      }
 
 
 
@@ -81,8 +104,8 @@ export default class Fgsearchbox extends React.Component {
   }
 
 
-
   render() {
+
     var data = this.state;
     var contents;
     switch(data.gamesfound) {
@@ -101,8 +124,6 @@ export default class Fgsearchbox extends React.Component {
     )
   })}
           </div>
-
-
 
     );
     break;
@@ -148,18 +169,12 @@ export default class Fgsearchbox extends React.Component {
                   </label>
               </div>
           </div>
-            <Fgsearchops>
-            </Fgsearchops>
+            <div> <Fgsearchops ref={(ops) => {this.ops = ops;}} />
+          </div>
           <p>
               <button type="submit" className="btn pull-right" onClick={(e) => this.fgHandler(e)}>Submit </button>
 
           </p>
-
-
-
-
-
-
       </div>
       <div className="panel panel-default panel-results">{contents}
 
