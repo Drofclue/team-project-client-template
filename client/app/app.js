@@ -16,7 +16,7 @@ import { IndexRoute, Router, Route, hashHistory } from 'react-router' // eslint-
 class SettingsPage extends React.Component {
   render() {
     return (
-      <p>This is the the settings page for user with ID {this.props.params.id}.</p>
+      <p>This is the the settings page for user with ID {this.props.params.userid}.</p>
     );
   }
 }
@@ -24,38 +24,38 @@ class SettingsPage extends React.Component {
 class LogoutPage extends React.Component {
   render() {
     return (
-      <p>This is the logout page for user with ID {this.props.params.id}.</p>
+      <p>This is the logout page for user with ID {this.props.params.userid}.</p>
     )
   }
 }
 
 class GoToGame extends React.Component {
   render(){
-    return <GamePage gameid={this.props.params.id}/>
+    return <GamePage gameid={this.props.params.gameid}/>
   }
 }
 
 class GoToLeague extends React.Component {
   render(){
-    return <LeaguePage league={this.props.params.id}/>
+    return <LeaguePage league={this.props.params.leagueid}/>
   }
 }
 
 class GoToUser extends React.Component {
   render(){
-    return <UserProfilePage user={this.props.params.id}/>
+    return <UserProfilePage user={this.props.params.userid}/>
   }
 }
 
 class GoToSchedule extends React.Component {
   render(){
-    return <Schedule user={this.props.params.id}/>
+    return <Schedule user={this.props.params.userid}/>
   }
 }
 
 class GoToCreateAGame extends React.Component {
   render(){
-    return <CreateAGame user={this.props.params.id}/>
+    return <CreateAGame user={this.props.params.userid}/>
   }
 }
 
@@ -65,14 +65,14 @@ class App extends React.Component {
       <Router history={hashHistory}>
         <Route path="/" component={Origin}>
           <IndexRoute/>
-          <Route path="settings/:id" component={SettingsPage}/>
+          <Route path="settings/:userid" component={SettingsPage}/>
           <Route path="findagame" component={Findagame}/>
-          <Route path="createagame/:id" component={GoToCreateAGame}/>
-          <Route path="game/:id" component={GoToGame}/>
-          <Route path="league/:id" component={GoToLeague}/>
-          <Route path="user/:id" component={GoToUser}/>
-          <Route path="logout/:id" component={LogoutPage}/>
-          <Route path="schedule/:id" component={GoToSchedule}/>
+          <Route path="createagame/:userid" component={GoToCreateAGame}/>
+          <Route path="game/:gameid" component={GoToGame}/>
+          <Route path="league/:leagueid" component={GoToLeague}/>
+          <Route path="user/:userid" component={GoToUser}/>
+          <Route path="logout/:userid" component={LogoutPage}/>
+          <Route path="schedule/:userid" component={GoToSchedule}/>
         </Route>
       </Router>
     )
