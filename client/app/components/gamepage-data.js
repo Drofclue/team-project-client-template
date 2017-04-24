@@ -11,7 +11,7 @@ export default class GamePageData extends React.Component {
             <table className = "table">
               <thead>
                 <tr>
-                <th><a href="#"><h1>{this.props.league}</h1></a></th>
+                <th><h1>{this.props.gameName}</h1></th>
                 </tr>
               </thead>
               <tbody>
