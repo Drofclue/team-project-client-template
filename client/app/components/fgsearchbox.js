@@ -37,7 +37,7 @@ export default class Fgsearchbox extends React.Component {
 
     });}
     else{
-    matchingGames(sport, skillLvl, location, /*maxPlayers, minAge, maxAge, league,*/ (games) => {
+    matchingGames(sport, skillLvl, location,  (games) => {
       this.setState({matchedGames: (games)});
       if (this.state.matchedGames) {this.setState({gamesfound: true});}
       window.alert("Found "+games.length+ " games based on your search");
@@ -53,13 +53,10 @@ export default class Fgsearchbox extends React.Component {
     var sportText = this.state.sport.trim();
     var skillLvlText = this.state.skillLvl.trim();
     var locationText = this.state.location.trim();
-    var maxPlayersText = this.state.maxPlayers.trim();
-    var minAgeText = this.state.minAge.trim();
-    var maxAgeText = this.state.maxAge.trim();
-    var leagueText = this.state.league;
+
     if(this.ops.state.showOps === false){
       if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-        this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText);
+        this.onSubmit(sportText, locationText, skillLvlText);
 
       }
       else{
@@ -71,13 +68,13 @@ export default class Fgsearchbox extends React.Component {
       this.state.minAge = this.ops.state.opMinAge;
       this.state.maxAge = this.ops.state.opMaxAge;
       this.state.league = this.ops.state.opLeague;
-      var maxPlayersText = this.state.maxPlayers.trim();
+      var maxPlayersText =   this.state.maxPlayers.trim();
       var minAgeText = this.state.minAge.trim();
       var maxAgeText = this.state.maxAge.trim();
       var leagueText = this.state.league.trim();
 
       if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-        this.onSubmit(sportText, locationText, skillLvlText/*, maxPlayersText, minAgeText, maxAgeText, leagueText */);
+        this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText );
 
       }
       else{
