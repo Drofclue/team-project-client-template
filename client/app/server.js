@@ -39,8 +39,10 @@ xhr.send();
 }
 
 export function getLeagueData(league, cb) {
-  var leagueData = readDocument('leagues', league);
-  emulateServerReturn(leagueData, cb);
+  sendXHR('GET', '/league/' + league, undefined, (xhr) => {
+    // Return the new game.
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 export function getSuggestedGames(user, cb) {

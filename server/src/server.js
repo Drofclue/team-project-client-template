@@ -89,6 +89,17 @@ app.get('/user/:userid', function(req, res) {
 });
 
 
+function getLeagueData(league) {
+  var leagueData = readDocument('leagues', league)
+  return leagueData;
+}
+
+
+app.get('/league/:leagueid', function(req, res) {
+  var leagueid = req.params.leagueid;
+  res.send(getLeagueData(leagueid));
+});
+
 
 /**
  * Adds a new game to the database.
