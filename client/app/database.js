@@ -99,7 +99,7 @@ var initialData = {
        "picture": "img/lingodaddy_profile_pic_userhub.jpg",
        "currentUsername": "a",
        "status": "",
-       "memCount": "s",
+       "memCount": "5",
        "admin": "", // a specific user
        "sports":[],
        "skill":[],
