@@ -1,8 +1,7 @@
 import React from 'react';
 import HighlightsUpdate from './highlightsupdate.js'
-import HighlightsReactions from './highlightsreactions.js'
 import Comment from './comment.js'
-import CommentEntry from './commententry.js'
+import CommentThread from './commentthread.js'
 import {unixTimeToString} from '../util.js'
 import {postComment} from '../server';
 import {unrsvpHighlightsItem} from '../server';
@@ -14,33 +13,20 @@ export default class HighlightsItem extends React.Component{
 	this.state = props.data;
 	}
 	handleCommentPost(commentText) {
-    // Post a comment as user ID 1, which is our mock user!
     postComment(this.state._id, 1, commentText, (updatedHighlightsItem) => {
-      // Update our state to trigger a re-render.
       this.setState(updatedHighlightsItem);
     });
   }
 	handleRsvpClick(clickEvent) {
-    // Stop the event from propagating up the DOM tree, since we handle it here.
-    // Also prevents the link click from causing the page to scroll to the top.
     clickEvent.preventDefault();
-    // 0 represents the 'main mouse button' -- typically a left click
-    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
     if (clickEvent.button === 0) {
-      // Callback function for both the rsvp and unrsvp cases.
       var callbackFunction = (updatedRsvpCounter) => {
-        // setState will overwrite the 'rsvpCounter' field on the current
-        // state, and will keep the other fields in-tact.
-        // This is called a shallow merge:
-        // https://facebook.github.io/react/docs/component-api.html#setstate
         this.setState({rsvpCounter: updatedRsvpCounter});
       };
 
       if (this.didUserRsvp()) {
-        // User clicked 'unrsvp' button.
         unrsvpHighlightsItem(this.state._id, 1, callbackFunction);
       } else {
-        // User clicked 'rsvp' button.
         rsvpHighlightsItem(this.state._id, 1, callbackFunction);
       }
     }
@@ -59,24 +45,36 @@ export default class HighlightsItem extends React.Component{
     return rsvpd;
   }
 	render(){
-		var rsvpButtonText = "Rsvp";
+		var rsvpButtonText = "RSVP";
     if (this.didUserRsvp()) {
-      rsvpButtonText = "Unrsvp";
+      rsvpButtonText = "UNRSVP";
     }
 		var data = this.props.data;
-		var contents;
-				contents = (
-					<HighlightsUpdate key={data._id} user={data.contents.user} timestamp={unixTimeToString(data.contents.timestamp)} location={data.contents.location}
-						message={data.contents.contents}>
-					</HighlightsUpdate>
-				);
 		return(
 			<div className="col-md-7 text-left mid">
 				<h1> Highlights</h1>
 				<div className="panel panel-default highlights">
 					<div className="panel-body post">
-						{contents}
-						<HighlightsReactions/>
+						<HighlightsUpdate key={data._id} user={data.contents[0].contents.user} timestamp={unixTimeToString(data.contents[0].contents.timestamp)} location={data.contents[0].contents.location}
+							message={data.contents[0].contents.contents}>
+							{data.contents[0].contents.contents.split("\n").map((line, i) => {
+              // Note: 'i' is the index of line in data.contents.contents.
+              return (
+                <p key={"line" + i}>{line}</p>
+              );
+            })}
+						</HighlightsUpdate>
+						<div className="row">
+							<div className="col-md-12 reactions">
+								<ul className="list-inline">
+									<li>
+										<a href="#" onClick={(e) => this.handleLikeClick(e)}>
+											<span className="glyphicon glyphicon-ok"></span> {rsvpButtonText}
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
 						<div className="panel-footer comments">
 							<div className="row people_reacted">
 								<div className="col-md-12">
@@ -84,7 +82,7 @@ export default class HighlightsItem extends React.Component{
 								</div>
 							</div>
 							<hr />
-							<CommentEntry onPost={(commentText) => this.handleCommentPost(commentText)}>
+							<CommentThread onPost={(commentText) => this.handleCommentPost(commentText)}>
 								{
 									data.contents[0].comments.map((comment, i) => {
 										// i is comment's index in comments array
@@ -93,7 +91,7 @@ export default class HighlightsItem extends React.Component{
 										);
 									})
 								}
-							</CommentEntry>
+							</CommentThread>
 						</div>
 					</div>
 				</div>

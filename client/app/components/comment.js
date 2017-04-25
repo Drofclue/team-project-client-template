@@ -11,9 +11,9 @@ export default class Comment extends React.Component{
             </span>
           </div>
           <div className="media-body">
-              <a href="#">{this.props.user.username}</a>
+              <a href="#">{this.props.username}</a>
                 {this.props.message}
-              <br /><a href="#">Like</a> · {unixTimeToString(this.props.timestamp)}
+              <br />{unixTimeToString(this.props.timestamp)}
           </div>
       </div>
     )

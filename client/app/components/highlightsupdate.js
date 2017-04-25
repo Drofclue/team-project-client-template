@@ -4,9 +4,10 @@ import {unixTimeToString} from '../util';
 export default class HighlightsUpdate extends React.Component{
   constructor(props) {
   super(props);
-  this.state = props;
+  this.state = this.props;
 }
   render(){
+    console.log(this.state);
     return(
       <div>
          <div className="panel panel-default highlights">
@@ -20,14 +21,11 @@ export default class HighlightsUpdate extends React.Component{
                            </span>
                         </div>
                         <div className="media-body">
-                           <a href="#">{this.state.user}</a>
+                           <a href="#">{this.state.user.username}</a>
                            <br /> {unixTimeToString(this.state.timestamp)}·
                            <span className="glyphicon glyphicon-user"></span>
                         </div>
                      </div>
-                  </div>
-                  <div className="col-md-2">
-                     <span className="caret pull-right"></span>
                   </div>
                </div>
                <div className="row">
