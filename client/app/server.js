@@ -28,6 +28,16 @@ export function getGameData(game, cb) {
   emulateServerReturn(gameData, cb);
 }
 
+//export function getGameData(game, cb) {
+  //var xhr = new XMLHttpRequest();
+  //xhr.open('GET', '/game/' + game);
+  //xhr.addEventListener('load', function() {
+  // Call the callback with the data.
+  //cb(JSON.parse(xhr.responseText));
+//});
+//xhr.send();
+//}
+
 export function getLeagueData(league, cb) {
   var leagueData = readDocument('leagues', league);
   emulateServerReturn(leagueData, cb);

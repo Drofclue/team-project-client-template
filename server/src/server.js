@@ -50,11 +50,25 @@ function getUserIdFromToken(authorizationLine) {
   }
 }
 
+// Fetches game data from database
+function getGameData(game) {
+  var gameData = readDocument('games', game);
+  return gameData;
+}
+
+/**
+ * Get the game data for a particular game.
+ */
+app.get('/game/:gameid', function(req, res) {
+  var gameid = req.params.gameid;
+  res.send(getGameData(gameid));
+});
+
+// Fetches user data from database
 function getUserData(user) {
   var userData = readDocument('users', user);
   return userData;
 }
-
 
 /**
  * Get the user data for a particular user.
