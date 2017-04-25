@@ -45,11 +45,6 @@ export function getLeagueData(league, cb) {
   });
 }
 
-export function getSuggestedGames(user, cb) {
-  var userData = readDocument('users', user);
-  emulateServerReturn(userData, cb);
-}
-
 function getHighlightsItemSync(highlightsItemId) {
     var highlightsItem = readDocument('highlightsItems', highlightsItemId);
     highlightsItem.rsvpCounter =
