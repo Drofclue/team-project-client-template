@@ -97,6 +97,7 @@ var initialData = {
          "status": "",
          "memCount": "5",
          "admin": "", // a specific user
+         "adminnum": 1,
          "sports":[],
          "skill":[],
          "members":[], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -114,6 +115,7 @@ var initialData = {
          "status": "Open",
          "memCount": "209",
          "admin": "LingoDaddy42", // a specific user
+         "adminnum": 1,
          "sports":["Dodgeball","Synchronized Swimming"],
          "skill":["Novice","Intermediate"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -131,6 +133,7 @@ var initialData = {
          "status": "Closed",
          "memCount": "696",
          "admin": "LingoDaddy42", // a specific user
+         "adminnum": 1,
          "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
          "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -150,6 +153,7 @@ var initialData = {
          "status": "Open",
          "memCount": "2",
          "admin": "LingoDaddy42", // a specific user
+         "adminnum" : 1,
          "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
          "skill":["Novice", "Beginner", "Beginner- Advanced"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -167,6 +171,7 @@ var initialData = {
        "status": "Open",
        "memCount": "4",
        "admin": "LingoDaddy42", // a specific user
+       "adminnum": 1,
        "sports":["Bowling","Walking", "Swimming", "Four Square"],
        "skill":["Novice", "Beginner", "Beginner", "Advanced"],
        "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -184,6 +189,7 @@ var initialData = {
      "status": "Open",
      "memCount": "4",
      "admin": "LingoDaddy42", // a specific user
+     "adminnum": 1,
      "sports":["Soccer"],
      "skill":["Novice"],
      "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -201,6 +207,7 @@ var initialData = {
     "status": "Open",
     "memCount": "1",
     "admin": "LingoDaddy4233", // a specific user
+    "adminnum": 1,
     "sports":["Football"],
     "skill":["Novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -219,6 +226,7 @@ var initialData = {
     "status": "Closed",
     "memCount": "19302",
     "admin": "LingoDaddy4233", // a specific user
+    "adminnum": 1,
     "sports":["Tea Drinking"],
     "skill":["Advanced"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -237,6 +245,7 @@ var initialData = {
     "status": "Open",
     "memCount": "1",
     "admin": "LingoDaddy4233", // a specific user
+    "adminnum": 1,
     "sports":["Football"],
     "skill":["Novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members

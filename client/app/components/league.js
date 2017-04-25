@@ -32,7 +32,7 @@ export default class League extends React.Component {
               </Groupdesc>
             </div>
           </div>
-          <Leagueupcoming games = {this.props.leagueData.games} dates = {this.props.leagueData.dates} times = {this.props.leagueData.times} locations = {this.props.leagueData.locations} league = {this.props.leagueData.leagName}>
+          <Leagueupcoming adminnum = {this.props.leagueData.adminnum} games = {this.props.leagueData.games} dates = {this.props.leagueData.dates} times = {this.props.leagueData.times} locations = {this.props.leagueData.locations} league = {this.props.leagueData.leagName}>
           </Leagueupcoming>
         </div>
     )
