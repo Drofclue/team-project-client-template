@@ -39,13 +39,10 @@ xhr.send();
 }
 
 export function getLeagueData(league, cb) {
-  var leagueData = readDocument('leagues', league);
-  emulateServerReturn(leagueData, cb);
-}
-
-export function getSuggestedGames(user, cb) {
-  var userData = readDocument('users', user);
-  emulateServerReturn(userData, cb);
+  sendXHR('GET', '/league/' + league, undefined, (xhr) => {
+    // Return the new game.
+    cb(JSON.parse(xhr.responseText));
+  });
 }
 
 function getHighlightsItemSync(highlightsItemId) {

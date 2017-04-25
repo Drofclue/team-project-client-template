@@ -27,6 +27,10 @@
       "id": "admin",
       "type": "string"
     },
+    "adminnum": {
+      "id": "adminnum",
+      "type": "integer"
+    },
     "sports": {
       "id": "sports",
       "type": "array"

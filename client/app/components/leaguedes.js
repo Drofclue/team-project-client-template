@@ -9,7 +9,7 @@ export default class Leaguedes extends React.Component {
     return (
       <div>
       <div className="media-left">
-          <img src={this.props.image} className="media-object" style={{"width" : "200px" ,"max-height" : "150px"}} />
+          <img src={this.props.image} className="media-object" style={{"width" : "200px" ,"maxHeight" : "150px"}} />
       </div>
           <div className="media-body">
               <h1 className="media-heading">{this.props.title}
