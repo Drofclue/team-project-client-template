@@ -12,7 +12,7 @@ var addDocument = database.addDocument;
 var getCollection = database.getCollection;
 
 // You run the server from `server`, so `../client/build` is `server/../client/build`.
-// '..' means "go up one directory", so this translates into `client/build`!
+// '..' means "go up one directory", so this translates into `client/build`
 app.use(express.static('../client/build'));
 
 var GameSchema = require('./schemas/game.json');
@@ -128,7 +128,7 @@ app.post('/game',
   // Check if requester is authorized to post this status update.
   // (The requester must be the author of the update.)
   if (fromUser === body.currPlayers[0]) {
-    var newUpdate = createGame(body.gameName, body.description, body.location, body.date, body.time, body.currPlayers, body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league);
+    var newUpdate = createGame(body.gameName, body.description, body.location, body.date, body.time, body.currPlayers[0], body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league);
     // When POST creates a new resource, we should tell the client about it
     // in the 'Location' header and use status code 201.
     res.status(201);
@@ -182,6 +182,15 @@ function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, m
 
   return(matchedGames);
 }
+
+// Reset database.
+app.post('/resetdb', function(req, res) {
+  console.log("Resetting database...");
+  // This is a debug route, so don't do any validation.
+  database.resetDatabase();
+  // res.send() sends an empty response with status code 200
+  res.send();
+});
 
 
 

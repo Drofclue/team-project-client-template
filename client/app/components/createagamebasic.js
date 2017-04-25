@@ -27,9 +27,9 @@ export default class CreateAGameBasic extends React.Component {
     var locationText = this.state.location.trim();
     var dateText = this.state.date.trim();
     var timeText = this.state.time.trim();
-    var maxPlayersText = this.state.maxPlayers.trim();
-    var minAgeText = this.state.minAge.trim();
-    var maxAgeText = this.state.maxAge.trim();
+    var maxPlayersText = this.state.maxPlayers;
+    var minAgeText = this.state.minAge;
+    var maxAgeText = this.state.maxAge;
     var sportText = this.state.sport;
     var skillLvlText = this.state.skillLvl;
     var leagueText = this.state.league;
@@ -72,17 +72,17 @@ export default class CreateAGameBasic extends React.Component {
 
   handleChangeMaxPlayers(e) {
     e.preventDefault();
-    this.setState({maxPlayers: e.target.value});
+    this.setState({maxPlayers: parseInt(e.target.value, 10)});
   }
 
   handleChangeMinAge(e) {
     e.preventDefault();
-    this.setState({minAge: e.target.value});
+    this.setState({minAge: parseInt(e.target.value, 10)});
   }
 
   handleChangeMaxAge(e) {
     e.preventDefault();
-    this.setState({maxAge: e.target.value});
+    this.setState({maxAge: parseInt(e.target.value, 10)});
   }
 
   handleChangeSport(e) {
@@ -93,6 +93,11 @@ export default class CreateAGameBasic extends React.Component {
   handleChangeSkillLvl(e) {
     e.preventDefault();
     this.setState({skillLvl: e.target.value});
+  }
+
+  handleChangeLeague(e) {
+    e.preventDefault();
+    this.setState({league: e.target.value});
   }
 
   render() {
