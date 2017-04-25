@@ -64,7 +64,6 @@
     "minAge",
     "maxAge",
     "sport",
-    "skillLvl",
-    "league"
+    "skillLvl"
   ]
 }
