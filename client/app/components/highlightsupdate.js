@@ -7,10 +7,9 @@ export default class HighlightsUpdate extends React.Component{
   this.state = this.props;
 }
   render(){
-    console.log(this.state);
     return(
       <div>
-         <div className="panel panel-default highlights">
+         <div className="panel panel-default highlightsupdate">
             <div className="panel-body post">
                <div className="row">
                   <div className="col-md-10">

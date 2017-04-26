@@ -44,7 +44,7 @@ var initialData = {
     "3":{
       "_id":3,
       "username": "FuriousSquirrel4500",
-      "profilepicture": "img/middle-aged-bowler.jpg",
+      "profilepicture": "img/bof.png",
       "name": "Paul Lactose",
       "highlights": 4,
       "gender": "Male",
@@ -60,7 +60,7 @@ var initialData = {
     "4":{
       "_id":4,
       "username": "donnydad",
-      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
+      "profilepicture": "img/profile.svg",
       "highlights": 4,
       "name": "Elrond Hubbard",
       "gender": "Space Alien",
@@ -76,7 +76,7 @@ var initialData = {
     "5":{
       "_id":5,
       "username": "FuriousBallWoman",
-      "profilepicture": "img/lingodaddy_profile_pic_userhub.jpg",
+      "profilepicture": "img/cherry.png",
       "name": "Brenda Fiddlebiscuits",
       "highlights": 4,
       "gender": "Female",
@@ -364,34 +364,30 @@ var initialData = {
       "type": "highlightsUpdate",
       "contents": {
         "user": 4,
+        "avatar": "img/profile.svg",
         "timestamp": 1453668480000,
         "location": "Northampton, MA",
         "contents": "League of Games is pleased to let everyone know that we will be having our first soccer game of the season this Saturday @ 6:00pm in the Southwest fields."
       },
-      // List of comments on the post
       "comments": [
         {
-          // The user of the comment.
           "user": 3,
-          // The contents of the comment.
+          "avatar": "img/fob.png",
           "contents": "Hope no one comes!",
-          // The date the comment was posted.
-          // 01/24/16 22:00 EST
           "timestamp": 1453690800000
         },
         {
           "user": 5,
+          "avatar": "img/bof.png",
           "contents": "#rekt",
           "timestamp": 1453690800000
         }
       ]
     }
   },
-    // "highlgihts" collection. Highlights for each FB user.
     "highlights": {
       "4": {
         "_id": 4,
-        // Listing of highlgihtsItems in the highlights.
         "contents": [1]
       }
     }

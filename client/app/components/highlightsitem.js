@@ -55,7 +55,7 @@ export default class HighlightsItem extends React.Component{
 				<h1> Highlights</h1>
 				<div className="panel panel-default highlights">
 					<div className="panel-body post">
-						<HighlightsUpdate key={data._id} user={data.contents[0].contents.user} timestamp={unixTimeToString(data.contents[0].contents.timestamp)} location={data.contents[0].contents.location}
+						<HighlightsUpdate key={data._id} avatar={data.contents[0].contents.user.profilepicture} user={data.contents[0].contents.user} timestamp={unixTimeToString(data.contents[0].contents.timestamp)} location={data.contents[0].contents.location}
 							message={data.contents[0].contents.contents}>
 							{data.contents[0].contents.contents.split("\n").map((line, i) => {
               // Note: 'i' is the index of line in data.contents.contents.
@@ -80,14 +80,14 @@ export default class HighlightsItem extends React.Component{
 								<div className="col-md-12">
 									<a href="#">{data.contents[0].rsvpCounter.length} people</a> are going
 								</div>
+								<hr />
 							</div>
-							<hr />
 							<CommentThread onPost={(commentText) => this.handleCommentPost(commentText)}>
 								{
 									data.contents[0].comments.map((comment, i) => {
 										// i is comment's index in comments array
 										return (
-											<Comment key={i} username={comment.user.username} timestamp={comment.timestamp} message={comment.contents}></Comment>
+											<Comment key={i} username={comment.user.username} avatar={comment.user.profilepicture} timestamp={comment.timestamp} message={comment.contents}></Comment>
 										);
 									})
 								}
