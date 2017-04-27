@@ -12,7 +12,7 @@ export default class Comment extends React.Component{
             </span>
           </div>
           <div className="media-body">
-              <Link to={"/user/" + this.props.username._id}>{this.props.username}</Link>
+              <Link to={"/user/" + this.props.user._id}>{this.props.username}</Link>
                 {this.props.message}
               <br />{unixTimeToString(this.props.timestamp)}
               <hr />

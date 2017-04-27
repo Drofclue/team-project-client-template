@@ -1,5 +1,7 @@
 import React from 'react';
 import {unixTimeToString} from '../util';
+import {Link} from 'react-router';
+
 
 export default class HighlightsUpdate extends React.Component{
   constructor(props) {
@@ -20,7 +22,7 @@ export default class HighlightsUpdate extends React.Component{
                            </span>
                         </div>
                         <div className="media-body">
-                           <a href="#">{this.state.user.username}</a>
+                          <Link to={"/user/" + this.state.user._id}>{this.state.user.username}</Link>
                            <br /> {unixTimeToString(this.state.timestamp)}·
                            <span className="glyphicon glyphicon-user"></span>
                         </div>
