@@ -1,7 +1,7 @@
 import React from 'react';
 import League from './league.js';
 import {getLeagueData} from '../server';
-import {readDocument} from '../database.js'
+
 
 
 export default class LeaguePage extends React.Component {
@@ -19,17 +19,16 @@ export default class LeaguePage extends React.Component {
   componentDidMount() {
     this.refresh();
   }
+
+  componentDidUpdate(preProps) {
+    if(preProps.league !== this.props.league){this.refresh();}
+  }
+
   render(){
-    var data = readDocument('leagues', this.props.league);
-    var contents;
-    switch(true) {
-      case true:
-      contents =(
-        <League leagueData= {data}/>
-      )
-    }
+
+
     return (
-          <div>{contents}</div>
+          <League leagueData ={this.state}/>
     )
   }
 }
