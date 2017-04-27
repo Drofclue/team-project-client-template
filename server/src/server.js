@@ -90,6 +90,39 @@ app.get('/league/:leagueid', function(req, res) {
   res.send(getLeagueData(leagueid));
 });
 
+function getHighlightsItemSync(highlightsItemId) {
+    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
+    highlightsItem.rsvpCounter =
+      highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
+    highlightsItem.contents.user =
+      readDocument('users', highlightsItem.contents.user);
+    highlightsItem.comments.forEach((comment) => {
+      comment.user = readDocument('users', comment.user);
+    });
+    return highlightsItem;
+  }
+
+  app.get('/user/:userid/highlights', function(req, res) {
+  var userid = req.params.userid;
+  var fromUser = getUserIdFromToken(req.get('Authorization'));
+  // userid is a string. We need it to be a number.
+  // Parameters are always strings.
+  var useridNumber = parseInt(userid, 10);
+    if (fromUser === useridNumber) {
+    // Send response.
+      res.send(getHighlightsData(userid));
+    } else {
+    // 401: Unauthorized request.
+      res.status(401).end();
+    }
+});
+
+  function getHighlightsData(user) {
+    var userData = readDocument('users', user);
+    var highlightsData = readDocument('highlights', userData.highlights);
+    highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
+    return highlightsData;
+  }
 
 /**
  * Adds a new game to the database.
