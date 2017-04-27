@@ -19,7 +19,7 @@ export default class GamePage extends React.Component {
 
   componentDidMount() {
     this.refresh();
-    console.log(this.state);
+  
   }
 
   componentDidUpdate(preProps) {

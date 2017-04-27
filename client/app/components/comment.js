@@ -1,5 +1,6 @@
 import React from 'react';
 import {unixTimeToString} from '../util';
+import {Link} from 'react-router';
 
 export default class Comment extends React.Component{
   render(){
@@ -11,7 +12,7 @@ export default class Comment extends React.Component{
             </span>
           </div>
           <div className="media-body">
-              <a href="#">{this.props.username}</a>
+              <Link to={"/user/" + this.props.username._id}>{this.props.username}</Link>
                 {this.props.message}
               <br />{unixTimeToString(this.props.timestamp)}
               <hr />

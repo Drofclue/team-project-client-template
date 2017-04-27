@@ -101,6 +101,9 @@ export default class Fgsearchbox extends React.Component {
     this.setState({location: e.target.value});
   }
 
+  componentDidUpdate(preProps) {
+    if(preProps.gameid !== this.props.gameid){this.refresh();}
+  }
 
   render() {
 

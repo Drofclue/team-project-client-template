@@ -68,7 +68,7 @@ export default class HighlightsItem extends React.Component{
 							<div className="col-md-12 reactions">
 								<ul className="list-inline">
 									<li>
-										<a href="#" onClick={(e) => this.handleLikeClick(e)}>
+										<a href="#" onClick={(e) => this.handleRsvpClick(e)}>
 											<span className="glyphicon glyphicon-ok"></span> {rsvpButtonText}
 											</a>
 										</li>
@@ -87,7 +87,7 @@ export default class HighlightsItem extends React.Component{
 									data.contents[0].comments.map((comment, i) => {
 										// i is comment's index in comments array
 										return (
-											<Comment key={i} username={comment.user.username} avatar={comment.user.profilepicture} timestamp={comment.timestamp} message={comment.contents}></Comment>
+											<Comment key={i}  user={comment.user} username={comment.user.username} avatar={comment.user.profilepicture} timestamp={comment.timestamp} message={comment.contents}></Comment>
 										);
 									})
 								}
