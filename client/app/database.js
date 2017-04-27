@@ -373,13 +373,13 @@ var initialData = {
         {
           "user": 3,
           "avatar": "img/fob.png",
-          "contents": "Hope no one comes!",
+          "contents": " Hope no one comes!",
           "timestamp": 1453690800000
         },
         {
           "user": 5,
           "avatar": "img/bof.png",
-          "contents": "#rekt",
+          "contents": " #rekt",
           "timestamp": 1453690800000
         }
       ]
