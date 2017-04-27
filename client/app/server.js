@@ -14,8 +14,7 @@ function emulateServerReturn(data, cb) {
 
 export function getUserData(user, cb) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/user/1');
-  xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  xhr.open('GET', '/user/' + user);
   xhr.addEventListener('load', function() {
   // Call the callback with the data.
   cb(JSON.parse(xhr.responseText));
