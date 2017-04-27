@@ -1,4 +1,4 @@
-import {readDocument, writeDocument, addDocument, getCollection} from './database.js';
+
 //import data from './database.js';
 
 /**
@@ -96,76 +96,36 @@ function getHighlightsItemSync(highlightsItemId) {
 
 
 
-export function matchingGames(sportPassed, skillPassed, locPasssed,/* maxPlayPassed, minAgePassed, maxAgePassed, leagPassed,*/ cb) {
-  var matchedGames = [];
-  var allGames = getCollection('games');
-  var gameIds = Object.keys(allGames);
-  gameIds.forEach((gameId) => {
-    var curGame = allGames[gameId];
-    var curSport = curGame.sport;
-    var curSkill = curGame.skillLvl;
-    var curLoc = curGame.location;
-  /*  var curMaxPlay = curGame.maxPlayers;
-    var curMinAge = curGame.minAge;
-    var curMaxAge = curGame.maxAge;
-    var curLeague = curGame.league;
-    */
-    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') /*|| (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))*/)) {
-      matchedGames.push(curGame);
-    }
+export function matchingGames(sportPassed, skillPassed, locPasssed, cb) {
+  sendXHR('GET', '/findagame', {
+    sportPassed: sportPassed,
+    skillPassed: skillPassed,
+    locPasssed: locPasssed
+  }, (xhr) => {
+    // Return the new game.
+    cb(JSON.parse(xhr.responseText));
   });
 
-  emulateServerReturn(matchedGames, cb);
-}
+  }
 
+/*
 export function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed, cb) {
-  var matchedGames = [];
-  var allGames = getCollection('games');
-  var gameIds = Object.keys(allGames);
-  gameIds.forEach((gameId) => {
-    var curGame = allGames[gameId];
-    var curSport = curGame.sport;
-    var curSkill = curGame.skillLvl;
-    var curLoc = curGame.location;
-    var curMaxPlay = curGame.maxPlayers;
-    var curMinAge = curGame.minAge;
-    var curMaxAge = curGame.maxAge;
-    var curLeague = curGame.league;
+  sendXHR('GET', '/findagame', {
+    sportPassed: sportPassed,
+    skillPassed: skillPassed,
+    locPasssed: locPasssed,
+    maxPlayPassed: maxPlayPassed,
+    minAgePassed: minAgePassed,
+    maxAgePassed: maxAgePassed,
+    leagPassed: leagPassed
 
-    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string')
-    || (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "")
-    || (curLeague === leagPassed || leagPassed === ""))){
-      matchedGames.push(curGame);
-    }
+  }, (xhr) => {
+    // Return the new game.
+    cb(JSON.parse(xhr.responseText));
   });
 
-  emulateServerReturn(matchedGames, cb);
 }
-
-
-
-/*export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
-  var newGame = {
-    "gameName": gameName,
-    "description": description,
-    "location": location,
-    "date": date,
-    "time": time,
-    "currPlayers": [user],
-    "maxPlayers": maxPlayers,
-    "minAge": minAge,
-    "maxAge": maxAge,
-    "sport": sport,
-    "skillLvl": skillLvl,
-    "league": league
-  };
-
-  // Add the game to the database.
-  // Returns the game w/ an ID assigned.
-  newGame = addDocument('games', newGame);
-  emulateServerReturn(newGame, cb);
-
-}*/
+*/
 
 export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   sendXHR('POST', '/game', {

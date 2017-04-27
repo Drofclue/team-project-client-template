@@ -206,9 +206,25 @@ app.post('/resetdb', function(req, res) {
 /*
  * GET /findagame/ the games which match the search criteria
 */
-//app.get('/findagame/', function(req, res){
-//  var
-//})
+app.get('/findagame/', validate({ body: GameSchema }), function(req, res) {
+// If this function runs, `req.body` passed JSON validation!
+var body = req.body;
+var fromUser = getUserIdFromToken(req.get('Authorization'));
+// Check if requester is authorized to post this status update.
+// (The requester must be the author of the update.)
+if (fromUser === body.currPlayers[0]) {
+var resultingGames = matchingGames(body.sport, body.skillLvl, body.location);
+// When POST creates a new resource, we should tell the client about it
+// in the 'Location' header and use status code 201.
+res.status(200);
+// Send the update!
+res.send(resultingGames);
+} else {
+// 401: Unauthorized.
+res.status(401).end();
+}
+});
+
 
 
 /**
