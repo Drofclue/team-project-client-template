@@ -16,7 +16,7 @@ var getCollection = database.getCollection;
 app.use(express.static('../client/build'));
 
 var GameSchema = require('./schemas/game.json');
-var FindaGameSchema = require('./schemas/findagame.json');
+var FindaGameSchema = require('./schemas/game.json');
 var validate = require('express-jsonschema').validate;
 
 var bodyParser = require('body-parser');

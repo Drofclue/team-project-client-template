@@ -47,11 +47,6 @@ class GoToUser extends React.Component {
   }
 }
 
-class GoToSchedule extends React.Component {
-  render(){
-    return <Schedule user={this.props.params.userid}/>
-  }
-}
 
 class GoToCreateAGame extends React.Component {
   render(){
@@ -72,7 +67,7 @@ class App extends React.Component {
           <Route path="league/:leagueid" component={GoToLeague}/>
           <Route path="user/:userid" component={GoToUser}/>
           <Route path="logout/:userid" component={LogoutPage}/>
-          <Route path="schedule/:userid" component={GoToSchedule}/>
+          <Route path="schedule" component={Schedule}/>
         </Route>
       </Router>
     )
