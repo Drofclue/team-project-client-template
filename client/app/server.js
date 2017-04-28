@@ -14,8 +14,7 @@ function emulateServerReturn(data, cb) {
 
 export function getUserData(user, cb) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/user/1');
-  xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+  xhr.open('GET', '/user/' + user);
   xhr.addEventListener('load', function() {
   // Call the callback with the data.
   cb(JSON.parse(xhr.responseText));
@@ -42,54 +41,35 @@ export function getLeagueData(league, cb) {
   });
 }
 
-function getHighlightsItemSync(highlightsItemId) {
-    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-    highlightsItem.rsvpCounter =
-      highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
-    highlightsItem.contents.user =
-      readDocument('users', highlightsItem.contents.user);
-    highlightsItem.comments.forEach((comment) => {
-      comment.user = readDocument('users', comment.user);
-    });
-    return highlightsItem;
-  }
+export function getHighlightsData(user, cb) {
+  sendXHR('GET', '/user/1/highlights', undefined, (xhr) => {
+    cb(JSON.parse(xhr.responseText));
+  });
+ }
 
-  export function getHighlightsData(user, cb) {
-    var userData = readDocument('users', user);
+export function postComment(highlightsItemId, user, contents, cb) {
+  sendXHR('POST', '/highlightsitem/' + highlightsItemId + '/commentthread/', {
+     "user" : user,
+     "contents" : contents,
+     "timestamp": new Date().getTime()
+   }, (xhr) => {
+  cb(JSON.parse(xhr.responseText))
+  });
+}
 
-    var highlightsData = readDocument('highlights', userData.highlights);
+export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
+  sendXHR('PUT', '/highlightsitem/' + highlightsItemId + '/rsvplist/' + userId,
+  undefined, (xhr) => {
+  cb(JSON.parse(xhr.responseText));
+  });
+}
 
-    highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
-    emulateServerReturn(highlightsData, cb);
-  }
-
-  export function postComment(highlightsItemId, author, contents, cb) {
-    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-    highlightsItem.comments.push({
-      "author": author,
-      "contents": contents,
-      "postDate": new Date().getTime()
-    });
-    writeDocument('highlightsItems', highlightsItem);
-    emulateServerReturn(getHighlightsItemSync(highlightsItemId), cb);
-  }
-
-  export function rsvpHighlightsItem(highlightsItemId, userId, cb) {
-    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-    highlightsItem.rsvpCounter.push(userId);
-    writeDocument('highlightsItems', highlightsItem);
-    emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
-  }
-
-  export function unrsvpHighlightsItem(highlightsItemId, userId, cb) {
-    var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-    var userIndex = highlightsItem.rsvpCounter.indexOf(userId);
-    if (userIndex !== -1) {
-      highlightsItem.rsvpCounter.splice(userIndex, 1);
-      writeDocument('highlightsItems', highlightsItem);
-    }
-    emulateServerReturn(highlightsItem.rsvpCounter.map((userId) => readDocument('users', userId)), cb);
-  }
+export function unrsvpHighlightsItem(highlightsItemId, userId, cb) {
+sendXHR('DELETE', '/highlightsitem/' + highlightsItemId + '/rsvplist/' + userId,
+undefined, (xhr) => {
+cb(JSON.parse(xhr.responseText));
+});
+}
 
 
 

@@ -5,12 +5,12 @@ import {getUserData} from '../server';
 export default class UserProfilePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state=props;
+    this.state={props,userdata:{}};
   }
 
   refresh() {
     getUserData(this.props.user, (userData) => {
-      this.setState(userData);
+      this.setState({userdata: userData});
     });
   }
 
@@ -18,9 +18,14 @@ export default class UserProfilePage extends React.Component {
     this.refresh();
   }
 
+  componentDidUpdate(preProps) {
+    if(preProps.user !== this.props.user){this.refresh();}
+  }
+
+
   render(){
     return(
-            <UserProfile userData={this.state}/>
+            <UserProfile userData={this.state.userdata}/>
     )
   }
 }

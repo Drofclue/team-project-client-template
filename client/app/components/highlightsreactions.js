@@ -11,7 +11,7 @@ export default class HighlightsReactions extends React.Component{
         <div className="col-md-12 reactions">
           <ul className="list-inline">
             <li>
-              <a href="#" onClick={(e) => this.handleLikeClick(e)}>
+              <a href="#" onClick={(e) => this.handleRsvpClick(e)}>
                     <span className="glyphicon glyphicon-ok"></span> {rsvpButtonText}
               </a>
             </li>
