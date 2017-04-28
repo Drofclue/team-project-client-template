@@ -23,10 +23,7 @@ export function getUserData(user, cb) {
 xhr.send();
 }
 
-//export function getGameData(game, cb) {
-  //var gameData = readDocument('games', game);
-  //emulateServerReturn(gameData, cb);
-//}
+
 
 export function getGameData(game, cb) {
   var xhr = new XMLHttpRequest();
@@ -96,36 +93,18 @@ function getHighlightsItemSync(highlightsItemId) {
 
 
 
-export function matchingGames(sportPassed, skillPassed, locPasssed, cb) {
-  sendXHR('GET', '/findagame', {
-    sportPassed: sportPassed,
-    skillPassed: skillPassed,
-    locPasssed: locPasssed
-  }, (xhr) => {
+export function matchingGames(sportPassed, skillPassed, locPassed, cb) {
+  console.log(sportPassed);
+  console.log(skillPassed);
+  console.log(locPassed);
+  sendXHR('GET', '/findagame/'+ sportPassed+ '/'+skillPassed+ '/'+ locPassed, undefined, (xhr) => {
     // Return the new game.
     cb(JSON.parse(xhr.responseText));
   });
 
   }
 
-/*
-export function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed, cb) {
-  sendXHR('GET', '/findagame', {
-    sportPassed: sportPassed,
-    skillPassed: skillPassed,
-    locPasssed: locPasssed,
-    maxPlayPassed: maxPlayPassed,
-    minAgePassed: minAgePassed,
-    maxAgePassed: maxAgePassed,
-    leagPassed: leagPassed
 
-  }, (xhr) => {
-    // Return the new game.
-    cb(JSON.parse(xhr.responseText));
-  });
-
-}
-*/
 
 export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
   sendXHR('POST', '/game', {

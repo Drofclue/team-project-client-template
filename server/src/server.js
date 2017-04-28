@@ -16,6 +16,7 @@ var getCollection = database.getCollection;
 app.use(express.static('../client/build'));
 
 var GameSchema = require('./schemas/game.json');
+var FindaGameSchema = require('./schemas/findagame.json');
 var validate = require('express-jsonschema').validate;
 
 var bodyParser = require('body-parser');
@@ -154,66 +155,50 @@ app.post('/game',
 
 
 
-function matchingGames(sportPassed, skillPassed, locPasssed) {
-  var matchedGames = [];
+function matchingGames(sportPassed, skillPassed, locPassed) {
+  console.log(sportPassed);
+  console.log(skillPassed);
+  console.log(locPassed);
   var allGames = getCollection('games');
+  var everygame = [];
   var gameIds = Object.keys(allGames);
-  gameIds.forEach((gameId) => {
-    var curGame = allGames[gameId];
-    var curSport = curGame.sport;
-    var curSkill = curGame.skillLvl;
-    var curLoc = curGame.location;
-    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string') /*|| (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "") || (curLeague === leagPassed || leagPassed === ""))*/)) {
-      matchedGames.push(curGame);
-    }
-  });
+  gameIds.forEach((gameId) => {everygame.push(allGames[gameId]);
+  console.log(allGames[gameId]);});
 
-  return(matchedGames);
+  console.log();
+  var matchGames = everygame.filter(function(game){
+    console.log(game.sport);
+    console.log(game.skillLvl);
+    console.log(game.loc);
+    return (game.sport.toLowerCase() === sportPassed) && ((game.skillLvl.toLowerCase() === skillPassed)||(game.loc.toLowerCase() === locPassed));
+});
+return matchGames;
 }
 
-function opsMatchingGames(sportPassed, skillPassed, locPasssed, maxPlayPassed, minAgePassed, maxAgePassed, leagPassed) {
-  var matchedGames = [];
-  var allGames = getCollection('games');
-  var gameIds = Object.keys(allGames);
-  gameIds.forEach((gameId) => {
-    var curGame = allGames[gameId];
-    var curSport = curGame.sport;
-    var curSkill = curGame.skillLvl;
-    var curLoc = curGame.location;
-    var curMaxPlay = curGame.maxPlayers;
-    var curMinAge = curGame.minAge;
-    var curMaxAge = curGame.maxAge;
-    var curLeague = curGame.league;
-    if (curSport === sportPassed & ((curSkill === skillPassed || skillPassed === "") || (curLoc === locPasssed || typeof(locPasssed) === 'string')
-    || (curMaxPlay === maxPlayPassed || maxPlayPassed === "") || (curMinAge === minAgePassed || minAgePassed === "")|| (curMaxAge === maxAgePassed || maxAgePassed === "")
-    || (curLeague === leagPassed || leagPassed === ""))){
-      matchedGames.push(curGame);
-    }
-  });
 
-  return(matchedGames);
-}
+
 
 
 // Reset database.
-app.post('/resetdb', function(req, res) {
+app.post('/resetdb', validate({ body: GameSchema }), function(req, res) {
   console.log("Resetting database...");
   // This is a debug route, so don't do any validation.
   database.resetDatabase();
   // res.send() sends an empty response with status code 200
   res.send();
 });
+
+
 /*
  * GET /findagame/ the games which match the search criteria
 */
-app.get('/findagame/', validate({ body: GameSchema }), function(req, res) {
+app.get('/findagame/:sportPassed/:skillPassed/:locPassed' /*, validate({ body: FindaGameSchema })*/, function(req, res) {
 // If this function runs, `req.body` passed JSON validation!
-var body = req.body;
-var fromUser = getUserIdFromToken(req.get('Authorization'));
+var body = req.params;
 // Check if requester is authorized to post this status update.
 // (The requester must be the author of the update.)
-if (fromUser === body.currPlayers[0]) {
-var resultingGames = matchingGames(body.sport, body.skillLvl, body.location);
+if (true) {
+var resultingGames = matchingGames(body.sportPassed, body.skillPassed, body.locPassed);
 // When POST creates a new resource, we should tell the client about it
 // in the 'Location' header and use status code 201.
 res.status(200);

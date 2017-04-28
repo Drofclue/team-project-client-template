@@ -1,6 +1,5 @@
 import React from 'react';
-import Fgsearchops from './fgsearchops';
-import {matchingGames, opsMatchingGames} from '../server.js';
+import {matchingGames} from '../server.js';
 import Fgresultitem from "./fgresultitem";
 import {Link} from 'react-router';
 
@@ -16,8 +15,13 @@ export default class Fgsearchbox extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      location: "",
+      gameName: "",
+      description: "",
+      date: "",
+      time: "",
+      currPlayers: "",
       maxPlayers: "",
+      loc: "",
       minAge: "",
       maxAge: "",
       sport: "baseball",
@@ -29,16 +33,9 @@ export default class Fgsearchbox extends React.Component {
 
   }
 
-  onSubmit(sport, location, skillLvl, maxPlayers, minAge, maxAge, league) {
-    if(this.ops.state.showOps == true){opsMatchingGames(sport, skillLvl, location, maxPlayers, minAge, maxAge, league,(games) => {
-      this.setState({matchedGames: (games)});
-      if (this.state.matchedGames) {this.setState({gamesfound: true});}
-      window.alert("Found "+games.length+ " games based on your search");
-
-    });}
-    else{
-    matchingGames(sport, skillLvl, location,  (games) => {
-      this.setState({matchedGames: (games)});
+  onSubmit(sport, skillLvl, loc) {
+    matchingGames(sport, skillLvl, loc, (games) => {
+      this.setState({matchedGames: games});
       if (this.state.matchedGames) {this.setState({gamesfound: true});}
       window.alert("Found "+games.length+ " games based on your search");
 
@@ -46,43 +43,22 @@ export default class Fgsearchbox extends React.Component {
 
 
   }
-}
+
 
 
   fgHandler() {
     var sportText = this.state.sport.trim();
     var skillLvlText = this.state.skillLvl.trim();
-    var locationText = this.state.location.trim();
+    var locationText = this.state.loc.trim();
 
-    if(this.ops.state.showOps === false){
-      if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-        this.onSubmit(sportText, locationText, skillLvlText);
-
-      }
-      else{
-        window.alert("Please fill out all of the required fields!");
-      }
-    }
-    else{
-      this.state.maxPlayers = this.ops.state.opMaxPlayers;
-      this.state.minAge = this.ops.state.opMinAge;
-      this.state.maxAge = this.ops.state.opMaxAge;
-      this.state.league = this.ops.state.opLeague;
-      var maxPlayersText =   this.state.maxPlayers.trim();
-      var minAgeText = this.state.minAge.trim();
-      var maxAgeText = this.state.maxAge.trim();
-      var leagueText = this.state.league.trim();
-
-      if (locationText !== "" && sportText !== "" && skillLvlText !== "") {
-        this.onSubmit(sportText, locationText, skillLvlText, maxPlayersText, minAgeText, maxAgeText, leagueText );
-
+      if (sportText !== "" && skillLvlText !== "" &&locationText !== "") {
+        this.onSubmit(sportText, skillLvlText, locationText);
       }
       else{
         window.alert("Please fill out all of the required fields!");
       }
     }
 
-      }
 
 
 
@@ -98,7 +74,7 @@ export default class Fgsearchbox extends React.Component {
 
   handleChangeLocation(e) {
     e.preventDefault();
-    this.setState({location: e.target.value});
+    this.setState({loc: e.target.value});
   }
 
   componentDidUpdate(preProps) {
@@ -111,9 +87,7 @@ export default class Fgsearchbox extends React.Component {
     var contents;
     switch(data.gamesfound) {
       case true:
-    // Create a StatusUpdate. Dynamically created React component: needs a key.
-    // Keys only need to be unique among *siblings*, so we can re-use the
-    // same key as the FeedItem.
+
     contents = (
       <div className="panel panel-default panel-results">
         {data.matchedGames.map((game) => {
@@ -150,7 +124,7 @@ export default class Fgsearchbox extends React.Component {
           <div className="form-group row">
               <label htmlFor="location" className="col-md-3 col-form-label">Location *</label>
               <div className="col-md-9">
-                  <input className="form-control" type="text" id="location" placeholder="Zip Code or City" value = {this.state.location} onChange={(e) => this.handleChangeLocation(e)}/>
+                  <input className="form-control" type="text" id="location" placeholder="Zip Code or City" value = {this.state.loc} onChange={(e) => this.handleChangeLocation(e)}/>
               </div>
           </div>
           <div className="form-group row">
@@ -170,8 +144,7 @@ export default class Fgsearchbox extends React.Component {
                   </label>
               </div>
           </div>
-            <div> <Fgsearchops ref={(ops) => {this.ops = ops;}} />
-          </div>
+
           <p>
               <button type="submit" className="btn pull-right" onClick={(e) => this.fgHandler(e)}>Submit </button>
 
