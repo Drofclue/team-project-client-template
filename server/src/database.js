@@ -261,7 +261,8 @@ var initialData = {
         "maxAge": 0,
         "sport": "N/A",
         "skillLvl": "N/A",
-        "league": "N/A"
+        "league": "N/A",
+        "leagueid":0
       },
       "1": {
         "_id": 1,
