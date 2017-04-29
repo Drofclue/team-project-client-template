@@ -12,7 +12,7 @@ var initialData = {
         "highlights": 4,
         "name": "Lingo A'Daddy",
         "gender": "Helicopter",
-        "sports": ["Muy Thai","Baseball","Water Polo"],
+        "sports": ["muy thai","baseball","water polo"],
         "skillLvl": ["Novice", "Intermediate", "Advanced"],
         "age": "79",
         "games":[4,5], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -28,7 +28,7 @@ var initialData = {
         "name": "Brosidan Daddy",
         "highlights": 4,
         "gender": "Tractor",
-        "sports": ["Muy Thai","Baseball","Water Polo"],
+        "sports": ["muy thai","baseball","water polo"],
         "skillLvl": ["Novice", "Intermediate", "Advanced"],
         "age": "24",
         "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -44,7 +44,7 @@ var initialData = {
         "name": "Paul Lactose",
         "highlights": 4,
         "gender": "Male",
-        "sports": ["Running","Water Polo", "Basketball"],
+        "sports": ["running","water polo", "basketball"],
         "skillLvl": ["Advanced", "Intermediate", "Advanced"],
         "age": "42",
         "games":[5,6], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -60,7 +60,7 @@ var initialData = {
         "highlights": 4,
         "name": "Elrond Hubbard",
         "gender": "Space Alien",
-        "sports": ["Soccer"],
+        "sports": ["soccer"],
         "skillLvl": ["Advanced"],
         "age": "24",
         "games":[4], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -76,7 +76,7 @@ var initialData = {
         "name": "Brenda Fiddlebiscuits",
         "highlights": 4,
         "gender": "Female",
-        "sports": ["Curling"],
+        "sports": ["curling"],
         "skillLvl": ["Beginner"],
         "age": "102",
         "games":[3], //an array/list of the games that a user has. In the form of the Game ID #s
@@ -97,6 +97,7 @@ var initialData = {
          "status": "",
          "memCount": "5",
          "admin": "", // a specific user
+         "adminnum": 1,
          "sports":[],
          "skill":[],
          "members":[], // store the list of members as the User ID's, that way easy to pass/use information about the members
@@ -114,7 +115,8 @@ var initialData = {
          "status": "Open",
          "memCount": "209",
          "admin": "LingoDaddy42", // a specific user
-         "sports":["Dodgeball","Synchronized Swimming"],
+         "adminnum": 1,
+         "sports":["dodgeball","synchronized swimming"],
          "skill":["Novice","Intermediate"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
@@ -131,7 +133,8 @@ var initialData = {
          "status": "Closed",
          "memCount": "696",
          "admin": "LingoDaddy42", // a specific user
-         "sports":["Bowling","Walking", "Running", "Hockey", "Frisbee"],
+         "adminnum": 1,
+         "sports":["bowling","walking", "running", "hockey", "frisbee"],
          "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
@@ -150,7 +153,8 @@ var initialData = {
          "status": "Open",
          "memCount": "2",
          "admin": "LingoDaddy42", // a specific user
-         "sports":["Bowling","Walking", "Running", "Ultimate Frisbee"],
+         "adminnum" : 1,
+         "sports":["bowling","walking", "running", "ultimate frisbee"],
          "skill":["Novice", "Beginner", "Beginner- Advanced"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
@@ -167,10 +171,11 @@ var initialData = {
        "status": "Open",
        "memCount": "4",
        "admin": "LingoDaddy42", // a specific user
-       "sports":["Bowling","Walking", "Swimming", "Four Square"],
+       "adminnum": 1,
+       "sports":["bowling","walking", "swimming", "four square"],
        "skill":["Novice", "Beginner", "Beginner", "Advanced"],
        "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
-       "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
+       "games":["walking", "running", "swimming", "jogging"],// List of the games associated with the league, uses game ID# reference
        "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
        "times":["4:00AM EST", "5:00PM EST", "4:30AM EST", "12:00PM EST"],
        "locations":["Puffers Pond", "Umass Amherst Campus", "Route 9", "That Creepy Trail by Sylvan"],
@@ -184,10 +189,11 @@ var initialData = {
      "status": "Open",
      "memCount": "4",
      "admin": "LingoDaddy42", // a specific user
-     "sports":["Soccer"],
+     "adminnum": 1,
+     "sports":["soccer"],
      "skill":["Novice"],
      "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
-     "games":["Soccer Game 1", "Soccer Game 2", "Soccer Game 3", "Last Soccer Game"],// List of the games associated with the league, uses game ID# reference
+     "games":["soccer Game 1", "soccer Game 2", "soccer Game 3", "Last soccer Game"],// List of the games associated with the league, uses game ID# reference
      "dates":["June 1st 2018", "June 29th 2018", "July 2nd 2017", "July 8th 2017"],
      "times":["4:00PM EST", "5:00PM EST", "4:30PM EST", "9:00PM EST"],
      "locations":["Puffers Pond", "Puffers Pond", "Puffers Pond", "Mullins Center"],
@@ -201,7 +207,8 @@ var initialData = {
     "status": "Open",
     "memCount": "1",
     "admin": "LingoDaddy4233", // a specific user
-    "sports":["Football"],
+    "adminnum": 1,
+    "sports":["football"],
     "skill":["Novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
@@ -219,7 +226,8 @@ var initialData = {
     "status": "Closed",
     "memCount": "19302",
     "admin": "LingoDaddy4233", // a specific user
-    "sports":["Tea Drinking"],
+    "adminnum": 1,
+    "sports":["tea drinking"],
     "skill":["Advanced"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
@@ -237,7 +245,8 @@ var initialData = {
     "status": "Open",
     "memCount": "1",
     "admin": "LingoDaddy4233", // a specific user
-    "sports":["Football"],
+    "adminnum": 1,
+    "sports":["football"],
     "skill":["Novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
@@ -275,7 +284,7 @@ var initialData = {
         "maxPlayers": 20,
         "minAge": 16,
         "maxAge": 30,
-        "sport": "Soccer",
+        "sport": "soccer",
         "skillLvl": "Novice",
         "league": "Not American Sports",
         "leagueid":5
@@ -291,7 +300,7 @@ var initialData = {
         "maxPlayers": 30,
         "minAge": 20,
         "maxAge": 28,
-        "sport":"Football",
+        "sport":"football",
         "skillLvl": "Advanced",
         "league":"American Sports",
         "leagueid": 6
@@ -307,7 +316,7 @@ var initialData = {
         "maxPlayers": 4,
         "minAge": 35,
         "maxAge": 50,
-        "sport":"Curling",
+        "sport":"curling",
         "skillLvl": "Beginner",
         "league":"Independent",
         "leagueid": 0
@@ -323,7 +332,7 @@ var initialData = {
         "maxPlayers": 4,
         "minAge": 50,
         "maxAge": 75,
-        "sport":"Muy Thai",
+        "sport":"muy thai",
         "skillLvl": "Novice",
         "league":"Independent",
         "leagueid": 0
@@ -339,7 +348,7 @@ var initialData = {
         "maxPlayers": 4,
         "minAge": 1,
         "maxAge": 99,
-        "sport":"Water Polo",
+        "sport":"water polo",
         "skillLvl": "Beginner",
         "league":"Independent",
         "leagueid": 0

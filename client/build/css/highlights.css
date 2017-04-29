@@ -1,10 +1,12 @@
-
-
-.mid hr {
-	width: 690px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+.highlights{
+	width: 700px;
 }
+
+.highlightsupdate{
+	width: 667px;
+}
+
+
 
 .reactions{
 	margin-left: 15px;
@@ -17,13 +19,16 @@
 .people_reacted{
 	padding-bottom: 0px;
 }
+.people_reacted hr{
+	width: 500px;
+}
 .comments hr{
 	width: 655px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 .send_message{
-	width: 560px !important;
+	width: 530px !important;
 }
 .highlights .send_button{
 	height: 34px;

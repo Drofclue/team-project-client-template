@@ -22,7 +22,7 @@ export default class LeftNavBar extends React.Component {
           </p>
         </div>
         <li>
-          <Link to={"/schedule/"+this.state.userData._id}><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</Link>
+          <Link to={"schedule"}><i className="fa fa-fw fa-calendar" aria-hidden="true"></i> Schedule</Link>
         </li>
         <li role="presentation">DEBUG</li>
         <ResetDatabase />

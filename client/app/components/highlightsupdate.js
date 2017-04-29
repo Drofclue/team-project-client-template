@@ -1,15 +1,17 @@
 import React from 'react';
 import {unixTimeToString} from '../util';
+import {Link} from 'react-router';
+
 
 export default class HighlightsUpdate extends React.Component{
   constructor(props) {
   super(props);
-  this.state = props;
+  this.state = this.props;
 }
   render(){
     return(
       <div>
-         <div className="panel panel-default highlights">
+         <div className="panel panel-default highlightsupdate">
             <div className="panel-body post">
                <div className="row">
                   <div className="col-md-10">
@@ -20,14 +22,11 @@ export default class HighlightsUpdate extends React.Component{
                            </span>
                         </div>
                         <div className="media-body">
-                           <a href="#">{this.state.user}</a>
+                          <Link to={"/user/" + this.state.user._id}>{this.state.user.username}</Link>
                            <br /> {unixTimeToString(this.state.timestamp)}·
                            <span className="glyphicon glyphicon-user"></span>
                         </div>
                      </div>
-                  </div>
-                  <div className="col-md-2">
-                     <span className="caret pull-right"></span>
                   </div>
                </div>
                <div className="row">
