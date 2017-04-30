@@ -9,16 +9,7 @@ export default class Fgresultlist extends React.Component {
 
   }
 
-/*  outputResults() {
-    var gamesOutput = giveGames;
-    //this.setState({gamesForResults: []});
-    for(var i = 0; i < gamesOutput.length; i++){
-      var gameToAdd = gamesOutput[i]
-      this.setState({gamesForResults: this.state.gamesForResults.concat(gameToAdd)});
-    }
-  }
 
-*/
 
   render() {
     //this.outputResults();
