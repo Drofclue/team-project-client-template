@@ -30,7 +30,7 @@ export function getLeagueData(league, cb) {
 }
 
 export function getHighlightsData(user, cb) {
-  sendXHR('GET', '/user/"000000000000000000000001"/highlights', undefined, (xhr) => {
+  sendXHR('GET', '/user/000000000000000000000001/highlights', undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
  }

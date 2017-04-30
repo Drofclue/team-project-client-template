@@ -8,7 +8,7 @@ export default class HighLightsPage extends React.Component {
   }
 
   refresh() {
-    getUserData("1", (userData) => {
+    getUserData("000000000000000000000001", (userData) => {
       this.setState({user: userData});
     });
   }
