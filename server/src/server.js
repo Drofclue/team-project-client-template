@@ -20,9 +20,12 @@ var bodyParser = require('body-parser');
 var MongoDB = require('mongodb');
 var MongoClient = MongoDB.MongoClient;
 var ObjectID = MongoDB.ObjectID;
+var mongo_express = require('mongo-express/lib/middleware');
+var mongo_express_config = require('mongo-express/config.default.js');
 var url = 'mongodb://localhost:27017/cherryPicker';
 
 MongoClient.connect(url, function(err, db) {
+  app.use('/mongo_express', mongo_express(mongo_express_config));
   // Put everything that uses `app` into this callback function.
   // from app.use(bodyParser.text());
   // all the way to
