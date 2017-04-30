@@ -1,5 +1,5 @@
 import React from 'react';
-import {ResetDatabase} from '../resetdatabase';
+import {ResetDatabase} from './resetdatabase';
 import {Link} from 'react-router';
 export default class LeftNavBar extends React.Component {
   constructor(props){
