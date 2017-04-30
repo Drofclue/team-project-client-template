@@ -10,6 +10,7 @@ var readDocument = database.readDocument;
 var writeDocument = database.writeDocument;
 var addDocument = database.addDocument;
 var getCollection = database.getCollection;
+var ResetDatabase = require('./resetdatabase');
 
 var GameSchema = require('./schemas/game.json');
 var FindaGameSchema = require('./schemas/game.json');
@@ -183,13 +184,12 @@ MongoClient.connect(url, function(err, db) {
 
 
 
-  // Reset database.
-  app.post('/resetdb', validate({ body: GameSchema }), function(req, res) {
+  // Reset the database.
+  app.post('/resetdb', function(req, res) {
     console.log("Resetting database...");
-    // This is a debug route, so don't do any validation.
-    database.resetDatabase();
-    // res.send() sends an empty response with status code 200
-    res.send();
+    ResetDatabase(db, function() {
+      res.send();
+    });
   });
 
 
