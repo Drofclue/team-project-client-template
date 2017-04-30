@@ -1,16 +1,4 @@
 
-//import data from './database.js';
-
-/**
- * Emulates how a REST call is *asynchronous* -- it calls your function back
- * some time in the future with data.
- */
-
-function emulateServerReturn(data, cb) {
-  setTimeout(() => {
-    cb(data);
-  }, 4);
-}
 
 export function getUserData(user, cb) {
   var xhr = new XMLHttpRequest();
@@ -42,7 +30,7 @@ export function getLeagueData(league, cb) {
 }
 
 export function getHighlightsData(user, cb) {
-  sendXHR('GET', '/user/1/highlights', undefined, (xhr) => {
+  sendXHR('GET', '/user/"000000000000000000000001"/highlights', undefined, (xhr) => {
     cb(JSON.parse(xhr.responseText));
   });
  }
@@ -72,18 +60,13 @@ cb(JSON.parse(xhr.responseText));
 }
 
 
-
 export function matchingGames(sportPassed, skillPassed, locPassed, cb) {
-  console.log(sportPassed);
-  console.log(skillPassed);
-  console.log(locPassed);
   sendXHR('GET', '/findagame/'+ sportPassed+ '/'+skillPassed+ '/'+ locPassed, undefined, (xhr) => {
     // Return the new game.
     cb(JSON.parse(xhr.responseText));
   });
 
   }
-
 
 
 export function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, cb) {
@@ -107,7 +90,7 @@ export function createGame(gameName, description, location, date, time, user, ma
 
 }
 
-var token = 'eyJpZCI6MX0='; // <-- Put your base64'd JSON token here
+var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9'; // <-- Put your base64'd JSON token here
 /**
  * Properly configure+send an XMLHttpRequest with error handling,
  * authorization token, and other needed properties.
