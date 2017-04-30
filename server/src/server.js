@@ -25,6 +25,7 @@ var mongo_express = require('mongo-express/lib/middleware');
 var mongo_express_config = require('mongo-express/config.default.js');
 var url = 'mongodb://localhost:27017/cherryPicker';
 
+
 MongoClient.connect(url, function(err, db) {
   app.use('/mongo_express', mongo_express(mongo_express_config));
   // Put everything that uses `app` into this callback function.
@@ -41,9 +42,18 @@ MongoClient.connect(url, function(err, db) {
   }
 
   // Fetches user data from database
-  function getUserData(user) {
-    var userData = readDocument('users', user);
-    return userData;
+  function getUserData(user, callback) {
+    db.collection('users').findOne({
+        _id: user
+      }, function(err, userData){
+        if(err){
+          return callback(err);
+        } else if (userData === null) {
+          //User not found
+          return callback(null,null);
+        }
+      }
+    )
   }
 
   function getLeagueData(league) {
@@ -113,6 +123,29 @@ MongoClient.connect(url, function(err, db) {
     return matchGames;
     }
 
+    function getUserIdFromToken(authorizationLine) {
+      try {
+        // Cut off "Bearer " from the header value.
+        var token = authorizationLine.slice(7);
+        // Convert the base64 string to a UTF-8 string.
+        var regularString = new Buffer(token, 'base64').toString('utf8');
+        // Convert the UTF-8 string into a JavaScript object.
+        var tokenObj = JSON.parse(regularString);
+        var id = tokenObj['id'];
+        // Check that id is a string.
+         if (typeof id === 'string') {
+           return id;
+         } else {
+           // Not a number. Return "", an invalid ID.
+           return "";
+         }
+      } catch (e) {
+        // Return an invalid ID.
+        console.log(authorizationLine);
+        return -1;
+      }
+    }
+
   // You run the server from `server`, so `../client/build` is `server/../client/build`.
   // '..' means "go up one directory", so this translates into `client/build`!
   app.use(express.static('../client/build'));
@@ -137,7 +170,20 @@ MongoClient.connect(url, function(err, db) {
    */
   app.get('/user/:userid', function(req, res) {
     var userid = req.params.userid;
-    res.send(getUserData(userid));
+    var fromUser = getUserIdFromToken(req.get('Authorization'));
+    if(fromUser === userid) {
+      getUserData(new ObjectID(userid), function(err, userData) {
+        if (err){
+          res.status(500).send("Database error: "+ err);
+        } else if (userData === null) {
+          res.status(400).send("Could not look up user page for user" + userid);
+        } else {
+          res.send(userData);
+        }
+      });
+    }else {
+      res.status(403).end();
+    }
   });
 
 
@@ -231,6 +277,8 @@ MongoClient.connect(url, function(err, db) {
     }
   });
 
+
+
   // Starts the server on port 3000!
   app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
@@ -238,32 +286,3 @@ MongoClient.connect(url, function(err, db) {
 
 });
 // The file ends here. Nothing should be after this.
-
-
-
-
-/**
- * Get the user ID from a token. Returns -1 (an invalid ID)
- * if it fails.
- */
-function getUserIdFromToken(authorizationLine) {
-  try {
-    // Cut off "Bearer " from the header value.
-    var token = authorizationLine.slice(7);
-    // Convert the base64 string to a UTF-8 string.
-    var regularString = new Buffer(token, 'base64').toString('utf8');
-    // Convert the UTF-8 string into a JavaScript object.
-    var tokenObj = JSON.parse(regularString);
-    var id = tokenObj['id'];
-    // Check that id is a number.
-    if (typeof id === 'number') {
-      return id;
-    } else {
-      // Not a number. Return -1, an invalid ID.
-      return -1;
-    }
-  } catch (e) {
-    // Return an invalid ID.
-    return -1;
-  }
-}
