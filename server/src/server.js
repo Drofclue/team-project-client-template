@@ -35,30 +35,63 @@ MongoClient.connect(url, function(err, db) {
   // Also put all of the helper functions that use mock database
   // methods like readDocument, writeDocument, ...
 
-  // Fetches game data from database
-  function getGameData(game) {
-  var gameData = readDocument('games', game);
-    return gameData;
+  /**
+   * Resolves a list of user objects. Returns an object that maps user IDs to
+   * user objects.
+   */
+  function resolveUserObjects(userList, callback) {
+    // Special case: userList is empty.
+    // It would be invalid to query the database with a logical OR
+    // query with an empty array.
+    if (userList.length === 0) {
+      callback(null, {});
+    } else {
+      // Build up a MongoDB "OR" query to resolve all of the user objects
+      // in the userList.
+      var query = {
+        $or: userList.map((id) => { return {_id: id } })
+      };
+      // Resolve 'like' counter
+      db.collection('users').find(query).toArray(function(err, users) {
+        if (err) {
+          return callback(err);
+        }
+        // Build a map from ID to user object.
+        // (so userMap["4"] will give the user with ID 4)
+        var userMap = {};
+        users.forEach((user) => {
+          userMap[user._id] = user;
+        });
+        callback(null, userMap);
+      });
+    }
   }
+  // Fetches game data from database
+  function getGameData(game, cb) {
+    db.collection('games').findOne(
+      {_id:game},
+      function(err, gameData) {
+        cb(gameData);
+      });
+  }
+
+
 
   // Fetches user data from database
-  function getUserData(user, callback) {
-    db.collection('users').findOne({
-        _id: user
-      }, function(err, userData){
-        if(err){
-          return callback(err);
-        } else if (userData === null) {
-          //User not found
-          return callback(null,null);
-        }
-      }
-    )
+  function getUserData(user ,cb) {
+    db.collection('users').findOne(
+      {_id:user},
+      function(err, userData) {
+        cb(userData);
+      });
   }
 
-  function getLeagueData(league) {
-    var leagueData = readDocument('leagues', league)
-    return leagueData;
+  function getLeagueData(league, cb) {
+    db.collection('leagues').findOne(
+      {_id:league},
+      function(err, leagueData) {
+        cb(leagueData);
+      });
   }
 
   function getHighlightsItemSync(highlightsItemId) {
@@ -161,7 +194,15 @@ MongoClient.connect(url, function(err, db) {
    */
   app.get('/game/:gameid', function(req, res) {
     var gameid = req.params.gameid;
-    res.send(getGameData(gameid));
+    getGameData(new ObjectID(gameid), function(gameData, err) {
+      if (err){
+        res.status(500).send("Database error: "+ err);
+      } else if (gameData === null) {
+        res.status(400).send("Could not look up user page for user: " + gameid);
+      } else {
+        res.send(gameData);
+      }
+    });
   });
 
 
@@ -170,26 +211,29 @@ MongoClient.connect(url, function(err, db) {
    */
   app.get('/user/:userid', function(req, res) {
     var userid = req.params.userid;
-    var fromUser = getUserIdFromToken(req.get('Authorization'));
-    if(fromUser === userid) {
-      getUserData(new ObjectID(userid), function(err, userData) {
-        if (err){
-          res.status(500).send("Database error: "+ err);
-        } else if (userData === null) {
-          res.status(400).send("Could not look up user page for user" + userid);
-        } else {
-          res.send(userData);
-        }
-      });
-    }else {
-      res.status(403).end();
-    }
+    getUserData(new ObjectID(userid), function(userData, err) {
+      if (err){
+        res.status(500).send("Database error: "+ err);
+      } else if (userData === null) {
+        res.status(400).send("Could not look up user page for user: " + userid);
+      } else {
+        res.send(userData);
+      }
+    });
   });
 
 
   app.get('/league/:leagueid', function(req, res) {
     var leagueid = req.params.leagueid;
-    res.send(getLeagueData(leagueid));
+    getLeagueData(new ObjectID(leagueid), function(leagueData, err) {
+      if (err){
+        res.status(500).send("Database error: "+ err);
+      } else if (leagueData === null) {
+        res.status(400).send("Could not look up user page for user: " + leagueid);
+      } else {
+        res.send(leagueData);
+      }
+    });
   });
 
   app.get('/user/:userid/highlights', function(req, res) {

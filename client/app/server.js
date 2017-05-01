@@ -1,4 +1,4 @@
-
+var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9'; // <-- Put your base64'd JSON token here
 
 export function getUserData(user, cb) {
   var xhr = new XMLHttpRequest();
@@ -90,7 +90,6 @@ export function createGame(gameName, description, location, date, time, user, ma
 
 }
 
-var token = 'eyJpZCI6IjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMSJ9'; // <-- Put your base64'd JSON token here
 /**
  * Properly configure+send an XMLHttpRequest with error handling,
  * authorization token, and other needed properties.
