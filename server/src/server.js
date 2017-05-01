@@ -94,24 +94,107 @@ MongoClient.connect(url, function(err, db) {
       });
   }
 
-  function getHighlightsItemSync(highlightsItemId) {
-      var highlightsItem = readDocument('highlightsItems', highlightsItemId);
-      highlightsItem.rsvpCounter =
-        highlightsItem.rsvpCounter.map((id) => readDocument('users', id));
-      highlightsItem.contents.user =
-        readDocument('users', highlightsItem.contents.user);
-      highlightsItem.comments.forEach((comment) => {
-        comment.user = readDocument('users', comment.user);
-      });
-      return highlightsItem;
+  function getHighlightsItemSync(highlightsItemId, callback) {
+    // Get the feed item with the given ID.
+  db.collection('highlightsItems').findOne({
+    _id: highlightsItemId
+  }, function(err, highlightsItem) {
+    if (err) {
+      // An error occurred.
+       return callback(err);
+    } else if (highlightsItem === null) {
+      // Feed item not found!
+      return callback(null, null);
     }
 
-    function getHighlightsData(user) {
-      var userData = readDocument('users', user);
-      var highlightsData = readDocument('highlights', userData.highlights);
-      highlightsData.contents = highlightsData.contents.map(getHighlightsItemSync);
-      return highlightsData;
+    // Build a list of all of the user objects we need to resolve.
+    // Start off with the author of the feedItem.
+    var userList = [highlightsItem.contents.user];
+    // Add all of the user IDs in the likeCounter.
+    userList = userList.concat(highlightsItem.rspvcounter);
+    // Add all of the authors of the comments.
+    highlightsItem.comments.forEach((comment) => userList.push(comment.user));
+    // Resolve all of the user objects!
+    resolveUserObjects(userList, function(err, userMap) {
+      if (err) {
+        return callback(err);
+      }
+      // Use the userMap to look up the author's user object
+      highlightsItem.contents.user = userMap[highlightsItem.contents.user];
+      // Look up the user objects for all users in the like counter.
+      highlightsItem.rspvcounter = highlightsItem.rspvcounter.map((userId) => userMap[userId]);
+      // Look up each comment's author's user object.
+      highlightsItem.comments.forEach((comment) => {
+        comment.user = userMap[comment.user];
+      });
+      // Return the resolved feedItem!
+      callback(null, highlightsItem);
+    });
+  });
+}
+
+    function getHighlightsData(user, callback) {
+      db.collection('users').findOne({
+    _id: user
+  }, function(err, userData) {
+    if (err) {
+      return callback(err);
+    } else if (userData === null) {
+      // User not found.
+      return callback(null, null);
     }
+
+    db.collection('highlights').findOne({
+      _id: userData.highlights
+    }, function(err, highlightsData) {
+      if (err) {
+        return callback(err);
+      } else if (highlightsData === null) {
+        // Feed not found.
+        return callback(null, null);
+      }
+
+      // We will place all of the resolved FeedItems here.
+      // When done, we will put them into the Feed object
+      // and send the Feed to the client.
+      var resolvedContents = [];
+
+      // processNextFeedItem is like an asynchronous for loop:
+      // It performs processing on one feed item, and then triggers
+      // processing the next item once the first one completes.
+      // When all of the feed items are processed, it completes
+      // a final action: Sending the response to the client.
+      function processNextFeedItem(i) {
+        // Asynchronously resolve a feed item.
+        getHighlightsItemSync(highlightsData.contents[i], function(err, highlightsItem) {
+          if (err) {
+            // Pass an error to the callback.
+            callback(err);
+          } else {
+            // Success!
+            resolvedContents.push(highlightsItem);
+            if (resolvedContents.length === highlightsData.contents.length) {
+              // I am the final feed item; all others are resolved.
+              // Pass the resolved feed document back to the callback.
+              highlightsData.contents = resolvedContents;
+              callback(null, highlightsData);
+            } else {
+              // Process the next feed item.
+              processNextFeedItem(i + 1);
+            }
+          }
+        });
+      }
+
+      // Special case: Feed is empty.
+      if (highlightsData.contents.length === 0) {
+        callback(null, highlightsData);
+      } else {
+        processNextFeedItem(0);
+      }
+    });
+  });
+}
 
     /**
      * Adds a new game to the database.
@@ -211,6 +294,7 @@ MongoClient.connect(url, function(err, db) {
    */
   app.get('/user/:userid', function(req, res) {
     var userid = req.params.userid;
+    //console.log("UserID!!!!!!!!!!! : " + userid)
     getUserData(new ObjectID(userid), function(userData, err) {
       if (err){
         res.status(500).send("Database error: "+ err);
@@ -238,18 +322,37 @@ MongoClient.connect(url, function(err, db) {
 
   app.get('/user/:userid/highlights', function(req, res) {
   var userid = req.params.userid;
+  //console.log("USERID!!!!!!!!!!!!!: " + userid)
   var fromUser = getUserIdFromToken(req.get('Authorization'));
+  //console.log("FROmUSER!!!!!!!!!:" + fromUser)
   // userid is a string. We need it to be a number.
   // Parameters are always strings.
-  var useridNumber = parseInt(userid, 10);
-    if (fromUser === useridNumber) {
+  //var useridNumber = parseInt(userid, 10);
+
+  // var useridNumber = parseInt(userid, 10);
+  //var fromUserNumber = parseInt(fromUser, 10);
+    if (fromUser === userid) {
     // Send response.
-      res.send(getHighlightsData(userid));
+      getHighlightsData(new ObjectID(userid), function(err, feedData) {
+        if (err) {
+          // A database error happened.
+          // Internal Error: 500.
+          res.status(500).send("Database error: " + err);
+        } else if (feedData === null) {
+          // Couldn't find the feed in the database.
+          res.status(400).send("Could not look up highlights for user " + fromUser.toString());
+        } else {
+          // Send data.
+          res.send(feedData);
+        }
+      });
     } else {
-    // 401: Unauthorized request.
-      res.status(401).end();
+      // 403: Unauthorized request.
+      console.log("fromUser: " + fromUser)
+      res.status(403).end();
     }
 });
+
 
 
   // `POST /game { ... }`
