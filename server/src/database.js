@@ -386,6 +386,10 @@ var initialData = {
     },
       // "highlgihts" collection. Highlights for each FB user.
       "highlights": {
+        "1":{
+          "_id": 1,
+          "contents": [1]
+        },
         "4": {
           "_id": 4,
           // Listing of highlgihtsItems in the highlights.

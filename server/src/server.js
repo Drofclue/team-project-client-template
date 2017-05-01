@@ -188,6 +188,7 @@ MongoClient.connect(url, function(err, db) {
 
       // Special case: Feed is empty.
       if (highlightsData.contents.length === 0) {
+        console.log("HIGHLIGHTSDATA CONTENTS LENGTH IS EQUAL TO ZEROOOOOOOOOOO")
         callback(null, highlightsData);
       } else {
         processNextFeedItem(0);
@@ -199,8 +200,13 @@ MongoClient.connect(url, function(err, db) {
     /**
      * Adds a new game to the database.
      */
-    function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league) {
-      // The new game. The database will assign the ID for us.
+      /**
+   * Adds a new status update to the database.
+   * @param user ObjectID of the user.
+   */
+   function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, callback) {
+    // Get the current UNIX time.
+    // The new status update. The database will assign the ID for us.
       var newGame = {
         "gameName": gameName,
         "description": description,
@@ -216,13 +222,24 @@ MongoClient.connect(url, function(err, db) {
         "league": league
       };
 
-      // Add the game to the database.
-      // Returns the game w/ an ID assigned.
-      newGame = addDocument('games', newGame);
 
-      // Return the newly-posted object.
+    // Add the status update to the database.
+    db.collection('games').insertOne(newGame, function(err, result) {
+      if (err) {
+        return callback(err);
+      }
+      // Unlike the mock database, MongoDB does not return the newly added object
+      // with the _id set.
+      // Attach the new feed item's ID to the newStatusUpdate object. We will
+      // return this object to the client when we are done.
+      // (When performing an insert operation, result.insertedId contains the new
+      // document's ID.)
+      newGame._id = result.insertedId;
       return newGame;
-    }
+      //callback(null, newGame);
+    });
+  }
+
 
     function matchingGames(sportPassed, skillPassed, locPassed) {
 
@@ -362,18 +379,27 @@ MongoClient.connect(url, function(err, db) {
     var body = req.body;
     var fromUser = getUserIdFromToken(req.get('Authorization'));
 
+    var fromUserNumber = parseInt(fromUser, 10);
     // Check if requester is authorized to post this status update.
     // (The requester must be the author of the update.)
-    if (fromUser === body.currPlayers[0]) {
-      var newUpdate = createGame(body.gameName, body.description, body.location, body.date, body.time, body.currPlayers, body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league);
+    if (fromUserNumber === body.currPlayers[0]) {
+      createGame(new ObjectID(fromUser), body.gameName, body.description, body.location, body.date, body.time, body.currPlayers, body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league, function(err, newUpdate){
       // When POST creates a new resource, we should tell the client about it
       // in the 'Location' header and use status code 201.
+      if (err) {
+       // A database error happened.
+       // 500: Internal error.
+       res.status(500).send("A database error occurred: " + err);
+     } else{
+
       res.status(201);
       res.set('Location', '/game/' + newUpdate._id);
        // Send the update!
       res.send(newUpdate);
-    } else {
+    }
+  });} else{
       // 401: Unauthorized.
+      console.log("fromUseris: " + fromUser + "currPlayers is: " + body.currPlayers[0] + "fromuserNumber is: " + fromUserNumber)
       res.status(401).end();
     }
   });
