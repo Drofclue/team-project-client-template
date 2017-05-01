@@ -92,7 +92,7 @@ var initialData = {
      "leagues" : {
        // Example League listing, this league has id "1"
        "0":{
-         "_id":new ObjectID("000000000000000000000001"),
+         "_id":new ObjectID("000000000000000000000000"),
          "leagName": "This is an Independent Event",
          "picture": "img/lingodaddy_profile_pic_userhub.jpg",
          "currentUsername": "a",
