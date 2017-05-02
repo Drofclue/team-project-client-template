@@ -238,7 +238,7 @@ MongoClient.connect(url, function(err, db) {
       //return newGame;
 
     });
-    if(callback) callback(null, newGame);
+    callback(null, newGame);
   }
 
 
