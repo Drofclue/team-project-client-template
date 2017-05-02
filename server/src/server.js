@@ -207,26 +207,7 @@ MongoClient.connect(url, function(err, db) {
    function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, callback) {
     // The database will assign the ID for us.
 
-    /*
-
-    This function should :
-
-    -Add the game to the gamess document collection.
-        We can use insertOne to do this.
-
-    -Gets the author’s user object.
-        We can use findOne to do this.
-
-    -Updates the author’s games to include the new game.
-        We can use updateOne to do this using a $push update operator.
-
-    -Returns the new game.
-
-
-
-
-    */
-      var newGame = {
+        var newGame = {
         "gameName": gameName,
         "description": description,
         "location": location,
