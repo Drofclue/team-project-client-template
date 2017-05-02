@@ -205,8 +205,27 @@ MongoClient.connect(url, function(err, db) {
    * @param user ObjectID of the user.
    */
    function createGame(gameName, description, location, date, time, user, maxPlayers, minAge, maxAge, sport, skillLvl, league, callback) {
-    // Get the current UNIX time.
-    // The new status update. The database will assign the ID for us.
+    // The database will assign the ID for us.
+
+    /*
+
+    This function should :
+
+    -Add the game to the gamess document collection.
+        We can use insertOne to do this.
+
+    -Gets the author’s user object.
+        We can use findOne to do this.
+
+    -Updates the author’s games to include the new game.
+        We can use updateOne to do this using a $push update operator.
+
+    -Returns the new game.
+
+
+
+
+    */
       var newGame = {
         "gameName": gameName,
         "description": description,
@@ -223,14 +242,14 @@ MongoClient.connect(url, function(err, db) {
       };
 
 
-    // Add the status update to the database.
+    // Add the new game to the database.
     db.collection('games').insertOne(newGame, function(err, result) {
       if (err) {
         return callback(err);
       }
       // Unlike the mock database, MongoDB does not return the newly added object
       // with the _id set.
-      // Attach the new feed item's ID to the newStatusUpdate object. We will
+      // Attach the new game's ID to the newGame object. We will
       // return this object to the client when we are done.
       // (When performing an insert operation, result.insertedId contains the new
       // document's ID.)
@@ -241,7 +260,15 @@ MongoClient.connect(url, function(err, db) {
   }
 
 
-    function matchingGames(sportPassed, skillPassed, locPassed) {
+    function matchingGames(sportPassed, skillPassed, locPassed, cb) {
+        db.collection('games').find(
+          {$and: [ {sport: sportPassed} , {$or: [{skill:skillPassed}, {loc: locPassed}]}]},
+          function(err, matchedGames) {
+            cb(matchedGames);
+          });
+      }
+/*
+  old code for finding a game.
 
       var allGames = getCollection('games');
       var everygame = [];
@@ -255,6 +282,7 @@ MongoClient.connect(url, function(err, db) {
     });
     return matchGames;
     }
+    */
 
     function getUserIdFromToken(authorizationLine) {
       try {
@@ -418,11 +446,8 @@ MongoClient.connect(url, function(err, db) {
   /*
    * GET /findagame/ the games which match the search criteria
   */
-  app.get('/findagame/:sportPassed/:skillPassed/:locPassed' /*, validate({ body: FindaGameSchema })*/, function(req, res) {
-    // If this function runs, `req.body` passed JSON validation!
+  app.get('/findagame/:sportPassed/:skillPassed/:locPassed', function(req, res) {
     var body = req.params;
-    // Check if requester is authorized to post this status update.
-    // (The requester must be the author of the update.)
     if (true) {
       var resultingGames = matchingGames(body.sportPassed, body.skillPassed, body.locPassed);
       // When POST creates a new resource, we should tell the client about it
