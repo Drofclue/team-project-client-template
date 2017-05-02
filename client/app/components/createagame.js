@@ -22,7 +22,7 @@
     // Send to server.
     // We could use geolocation to get a location, but let's fix it to Amherst
     // for now.
-    createGame(gameName, description, location, date, time, 1, maxPlayers, minAge, maxAge, sport, skillLvl, league, () => {
+    createGame(gameName, description, location, date, time, "000000000000000000000001", maxPlayers, minAge, maxAge, sport, skillLvl, league, () => {
       // Database is now updated. Redirect to the game page.
       window.alert("Database has been updated!");
     });

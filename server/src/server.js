@@ -235,9 +235,10 @@ MongoClient.connect(url, function(err, db) {
       // (When performing an insert operation, result.insertedId contains the new
       // document's ID.)
       newGame._id = result.insertedId;
-      return newGame;
-      //callback(null, newGame);
+      //return newGame;
+
     });
+    callback(null, newGame);
   }
 
 
@@ -387,12 +388,10 @@ MongoClient.connect(url, function(err, db) {
     // If this function runs, `req.body` passed JSON validation!
     var body = req.body;
     var fromUser = getUserIdFromToken(req.get('Authorization'));
-
-    var fromUserNumber = parseInt(fromUser, 10);
     // Check if requester is authorized to post this status update.
     // (The requester must be the author of the update.)
-    if (fromUserNumber === body.currPlayers[0]) {
-      createGame(new ObjectID(fromUser), body.gameName, body.description, body.location, body.date, body.time, body.currPlayers, body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league, function(err, newUpdate){
+    if (fromUser === body.currPlayers[0]) {
+      createGame(body.gameName, body.description, body.location, body.date, body.time, body.currPlayers, body.maxPlayers, body.minAge, body.maxAge, body.sport, body.skillLvl, body.league, function(err, newUpdate){
       // When POST creates a new resource, we should tell the client about it
       // in the 'Location' header and use status code 201.
       if (err) {
@@ -408,7 +407,7 @@ MongoClient.connect(url, function(err, db) {
     }
   });} else{
       // 401: Unauthorized.
-      console.log("fromUseris: " + fromUser + "currPlayers is: " + body.currPlayers[0] + "fromuserNumber is: " + fromUserNumber)
+      console.log("fromUseris: " + fromUser + "currPlayers is: " + body.currPlayers[0] + "fromuserNumber is: ")
       res.status(401).end();
     }
   });
