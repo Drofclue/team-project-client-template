@@ -5,15 +5,15 @@
 var express = require('express');
 // Creates an Express server.
 var app = express();
-var database = require ('./database');
-var readDocument = database.readDocument;
-var writeDocument = database.writeDocument;
-var addDocument = database.addDocument;
-var getCollection = database.getCollection;
+//var database = require ('./database');
+//var readDocument = database.readDocument;
+//var writeDocument = database.writeDocument;
+//var addDocument = database.addDocument;
+//var getCollection = database.getCollection;
 var ResetDatabase = require('./resetdatabase');
 
 var GameSchema = require('./schemas/game.json');
-var FindaGameSchema = require('./schemas/game.json');
+//var FindaGameSchema = require('./schemas/game.json');
 var validate = require('express-jsonschema').validate;
 
 var bodyParser = require('body-parser');
@@ -243,12 +243,38 @@ MongoClient.connect(url, function(err, db) {
 
 
     function matchingGames(sportPassed, skillPassed, locPassed, cb) {
-        db.collection('games').find(
-          {$and: [ {sport: sportPassed} , {$or: [{skill:skillPassed}, {loc: locPassed}]}]},
-          function(err, matchedGames) {
-            cb(matchedGames);
-          });
+
+      var query = {$and: [ {sport: sportPassed.trim()}, {$or: [ {skillLvl: skillPassed.trim()}, {location: locPassed.trim()} ]  } ]  };
+        db.collection('games').find(query).toArray(function(err,matchGames){
+          if(err){
+            console.log("error occurred "+err);
+            return cb(err);
+          }
+          cb(null,matchGames);
+          }
+        );
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
   old code for finding a game.
 
@@ -429,13 +455,20 @@ MongoClient.connect(url, function(err, db) {
   app.get('/findagame/:sportPassed/:skillPassed/:locPassed', function(req, res) {
     var body = req.params;
     if (true) {
-      var resultingGames = matchingGames(body.sportPassed, body.skillPassed, body.locPassed);
-      // When POST creates a new resource, we should tell the client about it
-      // in the 'Location' header and use status code 201.
-      res.status(200);
-      // Send the update!
-      res.send(resultingGames);
-    }
+      matchingGames(body.sportPassed, body.skillPassed, body.locPassed, function(err, matchedGames){
+        if (err) {
+         // A database error happened.
+         // 500: Internal error.
+         res.status(500).send("A database error occurred: " + err);
+       } else{
+
+        res.status(201);
+
+         // Send the update!
+        res.send(matchedGames);
+      }
+    } );
+  }
     else {
       // 401: Unauthorized.
       res.status(401).end();

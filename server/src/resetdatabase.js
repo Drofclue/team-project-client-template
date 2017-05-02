@@ -15,7 +15,7 @@ var initialData = {
         "name": "Lingo A'Daddy",
         "gender": "Helicopter",
         "sports": ["muy thai","baseball","water polo"],
-        "skillLvl": ["Novice", "Intermediate", "Advanced"],
+        "skillLvl": ["novice", "intermediate", "advanced"],
         "age": "79",
         "games":[new ObjectID("000000000000000000000004"),new ObjectID("000000000000000000000005")], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[new ObjectID("000000000000000000000001"),new ObjectID("000000000000000000000002"),new ObjectID("000000000000000000000003")], //an arrayList of the games that are suggested for the user to participate in by Game ID
@@ -31,7 +31,7 @@ var initialData = {
         "highlights": new ObjectID("000000000000000000000004"),
         "gender": "Tractor",
         "sports": ["muy thai","baseball","water polo"],
-        "skillLvl": ["Novice", "Intermediate", "Advanced"],
+        "skillLvl": ["novice", "intermediate", "advanced"],
         "age": "24",
         "games":[new ObjectID("000000000000000000000004")], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[new ObjectID("000000000000000000000001"),new ObjectID("000000000000000000000002"),new ObjectID("000000000000000000000003")], //an arrayList of the games that are suggested for the user to participate in by Game ID
@@ -47,7 +47,7 @@ var initialData = {
         "highlights": new ObjectID("000000000000000000000004"),
         "gender": "Male",
         "sports": ["running","water polo", "basketball"],
-        "skillLvl": ["Advanced", "Intermediate", "Advanced"],
+        "skillLvl": ["advanced", "intermediate", "advanced"],
         "age": "42",
         "games":[new ObjectID("000000000000000000000005"),new ObjectID("000000000000000000000006")], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[new ObjectID("000000000000000000000001"),new ObjectID("000000000000000000000002"),new ObjectID("000000000000000000000003")], //an arrayList of the games that are suggested for the user to participate in by Game ID
@@ -63,7 +63,7 @@ var initialData = {
         "name": "Elrond Hubbard",
         "gender": "Space Alien",
         "sports": ["soccer"],
-        "skillLvl": ["Advanced"],
+        "skillLvl": ["advanced"],
         "age": "24",
         "games":[new ObjectID("000000000000000000000004")], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[new ObjectID("000000000000000000000001"),new ObjectID("000000000000000000000002"),new ObjectID("000000000000000000000003")], //an arrayList of the games that are suggested for the user to participate in by Game ID
@@ -79,7 +79,7 @@ var initialData = {
         "highlights": new ObjectID("000000000000000000000004"),
         "gender": "Female",
         "sports": ["curling"],
-        "skillLvl": ["Beginner"],
+        "skillLvl": ["beginner"],
         "age": "102",
         "games":[new ObjectID("000000000000000000000003")], //an array/list of the games that a user has. In the form of the Game ID #s
         "suggestedgames":[new ObjectID("000000000000000000000001"),new ObjectID("000000000000000000000002"),new ObjectID("000000000000000000000004")], //an arrayList of the games that are suggested for the user to participate in by Game ID
@@ -119,7 +119,7 @@ var initialData = {
          "admin": "LingoDaddy42", // a specific user
          "adminnum": new ObjectID("000000000000000000000001"),
          "sports":["dodgeball","synchronized swimming"],
-         "skill":["Novice","Intermediate"],
+         "skill":["novice","intermediate"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
          "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
@@ -137,7 +137,7 @@ var initialData = {
          "admin": "LingoDaddy42", // a specific user
          "adminnum": new ObjectID("000000000000000000000001"),
          "sports":["bowling","walking", "running", "hockey", "frisbee"],
-         "skill":["Novice", "Beginner", "Beginner- Advanced", "Advanced", "Novice"],
+         "skill":["novice", "beginner", "beginner- advanced", "advanced", "novice"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
          "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
@@ -157,7 +157,7 @@ var initialData = {
          "admin": "LingoDaddy42", // a specific user
          "adminnum" : new ObjectID("000000000000000000000001"),
          "sports":["bowling","walking", "running", "ultimate frisbee"],
-         "skill":["Novice", "Beginner", "Beginner- Advanced"],
+         "skill":["novice", "beginner", "beginner- advanced"],
          "members":["Carlos390", "OGLingo", "Calvin", "The_mIddlE_AGEd_Bowl3R", "Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
          "games":["Walking", "Running", "Swimming", "Jogging"],// List of the games associated with the league, uses game ID# reference
          "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
@@ -175,7 +175,7 @@ var initialData = {
        "admin": "LingoDaddy42", // a specific user
        "adminnum": new ObjectID("000000000000000000000001"),
        "sports":["bowling","walking", "swimming", "four square"],
-       "skill":["Novice", "Beginner", "Beginner", "Advanced"],
+       "skill":["novice", "beginner", "beginner", "advanced"],
        "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
        "games":["walking", "running", "swimming", "jogging"],// List of the games associated with the league, uses game ID# reference
        "dates":["April 1st 2018", "April 29 2018", "May 2 2017", "July 8 2017"],
@@ -193,7 +193,7 @@ var initialData = {
      "admin": "LingoDaddy42", // a specific user
      "adminnum": new ObjectID("000000000000000000000001"),
      "sports":["soccer"],
-     "skill":["Novice"],
+     "skill":["novice"],
      "members":["Carlos390", "OGLingo", "Calvin", "Not Micheal"], // store the list of members as the User ID's, that way easy to pass/use information about the members
      "games":["soccer Game 1", "soccer Game 2", "soccer Game 3", "Last soccer Game"],// List of the games associated with the league, uses game ID# reference
      "dates":["June 1st 2018", "June 29th 2018", "July 2nd 2017", "July 8th 2017"],
@@ -211,7 +211,7 @@ var initialData = {
     "admin": "LingoDaddy4233", // a specific user
     "adminnum": new ObjectID("000000000000000000000001"),
     "sports":["football"],
-    "skill":["Novice"],
+    "skill":["novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
     "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
@@ -230,7 +230,7 @@ var initialData = {
     "admin": "LingoDaddy4233", // a specific user
     "adminnum": new ObjectID("000000000000000000000001"),
     "sports":["tea drinking"],
-    "skill":["Advanced"],
+    "skill":["advanced"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
     "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
@@ -249,7 +249,7 @@ var initialData = {
     "admin": "LingoDaddy4233", // a specific user
     "adminnum": new ObjectID("000000000000000000000001"),
     "sports":["football"],
-    "skill":["Novice"],
+    "skill":["novice"],
     "members":["LingoDaddy4233"], // store the list of members as the User ID's, that way easy to pass/use information about the members
     "games":["Game1", "Game2", "Game3", "Big Ol' Game"],// List of the games associated with the league, uses game ID# reference
     "dates":["February 2nd 2018", "March 2nd 2018", "May 2 2017", "July 8 2017"],
@@ -287,7 +287,7 @@ var initialData = {
         "minAge": 16,
         "maxAge": 30,
         "sport": "soccer",
-        "skillLvl": "Novice",
+        "skillLvl": "novice",
         "league": "Not American Sports",
         "leagueid":new ObjectID("000000000000000000000005")
       },
@@ -303,7 +303,7 @@ var initialData = {
         "minAge": 20,
         "maxAge": 28,
         "sport":"football",
-        "skillLvl": "Advanced",
+        "skillLvl": "advanced",
         "league":"American Sports",
         "leagueid": new ObjectID("000000000000000000000006")
       },
@@ -319,7 +319,7 @@ var initialData = {
         "minAge": 35,
         "maxAge": 50,
         "sport":"curling",
-        "skillLvl": "Beginner",
+        "skillLvl": "beginner",
         "league":"Independent",
         "leagueid": new ObjectID("000000000000000000000000")
       },
@@ -335,7 +335,7 @@ var initialData = {
         "minAge": 50,
         "maxAge": 75,
         "sport":"muy thai",
-        "skillLvl": "Novice",
+        "skillLvl": "novice",
         "league":"Independent",
         "leagueid": new ObjectID("000000000000000000000000")
       },
@@ -351,7 +351,7 @@ var initialData = {
         "minAge": 1,
         "maxAge": 99,
         "sport":"water polo",
-        "skillLvl": "Beginner",
+        "skillLvl": "beginner",
         "league":"Independent",
         "leagueid": new ObjectID("000000000000000000000000")
       }
@@ -395,6 +395,18 @@ var initialData = {
         }
       }
 };
+/**
+ * Adds any desired indexes to the database.
+ */
+function addGameIndexes(db, cb) {
+  db.collection('games').createIndex({
+    "gameName": "text",
+    "location": "text",
+    "sport":"text",
+    "skillLvl": "text"
+   }, null, cb);
+}
+
 
 /**
  * Resets a collection.
@@ -432,7 +444,7 @@ function resetDatabase(db, cb) {
       // Use myself as a callback.
       resetCollection(db, collection, processNextCollection);
     } else {
-      cb();
+      addGameIndexes(db,cb);
     }
   }
 
