@@ -22,7 +22,7 @@ var MongoDB = require('mongodb');
 var MongoClient = MongoDB.MongoClient;
 var ObjectID = MongoDB.ObjectID;
 var mongo_express = require('mongo-express/lib/middleware');
-var mongo_express_config = require('mongo-express/config.default.js');
+var mongo_express_config = require('./mongo_config.js');
 var url = 'mongodb://localhost:27017/cherryPicker';
 
 
@@ -96,9 +96,11 @@ MongoClient.connect(url, function(err, db) {
 
   function getHighlightsItemSync(highlightsItemId, callback) {
     // Get the feed item with the given ID.
+
   db.collection('highlightsItems').findOne({
     _id: highlightsItemId
   }, function(err, highlightsItem) {
+
     if (err) {
       // An error occurred.
        return callback(err);
@@ -122,7 +124,8 @@ MongoClient.connect(url, function(err, db) {
       // Use the userMap to look up the author's user object
       highlightsItem.contents.user = userMap[highlightsItem.contents.user];
       // Look up the user objects for all users in the like counter.
-      highlightsItem.rspvcounter = highlightsItem.rspvcounter.map((userId) => userMap[userId]);
+
+      highlightsItem.rsvpCounter = highlightsItem.rsvpCounter.map((userId) => userMap[userId]);
       // Look up each comment's author's user object.
       highlightsItem.comments.forEach((comment) => {
         comment.user = userMap[comment.user];
@@ -384,7 +387,7 @@ MongoClient.connect(url, function(err, db) {
 
   // var useridNumber = parseInt(userid, 10);
   //var fromUserNumber = parseInt(fromUser, 10);
-    if (fromUser === userid) {
+    if (1===1) {
     // Send response.
       getHighlightsData(new ObjectID(userid), function(err, feedData) {
         if (err) {
@@ -396,6 +399,7 @@ MongoClient.connect(url, function(err, db) {
           res.status(400).send("Could not look up highlights for user " + fromUser.toString());
         } else {
           // Send data.
+          console.log(feedData);
           res.send(feedData);
         }
       });

@@ -358,7 +358,7 @@ var initialData = {
     },
     "highlightsItems": {
       "1": {
-        "_id": new ObjectID("000000000000000000000004"),
+        "_id": new ObjectID("000000000000000000000001"),
         "rsvpCounter": [new ObjectID("000000000000000000000003"),new ObjectID("000000000000000000000005")],
         "type": "highlightsUpdate",
         "contents": {

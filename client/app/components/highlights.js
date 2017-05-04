@@ -34,16 +34,22 @@ componentDidMount() {
 
 
   render() {
-    return (
-      <div>
+    if (this.state.contents.length > 0)
+    {
+      return (
         <div>
-        {this.state.contents.map((highlightsItem) => {
-            return (
-              <HighlightsItem key={highlightsItem._id} user={this.props.user} data={this.state} />
-            );
-        })}
+          <div>
+          {this.state.contents.map((highlightsItem) => {
+              return (
+                <HighlightsItem key={highlightsItem._id} user={this.props.user} data={this.state} />
+              );
+          })}
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+    else {
+      return (<div>test</div>)
+    }
   }
 }
